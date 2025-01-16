@@ -226,14 +226,23 @@ export const useUserStore = defineStore('userStore', () => {
                 return new Date(dateStr).toISOString().substring(0, 10); // 格式化為 YYYY-MM-DD
             };
 
-            // 立即格式化日期
-            companyMember.value = companyMember.value.map((member) => ({
-                ...member,
-                create_at: formatDate(member.create_at),
-                update_at: formatDate(member.update_at),
-                isChecked: false, // 初始化 checkbox 狀態
-            }));
-            console.log("處理", companyMember.value);
+            // 定義 permissions 排序優先順序
+            const permissionOrder = ["老闆", "主管", "員工", "關閉"];
+
+            // 立即格式化日期並排序
+            companyMember.value = companyMember.value
+                .map((member) => ({
+                    ...member,
+                    create_at: formatDate(member.create_at),
+                    update_at: formatDate(member.update_at),
+                    isChecked: false, // 初始化 checkbox 狀態
+                }))
+                .sort((a, b) => {
+                    // 根據 permissions 排序
+                    return permissionOrder.indexOf(a.permissions) - permissionOrder.indexOf(b.permissions);
+                });
+
+            console.log("處理後的資料", companyMember.value);
         } catch (error) {
             console.log("error: ", error);
         }

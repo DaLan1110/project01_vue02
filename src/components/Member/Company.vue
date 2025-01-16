@@ -66,20 +66,6 @@ const checkIfAllSelected = (member) => {
 const getCompanyMemberData = async () => {
   // 等待 userStore 的資料加載完成
   await userStore.getCompanyMemberData();
-  // 定義排序的優先級
-  const permissionsOrder = ["老闆", "主管", "員工", "關閉"];
-
-  // 將 companyMember 根據 permissions 排序
-  companyMember.value.sort((a, b) => {
-    // 確保正確訪問 permissions 屬性
-    const permissionsA = a?.[[Target]]?.permissions || a.permissions || "";
-    const permissionsB = b?.[[Target]]?.permissions || b.permissions || "";
-
-    return (
-      permissionsOrder.indexOf(permissionsA) -
-      permissionsOrder.indexOf(permissionsB)
-    );
-  });
 
   // 延遲 0.5 秒後顯示資料
   setTimeout(() => {
