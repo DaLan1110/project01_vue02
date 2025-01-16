@@ -67,6 +67,17 @@ const getCompanyMemberData = async () => {
   // 等待 userStore 的資料加載完成
   await userStore.getCompanyMemberData();
 
+  // 定義排序的優先級
+  const permissionsOrder = ["老闆", "主管", "員工", "關閉"];
+
+  // 將 companyMember 根據 permissions 排序
+  companyMember.value.sort((a, b) => {
+    return (
+      permissionsOrder.indexOf(a.permissions) -
+      permissionsOrder.indexOf(b.permissions)
+    );
+  });
+
   // 延遲 0.5 秒後顯示資料
   setTimeout(() => {
     loading.value = false;
@@ -210,7 +221,9 @@ const deleteUser = () => {
                     <option selected disabled>請選擇</option>
                     <option
                       value="老闆"
-                      v-if="user_data.permissions === item.UserDatum.permissions"
+                      v-if="
+                        user_data.permissions === item.UserDatum.permissions
+                      "
                     >
                       老闆
                     </option>
