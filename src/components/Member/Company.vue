@@ -170,7 +170,7 @@ const deleteUser = () => {
                 {{ (currentPage - 1) * itemsPerPage + index + 1 }}
               </td>
               <td class="text-center align-middle" data-label="使用者名稱">
-                {{ item.username }}
+                {{ item.UserDatum.username }}
               </td>
               <td
                 class="text-center align-middle"
