@@ -24,17 +24,6 @@ const itemsPerPage = ref(5);
 const currentPage = ref("");
 const totalPages = ref("");
 const getPaginatedMembers = (data) => {
-  
-  // 定義排序的優先級
-  const permissionsOrder = ["老闆", "主管", "員工", "關閉"];
-
-  // 將 companyMember 根據 permissions 排序
-  paginatedMembers.value.sort((a, b) => {
-    return (
-      permissionsOrder.indexOf(a.permissions) -
-      permissionsOrder.indexOf(b.permissions)
-    );
-  });
   paginatedMembers.value = data;
 };
 const getCurrentPage = (data) => {
@@ -77,6 +66,18 @@ const checkIfAllSelected = (member) => {
 const getCompanyMemberData = async () => {
   // 等待 userStore 的資料加載完成
   await userStore.getCompanyMemberData();
+
+  console.log(companyMember);
+  // 定義排序的優先級
+  const permissionsOrder = ["老闆", "主管", "員工", "關閉"];
+
+  // 將 companyMember 根據 permissions 排序
+  companyMember.value.sort((a, b) => {
+    return (
+      permissionsOrder.indexOf(a.permissions) -
+      permissionsOrder.indexOf(b.permissions)
+    );
+  });
 
   // 延遲 0.5 秒後顯示資料
   setTimeout(() => {
