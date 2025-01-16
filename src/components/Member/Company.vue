@@ -63,31 +63,31 @@ const checkIfAllSelected = (member) => {
   console.log("Selected Member IDs: ", selectedIds);
 };
 
-const getCompanyMemberData = async () => {
-  // 等待 userStore 的資料加載完成
-  await userStore.getCompanyMemberData();
+// const getCompanyMemberData = async () => {
+//   // 等待 userStore 的資料加載完成
+//   await userStore.getCompanyMemberData();
 
-  console.log(companyMember);
-  // 定義排序的優先級
-  const permissionsOrder = ["老闆", "主管", "員工", "關閉"];
+//   console.log(companyMember);
+//   // 定義排序的優先級
+//   const permissionsOrder = ["老闆", "主管", "員工", "關閉"];
 
-  // 將 companyMember 根據 permissions 排序
-  companyMember.value.sort((a, b) => {
-    return (
-      permissionsOrder.indexOf(a.permissions) -
-      permissionsOrder.indexOf(b.permissions)
-    );
-  });
+//   // 將 companyMember 根據 permissions 排序
+//   companyMember.value.sort((a, b) => {
+//     return (
+//       permissionsOrder.indexOf(a.permissions) -
+//       permissionsOrder.indexOf(b.permissions)
+//     );
+//   });
 
-  // 延遲 0.5 秒後顯示資料
-  setTimeout(() => {
-    loading.value = false;
-  }, 500);
-  console.log("companyMember:", companyMember.value.length);
-};
+//   // 延遲 0.5 秒後顯示資料
+//   setTimeout(() => {
+//     loading.value = false;
+//   }, 500);
+//   console.log("companyMember:", companyMember.value.length);
+// };
 
 onMounted(() => {
-  getCompanyMemberData();
+  // getCompanyMemberData();
   // 視窗 768px
   window.addEventListener("resize", updateWindowWidth);
 });
