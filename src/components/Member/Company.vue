@@ -71,9 +71,13 @@ const getCompanyMemberData = async () => {
 
   // 將 companyMember 根據 permissions 排序
   companyMember.value.sort((a, b) => {
+    // 確保正確訪問 permissions 屬性
+    const permissionsA = a?.[[Target]]?.permissions || a.permissions || "";
+    const permissionsB = b?.[[Target]]?.permissions || b.permissions || "";
+
     return (
-      permissionsOrder.indexOf(a.permissions) -
-      permissionsOrder.indexOf(b.permissions)
+      permissionsOrder.indexOf(permissionsA) -
+      permissionsOrder.indexOf(permissionsB)
     );
   });
 
