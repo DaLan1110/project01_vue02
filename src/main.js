@@ -1,0 +1,26 @@
+import './assets/main.css'
+
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import App from './App.vue'
+import router from './router'
+
+// import 'bootstrap'
+
+import 'bootstrap/dist/css/bootstrap.min.css'; // 引入 Bootstrap 的 CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // 引入 Bootstrap 的 JS
+
+import { FontAwesomeIcon } from './assets/awesome/awesome.js'
+
+// import { firebaseApp } from './services/firebaseConfig.js'
+// firebaseApp;
+const app = createApp(App)
+
+app.component('font-awesome-icon', FontAwesomeIcon)
+
+app.use(createPinia())
+app.use(router)
+// router.isReady().then(()=>app.mount(`#app`))
+
+app.mount('#app')
