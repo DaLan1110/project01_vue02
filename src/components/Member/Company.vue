@@ -171,7 +171,7 @@ const deleteUser = () => {
                 {{ (currentPage - 1) * itemsPerPage + index + 1 }}
               </td>
               <td class="text-center align-middle" data-label="使用者名稱">
-                {{ item.UserDatum.username }}
+                {{ item.username }}
               </td>
               <td
                 class="text-center align-middle"
@@ -186,7 +186,7 @@ const deleteUser = () => {
               <td class="text-center align-middle" data-label="職位">
                 <template v-if="user_data.permissions !== '老闆'">
                   <select
-                    v-model="item.UserDatum.permissions"
+                    v-model="item.permissions"
                     class="form-select"
                     aria-label="Default select example"
                     :disabled="user_data.permissions !== '老闆'"
@@ -200,7 +200,7 @@ const deleteUser = () => {
                 </template>
                 <template v-else>
                   <select
-                    v-model="item.UserDatum.permissions"
+                    v-model="item.permissions"
                     class="form-select"
                     aria-label="Default select example"
                     :disabled="
@@ -212,7 +212,7 @@ const deleteUser = () => {
                     <option
                       value="老闆"
                       v-if="
-                        user_data.permissions === item.UserDatum.permissions
+                        user_data.permissions === item.permissions
                       "
                     >
                       老闆
@@ -235,7 +235,7 @@ const deleteUser = () => {
                 data-label="修改"
               >
                 <RouterLink
-                  v-if="!(item.UserDatum.permissions === '老闆')"
+                  v-if="!(item.permissions === '老闆')"
                   :to="{ path: 'company/' + item.id + '/update' }"
                   class="edit-btn-style add-user-btn me-2"
                   >修改</RouterLink
@@ -257,9 +257,9 @@ const deleteUser = () => {
                   class="edit-btn-style add-user-btn"
                   v-if="
                     user_data.permissions === '老闆' &&
-                    item.UserDatum.permissions !== '老闆'
+                    item.permissions !== '老闆'
                   "
-                  @click="saveHandle(item.userId, item.UserDatum.permissions)"
+                  @click="saveHandle(item.userId, item.permissions)"
                 >
                   儲存
                 </button>
@@ -272,7 +272,7 @@ const deleteUser = () => {
                   type="checkbox"
                   v-model="item.isChecked"
                   @change="checkIfAllSelected(item)"
-                  :disabled="item.UserDatum.permissions === '老闆'"
+                  :disabled="item.permissions === '老闆'"
                 />
               </td>
             </tr>
@@ -301,7 +301,7 @@ const deleteUser = () => {
               <strong class="horizontal-text">職位:</strong>
               <template v-if="user_data.permissions !== '老闆'">
                 <select
-                  v-model="item.UserDatum.permissions"
+                  v-model="item.permissions"
                   class="form-select"
                   aria-label="Default select example"
                   :disabled="user_data.permissions !== '老闆'"
@@ -315,7 +315,7 @@ const deleteUser = () => {
               </template>
               <template v-else>
                 <select
-                  v-model="item.UserDatum.permissions"
+                  v-model="item.permissions"
                   class="form-select"
                   aria-label="Default select example"
                   :disabled="
@@ -326,7 +326,7 @@ const deleteUser = () => {
                   <option selected disabled>請選擇</option>
                   <option
                     value="老闆"
-                    v-if="user_data.permissions === item.UserDatum.permissions"
+                    v-if="user_data.permissions === item.permissions"
                   >
                     老闆
                   </option>
@@ -345,7 +345,7 @@ const deleteUser = () => {
             <p class="company-cardlist-item align-items-center">
               <strong>修改:</strong>
               <RouterLink
-                v-if="!(item.UserDatum.permissions === '老闆')"
+                v-if="!(item.permissions === '老闆')"
                 :to="{ path: 'company/' + item.id + '/update' }"
                 class="edit-btn-style add-user-btn"
                 >修改</RouterLink
@@ -363,9 +363,9 @@ const deleteUser = () => {
                 class="edit-btn-style add-user-btn"
                 v-if="
                   user_data.permissions === '老闆' &&
-                  item.UserDatum.permissions !== '老闆'
+                  item.permissions !== '老闆'
                 "
-                @click="saveHandle(item.userId, item.UserDatum.permissions)"
+                @click="saveHandle(item.userId, item.permissions)"
               >
                 儲存
               </button>
@@ -375,7 +375,7 @@ const deleteUser = () => {
                     type="checkbox"
                     v-model="item.isChecked"
                     @change="checkIfAllSelected(item)"
-                    :disabled="item.UserDatum.permissions === '老闆'"
+                    :disabled="item.permissions === '老闆'"
                   /></div
               ></template>
             </p>
