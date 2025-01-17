@@ -6,7 +6,7 @@ import history from 'connect-history-api-fallback';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/home',
   plugins: [
     vue(),
   ],
