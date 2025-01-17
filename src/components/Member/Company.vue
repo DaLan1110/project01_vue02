@@ -525,7 +525,7 @@ const deleteUser = () => {
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1170px) {
   .company-table thead th:nth-child(4),
   .company-table tbody td:nth-child(4) {
     display: none; /* 隱藏第4欄 */
