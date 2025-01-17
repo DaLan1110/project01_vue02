@@ -124,7 +124,7 @@ const deleteUser = () => {
       <div class="card-body">
         <table
           class="table table-bordered company-table"
-          v-if="windowWidth > 900"
+          v-if="windowWidth > 930"
         >
           <thead>
             <tr>
