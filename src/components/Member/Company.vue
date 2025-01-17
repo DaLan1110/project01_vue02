@@ -525,7 +525,7 @@ const deleteUser = () => {
   }
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1200px) {
   .company-table thead th:nth-child(4),
   .company-table tbody td:nth-child(4) {
     display: none; /* 隱藏第4欄 */
@@ -533,12 +533,12 @@ const deleteUser = () => {
 
   .company-table thead th:nth-child(6),
   .company-table tbody td:nth-child(6) {
-    width: 5%; /* 第一列的寬度調整為 5% */
+    display: none;
   }
 
   .company-table thead th:nth-child(7),
   .company-table tbody td:nth-child(7) {
-    width: 5%;
+    display: none;
   }
 }
 
@@ -563,14 +563,14 @@ const deleteUser = () => {
     width: 10%;
   }
 
-  .company-table thead th:nth-child(6),
+  /* .company-table thead th:nth-child(6),
   .company-table tbody td:nth-child(6) {
-    width: 8%; /* 第一列的寬度調整為 5% */
+    width: 8%;
   }
 
   .company-table thead th:nth-child(7),
   .company-table tbody td:nth-child(7) {
     width: 8%;
-  }
+  } */
 }
 </style>
