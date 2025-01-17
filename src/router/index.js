@@ -26,7 +26,7 @@ const router = createRouter({
   routes: [
     {
       path: '/:pathMatch(.*)*',
-      redirect: '/home',
+      redirect: '/',
     },
     {
       path: '/',
