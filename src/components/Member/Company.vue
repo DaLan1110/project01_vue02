@@ -137,8 +137,8 @@ const deleteUser = () => {
               >
                 使用者帳號
               </th>
-              <th width="20%" class="text-center">電子郵件</th>
-              <th width="7%" class="text-center">職位</th>
+              <th width="15%" class="text-center">電子郵件</th>
+              <th width="10%" class="text-center">職位</th>
               <th width="10%" class="text-center">建立時間</th>
               <th width="10%" class="text-center">更新時間</th>
               <th
@@ -149,7 +149,7 @@ const deleteUser = () => {
                 修改
               </th>
               <th
-                width="5%"
+                width="7%"
                 class="text-center"
                 v-if="user_data.permissions === '老闆'"
               >
