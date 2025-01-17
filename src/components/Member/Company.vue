@@ -422,6 +422,8 @@ const deleteUser = () => {
   background-color: #ffffff;
   font-weight: 900;
   font-size: 12px;
+  white-space: nowrap; /* 禁止文字換行 */
+  text-align: center;
 }
 
 .add-user-btn:hover {
