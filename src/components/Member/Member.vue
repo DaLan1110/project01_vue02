@@ -453,10 +453,10 @@ onBeforeUnmount(() => {
     display: none; /* 隱藏第4欄 */
   }
 
-  /* .member-table thead th:nth-child(9),
+  .member-table thead th:nth-child(9),
   .member-table tbody td:nth-child(9) {
     width: 10%;
-  } */
+  }
 
   .member-table thead th:nth-child(10),
   .member-table tbody td:nth-child(10) {
