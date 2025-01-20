@@ -66,7 +66,7 @@ const checkIfAllSelected = (member) => {
   // 只取得已選成員的 ID
   selectedIds.value = members.value
     .filter((member) => member.isChecked) // 篩選出已選中的成員
-    .map((member) => member.id); // 取得已選成員的 id
+    .map((member) => member.memberId); // 取得已選成員的 id
 
   console.log("Selected Member IDs: ", selectedIds);
 };
