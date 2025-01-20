@@ -453,4 +453,16 @@ onBeforeUnmount(() => {
     display: none; /* 隱藏第4欄 */
   }
 }
+
+@media (max-width: 1170px) {
+  .member-table thead th:nth-child(2),
+  .member-table tbody td:nth-child(2) {
+    width: 12%;
+  }
+
+  .member-table thead th:nth-child(9),
+  .member-table tbody td:nth-child(9) {
+    width: 8%;
+  }
+}
 </style>
