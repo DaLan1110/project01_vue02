@@ -453,10 +453,10 @@ onBeforeUnmount(() => {
     display: none; /* 隱藏第4欄 */
   }
 
-  .member-table thead th:nth-child(9),
+  /* .member-table thead th:nth-child(9),
   .member-table tbody td:nth-child(9) {
     width: 10%;
-  }
+  } */
 
   .member-table thead th:nth-child(10),
   .member-table tbody td:nth-child(10) {
@@ -474,9 +474,10 @@ onBeforeUnmount(() => {
   .member-table tbody td:nth-child(8) {
     width: 9%;
   }
-  /* .member-table thead th:nth-child(2),
+
+  .member-table thead th:nth-child(2),
   .member-table tbody td:nth-child(2) {
-    width: 12%;
-  } */
+    width: 11%;
+  }
 }
 </style>
