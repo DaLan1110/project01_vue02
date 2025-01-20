@@ -117,7 +117,7 @@ onBeforeUnmount(() => {
       <div class="card-body">
         <table
           class="table table-bordered product-table"
-          v-if="windowWidth > 910"
+          v-if="windowWidth > 930"
         >
           <thead>
             <tr>
