@@ -432,7 +432,7 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1400px) {
   .member-table thead th:nth-child(2),
   .member-table tbody td:nth-child(2) {
     width: 8%; /* 第一列的寬度調整為 5% */
