@@ -354,4 +354,16 @@ onBeforeUnmount(() => {
     display: none;
   }
 }
+
+@media (max-width: 1000px) {
+  .product-table thead th:nth-child(3),
+  .product-table tbody td:nth-child(3) {
+    width: 13%;
+  }
+
+  .product-table thead th:nth-child(5),
+  .product-table tbody td:nth-child(5) {
+    width: 12%;
+  }
+}
 </style>
