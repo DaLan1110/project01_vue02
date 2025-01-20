@@ -182,7 +182,7 @@ onBeforeUnmount(() => {
               </td>
               <td class="text-center align-middle">{{ item.create_at }}</td>
               <td class="text-center align-middle">{{ item.update_at }}</td>
-              <td class="text-center align-middle middle-style">
+              <td class="middle-style">
                 <RouterLink
                   :to="{ path: 'member/' + item.memberId + '/update' }"
                   class="edit-btn-style add-user-btn me-2"
@@ -352,6 +352,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* 防止溢出 */
 }
 
 .card-list {
