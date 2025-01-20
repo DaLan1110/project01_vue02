@@ -127,7 +127,7 @@ onBeforeUnmount(() => {
       <div class="card-body">
         <table
           class="table table-bordered member-table"
-          v-if="windowWidth > 910"
+          v-if="windowWidth > 930"
         >
           <thead>
             <tr>
@@ -432,7 +432,7 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1330px) {
   .member-table thead th:nth-child(2),
   .member-table tbody td:nth-child(2) {
     width: 8%; /* 第一列的寬度調整為 5% */
