@@ -460,9 +460,8 @@ onBeforeUnmount(() => {
     width: 12%;
   }
 
-  .member-table thead th:nth-child(9),
-  .member-table tbody td:nth-child(9) {
-    width: 20%;
+  .member-table thead th:nth-child(9) {
+    width: 8%;
   }
 }
 </style>
