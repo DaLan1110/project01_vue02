@@ -452,6 +452,11 @@ onBeforeUnmount(() => {
   .member-table tbody td:nth-child(5) {
     display: none; /* 隱藏第4欄 */
   }
+
+  .member-table thead th:nth-child(10),
+  .member-table tbody td:nth-child(10) {
+    width: 5%;
+  }
 }
 
 @media (max-width: 1170px) {
