@@ -62,7 +62,7 @@ const toggleSelectAll = () => {
     .map((member) => member.memberId); // 取得已選成員的 id
 
   console.log("Selected Member IDs: ", selectedIds);
-  console.log("Selected MemberId IDs: ", selectedIds);
+  console.log("Selected MemberId IDs: ", selectedMemberIds);
 };
 // 檢查是否已全選
 const checkIfAllSelected = (member) => {
@@ -80,7 +80,7 @@ const checkIfAllSelected = (member) => {
     .map((member) => member.memberId); // 取得已選成員的 id
 
   console.log("Selected Member IDs: ", selectedIds);
-  console.log("Selected MemberId IDs: ", selectedIds);
+  console.log("Selected MemberId IDs: ", selectedMemberIds);
 };
 
 // 刪除會員
