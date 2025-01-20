@@ -135,8 +135,8 @@ onBeforeUnmount(() => {
               <th width="10%" class="text-center">使用者名稱</th>
               <th width="13%" class="text-center">使用者帳號</th>
               <th width="15%" class="text-center">電子郵件</th>
-              <th width="13%" class="text-center">電話</th>
-              <th width="7%" class="text-center">職位</th>
+              <th width="11%" class="text-center">電話</th>
+              <th width="9%" class="text-center">職位</th>
               <th width="10%" class="text-center">建立時間</th>
               <th width="10%" class="text-center">更新時間</th>
               <th width="10%" class="text-center">修改</th>
