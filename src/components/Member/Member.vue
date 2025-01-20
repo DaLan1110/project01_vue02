@@ -463,12 +463,12 @@ onBeforeUnmount(() => {
 @media (max-width: 1170px) {
   .member-table thead th:nth-child(7),
   .member-table tbody td:nth-child(7) {
-    width: 9%;
+    display: none;
   }
 
   .member-table thead th:nth-child(8),
   .member-table tbody td:nth-child(8) {
-    width: 9%;
+    display: none;
   }
 
   .member-table thead th:nth-child(2),
