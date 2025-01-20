@@ -5,7 +5,7 @@ import { useMemberStore } from "@/stores/members";
 import PaginationMember from "../AppLayout/Pagination.vue";
 
 const memberStore = useMemberStore();
-const { members, selectedIds } = storeToRefs(memberStore);
+const { members, selectedIds, selectedMemberIds } = storeToRefs(memberStore);
 
 const loading = ref(true);
 const selectAll = ref(false); // 用於控制「全選」狀態
@@ -54,9 +54,15 @@ const toggleSelectAll = () => {
   // 只取得已選成員的 ID
   selectedIds.value = members.value
     .filter((member) => member.isChecked) // 篩選出已選中的成員
+    .map((member) => member.id); // 取得已選成員的 id
+
+  // 只取得已選成員的 memberId
+  selectedMemberIds.value = members.value
+    .filter((member) => member.isChecked) // 篩選出已選中的成員
     .map((member) => member.memberId); // 取得已選成員的 id
 
   console.log("Selected Member IDs: ", selectedIds);
+  console.log("Selected MemberId IDs: ", selectedIds);
 };
 // 檢查是否已全選
 const checkIfAllSelected = (member) => {
@@ -66,9 +72,15 @@ const checkIfAllSelected = (member) => {
   // 只取得已選成員的 ID
   selectedIds.value = members.value
     .filter((member) => member.isChecked) // 篩選出已選中的成員
+    .map((member) => member.id); // 取得已選成員的 id
+
+  // 只取得已選成員的 memberId
+  selectedMemberIds.value = members.value
+    .filter((member) => member.isChecked) // 篩選出已選中的成員
     .map((member) => member.memberId); // 取得已選成員的 id
 
   console.log("Selected Member IDs: ", selectedIds);
+  console.log("Selected MemberId IDs: ", selectedIds);
 };
 
 // 刪除會員

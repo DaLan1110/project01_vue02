@@ -135,15 +135,16 @@ export const useMemberStore = defineStore('memberStore', () => {
 
     // 刪除會員
     const selectedIds = ref([]); // 用於存儲選中的使用者 ID
+    const selectedMemberIds = ref([]);// 用於存儲選中的使用者 MemberId
     const deleteSelectedMembers = async () => {
-        if (selectedIds.value.length === 0) {
+        if (selectedIds.value.length === 0 || selectedMemberIds.value.length === 0) {
             alert("請選擇至少一名成員進行刪除");
             return;
         }
 
         try {
             // 遍歷選中的成員 ID 列表
-            for (const Id of selectedIds.value) {
+            for (const Id of selectedMemberIds.value) {
                 try {
                     // 1. 獲取每個成員的資料以便刪除頭像
                     const getDeleteMemberrData = await axios.get(`https://project01-back-end.onrender.com/members/get/${Id}`);
@@ -289,7 +290,7 @@ export const useMemberStore = defineStore('memberStore', () => {
         // 新增會員
         newMemberData, createMemberAccount, resetNewMemberData,
         // 刪除會員
-        selectedIds, deleteSelectedMembers,
+        selectedIds, selectedMemberIds, deleteSelectedMembers,
         // 更新會員資料
         tempImageUrl, tempImageUrlName, updateMemberData,
     }
