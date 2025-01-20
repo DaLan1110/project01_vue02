@@ -466,7 +466,7 @@ onBeforeUnmount(() => {
   }
 
   .member-table thead th:nth-child(9) {
-    width: 8%;
+    width: 6%;
   }
 }
 </style>
