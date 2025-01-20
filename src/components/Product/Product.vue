@@ -342,4 +342,16 @@ onBeforeUnmount(() => {
     gap: 10px; /* 按钮之间的间距 */
   }
 }
+
+@media (max-width: 1200px) {
+  .product-table thead th:nth-child(6),
+  .product-table tbody td:nth-child(6) {
+    display: none;
+  }
+
+  .product-table thead th:nth-child(7),
+  .product-table tbody td:nth-child(7) {
+    display: none;
+  }
+}
 </style>
