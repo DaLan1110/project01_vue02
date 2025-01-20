@@ -358,7 +358,12 @@ onBeforeUnmount(() => {
 @media (max-width: 1000px) {
   .product-table thead th:nth-child(3),
   .product-table tbody td:nth-child(3) {
-    width: 13%;
+    width: 7%;
+  }
+  
+  .product-table thead th:nth-child(3),
+  .product-table tbody td:nth-child(3) {
+    width: 11%;
   }
 
   .product-table thead th:nth-child(5),
