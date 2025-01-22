@@ -98,7 +98,7 @@ const deleteUser = () => {
 </script>
 
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5" style="background-color: red;">
     <div class="card card-company">
       <div class="card-header">
         <div class="card-title-style">
@@ -566,7 +566,7 @@ const deleteUser = () => {
 
 @media (max-width: 650px) {
   .card-company{
-    margin-left: -30px;
+    margin-left: -200px;
   }
 }
 </style>
