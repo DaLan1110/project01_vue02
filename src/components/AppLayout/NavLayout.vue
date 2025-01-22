@@ -98,9 +98,9 @@ const logoutHandle = () => {
   width: 100%;
 }
 
-/* .work-page {
-  padding: 3rem;
-} */
+.work-page {
+  padding: 2rem;
+}
 
 .breadcrumb-style {
   display: flex;
