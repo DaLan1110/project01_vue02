@@ -99,7 +99,7 @@ const logoutHandle = () => {
 }
 
 .work-page {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .breadcrumb-style {
