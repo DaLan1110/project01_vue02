@@ -566,7 +566,7 @@ const deleteUser = () => {
 
 @media (max-width: 650px) {
   .card-company{
-    margin-left: -50px;
+    margin-left: -30px;
   }
 }
 </style>
