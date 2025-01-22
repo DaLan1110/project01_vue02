@@ -211,9 +211,7 @@ const deleteUser = () => {
                     <option selected disabled>請選擇</option>
                     <option
                       value="老闆"
-                      v-if="
-                        user_data.permissions === item.permissions
-                      "
+                      v-if="user_data.permissions === item.permissions"
                     >
                       老闆
                     </option>
@@ -462,7 +460,7 @@ const deleteUser = () => {
   justify-content: center;
 }
 
-.card-list {
+/* .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -470,6 +468,28 @@ const deleteUser = () => {
 }
 
 .company-cardto768 {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+} */
+
+.card-list {
+  width: 70%; /* 整個卡片列表的寬度佔螢幕的 70% */
+  margin: 0 auto; /* 水平置中 */
+  display: flex; /* 使用 Flexbox 排列卡片 */
+  flex-wrap: wrap; /* 允許卡片換行 */
+  justify-content: space-between; /* 卡片之間的間距均勻分配 */
+  gap: 20px; /* 卡片之間的縱向與橫向間距 */
+  padding: 20px; /* 容器內邊距 */
+}
+
+.company-cardto768 {
+  flex: 0 1 calc(33.333% - 20px); /* 每個卡片佔三分之一寬，扣除 gap 的寬度 */
+  max-width: 300px; /* 最大寬度為 300px */
+  min-width: 250px; /* 最小寬度 250px */
+  box-sizing: border-box; /* 包括 padding 在內計算寬度 */
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
