@@ -99,7 +99,7 @@ const deleteUser = () => {
 
 <template>
   <div class="container mt-5">
-    <div class="card">
+    <div class="card card-company">
       <div class="card-header">
         <div class="card-title-style">
           <h4 class="mt-3" style="font-weight: 600">公司人員</h4>
@@ -561,6 +561,12 @@ const deleteUser = () => {
   .company-table thead th:nth-child(4),
   .company-table tbody td:nth-child(4) {
     width: 10%;
+  }
+}
+
+@media (max-width: 650px) {
+  .card-company{
+    margin-left: -30px;
   }
 }
 </style>
