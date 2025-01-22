@@ -32,7 +32,7 @@ const logoutHandle = () => {
 </script>
 
 <template>
-  <div style="width: 100%">
+  <div class="naylayout-width">
     <nav class="navbar bg-body-tertiary navbar-expand" style="height: 60px">
       <div class="container-fluid" style="margin-left: 80px">
         <!-- <div class="collapse navbar-collapse"> -->
@@ -94,9 +94,13 @@ const logoutHandle = () => {
 </template>
 
 <style>
-.work-page {
-  padding: 3rem;
+.naylayout-width {
+  width: 100%;
 }
+
+/* .work-page {
+  padding: 3rem;
+} */
 
 .breadcrumb-style {
   display: flex;
@@ -124,8 +128,12 @@ const logoutHandle = () => {
 }
 
 @media (max-width: 768px) {
-  .work-page {
+  /* .work-page {
     padding-left: 3rem;
+  } */
+
+  .naylayout-width {
+    width: 90%;
   }
 }
 </style>
