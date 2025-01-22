@@ -32,7 +32,7 @@ const logoutHandle = () => {
 </script>
 
 <template>
-  <div style="width: 100vw">
+  <div style="width: 100%">
     <nav class="navbar bg-body-tertiary navbar-expand" style="height: 60px">
       <div class="container-fluid" style="margin-left: 80px">
         <!-- <div class="collapse navbar-collapse"> -->

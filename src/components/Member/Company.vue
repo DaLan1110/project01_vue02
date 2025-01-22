@@ -562,15 +562,5 @@ const deleteUser = () => {
   .company-table tbody td:nth-child(4) {
     width: 10%;
   }
-
-  /* .company-table thead th:nth-child(6),
-  .company-table tbody td:nth-child(6) {
-    width: 8%;
-  }
-
-  .company-table thead th:nth-child(7),
-  .company-table tbody td:nth-child(7) {
-    width: 8%;
-  } */
 }
 </style>
