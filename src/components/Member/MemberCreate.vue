@@ -33,7 +33,7 @@ onMounted(()=>{
 
 <template>
   <div class="container mt-5" style="display: flex; justify-content: center">
-    <div class="card col-8">
+    <div class="card col-12 col-md-8">
       <div class="card-header mt-2"><h4 class="mt-1">新增會員</h4></div>
       <div class="card-body col-10 mx-auto">
         <div class="mt-4">
