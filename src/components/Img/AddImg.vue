@@ -36,7 +36,7 @@ const handleFileChange = (event) => {
 
 <template>
   <div class="row align-items-center">
-    <div class="col-8 col-lg-8 col-12 d-flex custom-col">
+    <div class="col-8 col-lg-8 col-12 d-flex">
       <input
         type="file"
         class="form-control"
@@ -44,7 +44,7 @@ const handleFileChange = (event) => {
         @change="handleFileChange"
       />
     </div>
-    <div class="col-4 col-lg-4 col-12 d-flex justify-content-center custom-col">
+    <div class="col-4 col-lg-4 col-12 d-flex justify-content-center">
       <div class="circle-style-img">
         <i
           class="material-icons icon-style-avatar"
