@@ -36,7 +36,7 @@ const handleFileChange = (event) => {
 
 <template>
   <div class="row align-items-center">
-    <div class="col-8 col-lg-8 col-xxl-9 d-flex custom-col">
+    <div class="col-8 col-lg-8 col-xxl-9 col-12 d-flex custom-col">
       <input
         type="file"
         class="form-control"
