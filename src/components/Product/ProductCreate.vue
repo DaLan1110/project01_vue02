@@ -539,7 +539,7 @@ onBeforeUnmount(() => {
 }
 
 .product-classify-style {
-  flex: 0 0 100%;
+  flex: 0 0 10%;
 }
 
 .product-classify-name {
