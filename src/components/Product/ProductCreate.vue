@@ -546,7 +546,7 @@ onBeforeUnmount(() => {
   white-space: nowrap; /* 防止文字換行 */
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .product-classify-style {
     flex: 0 0 20%; /* 每個選項占寬度增加，方便分行 */
   }
