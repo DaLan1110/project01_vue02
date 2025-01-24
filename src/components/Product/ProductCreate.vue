@@ -330,7 +330,7 @@ onBeforeUnmount(() => {
             <label for="member_email">產品標籤</label>
             <div class="my-2 d-flex align-items-center">
               <div
-                class="form-check form-check-inline"
+                class="form-check form-check-inline product-classify-style"
                 v-for="(item, index) in productLabels"
                 :key="index"
               >
@@ -343,9 +343,11 @@ onBeforeUnmount(() => {
                   v-model="newProductData.product_classify"
                   @change="onInputBlur($event, 'product_classify')"
                 />
-                <label :for="item.itemId" class="form-check-label">{{
-                  item.itemName
-                }}</label>
+                <label
+                  :for="item.itemId"
+                  class="form-check-label product-classify-name"
+                  >{{ item.itemName }}</label
+                >
               </div>
             </div>
             <ul
@@ -534,5 +536,13 @@ onBeforeUnmount(() => {
 
 .cancel-btn:hover {
   opacity: 0.8;
+}
+
+.product-classify-style {
+  flex: 0 0 100%;
+}
+
+.product-classify-name {
+  white-space: nowrap; /* 防止文字換行 */
 }
 </style>
