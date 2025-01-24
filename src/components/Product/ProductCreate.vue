@@ -330,7 +330,7 @@ onBeforeUnmount(() => {
             <label for="member_email">產品標籤</label>
             <div class="my-2 d-flex align-items-center">
               <div
-                class="form-check product-classify-style"
+                class="form-check form-check-inline product-classify-style"
                 v-for="(item, index) in productLabels"
                 :key="index"
               >
