@@ -546,10 +546,10 @@ onBeforeUnmount(() => {
   white-space: nowrap; /* 防止文字換行 */
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
   .product-classify-style {
     flex: 0 0 20%; /* 每個選項占寬度增加，方便分行 */
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   .product-classify-row-style {
