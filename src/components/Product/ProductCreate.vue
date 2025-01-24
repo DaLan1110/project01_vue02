@@ -328,7 +328,7 @@ onBeforeUnmount(() => {
           </div>
           <div class="mt-4">
             <label for="member_email">產品標籤</label>
-            <div class="my-2 d-flex align-items-center">
+            <div class="my-2 d-flex align-items-center product-classify-row-style">
               <div
                 class="form-check form-check-inline product-classify-style"
                 v-for="(item, index) in productLabels"
@@ -544,5 +544,14 @@ onBeforeUnmount(() => {
 
 .product-classify-name {
   white-space: nowrap; /* 防止文字換行 */
+}
+
+@media (max-width: 1200px) {
+  .product-classify-style {
+    flex: 0 0 20%; /* 每個選項占寬度增加，方便分行 */
+  }
+  .product-classify-row-style {
+    flex-wrap: wrap !important; /* 允許項目換行 */
+  }
 }
 </style>
