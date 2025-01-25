@@ -2,11 +2,19 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { storeToRefs } from "pinia";
 import { useProductStore } from "@/stores/products";
+import { useMenuStore } from "@/stores/menu";
 import AddImgProduct from "@/components/Img/AddImg_product.vue";
 import PaginationMember from "../AppLayout/Pagination.vue";
 
 const productStore = useProductStore();
 const { products, selectedIds } = storeToRefs(productStore);
+
+const menuStore = useMenuStore();
+const { menuFlexible } = storeToRefs(menuStore);
+
+const toggleMenu = () => {
+  menuStore.toggleMenu();
+};
 
 // 視窗 910px
 const windowWidth = ref(window.innerWidth);
@@ -224,7 +232,7 @@ onBeforeUnmount(() => {
             <AddImgProduct
               :img_path="img_path"
               :img_avatar="product.product_img"
-              v-if="product.product_img"
+              v-if="product.product_img && !menuStore.hideAddImgProduct"
               class="product-img-910"
             />
 
