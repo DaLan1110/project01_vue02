@@ -328,9 +328,7 @@ onBeforeUnmount(() => {
           </div>
           <div class="mt-4">
             <label for="member_email">產品標籤</label>
-            <div
-              class="my-2 d-flex align-items-center product-classify-row-style"
-            >
+            <div class="my-2 d-flex align-items-center product-row-style">
               <div
                 class="form-check form-check-inline product-classify-style"
                 v-for="(item, index) in productLabels"
@@ -402,7 +400,7 @@ onBeforeUnmount(() => {
           </div>
           <div class="mt-4">
             <label for="member_email">可選擇溫度</label>
-            <div class="my-2 d-flex align-items-center">
+            <div class="my-2 d-flex align-items-center product-row-style">
               <div
                 class="form-check form-check-inline product-ice-style"
                 v-for="(item, index) in temperatureChooses"
@@ -558,11 +556,12 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 1450px) {
-  .product-classify-style {
-    flex: 0 0 20%; /* 每個選項占寬度增加，方便分行 */
-  }
+  /* 每個選項占寬度增加，方便分行 */
+  /* .product-classify-style {
+    flex: 0 0 20%; 
+  } */
 
-  .product-classify-row-style {
+  .product-row-style {
     flex-wrap: wrap !important; /* 允許項目換行 */
   }
 }
