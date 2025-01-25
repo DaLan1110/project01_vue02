@@ -556,11 +556,6 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 1450px) {
-  /* 每個選項占寬度增加，方便分行 */
-  /* .product-classify-style {
-    flex: 0 0 20%; 
-  } */
-
   .product-row-style {
     flex-wrap: wrap !important; /* 允許項目換行 */
   }

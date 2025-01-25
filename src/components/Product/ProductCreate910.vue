@@ -321,9 +321,9 @@ onBeforeUnmount(() => {
           </div>
           <div class="mt-4">
             <label for="member_email">產品標籤</label>
-            <div class="my-2 d-flex align-items-center">
+            <div class="my-2 d-flex align-items-center product-row-style">
               <div
-                class="form-check form-check-inline"
+                class="form-check form-check-inline product-classify-style"
                 v-for="(item, index) in productLabels"
                 :key="index"
               >
@@ -336,7 +336,7 @@ onBeforeUnmount(() => {
                   v-model="newProductData.product_classify"
                   @change="onInputBlur($event, 'product_classify')"
                 />
-                <label :for="item.itemId" class="form-check-label">{{
+                <label :for="item.itemId" class="form-check-label product-label-name">{{
                   item.itemName
                 }}</label>
               </div>
@@ -370,7 +370,7 @@ onBeforeUnmount(() => {
                   v-model="newProductData.product_sweetness"
                   @change="onInputBlur($event, 'product_sweetness')"
                 />
-                <label :for="item.itemId" class="form-check-label">{{
+                <label :for="item.itemId" class="form-check-label product-label-name">{{
                   item.itemName
                 }}</label>
               </div>
@@ -389,9 +389,9 @@ onBeforeUnmount(() => {
           </div>
           <div class="mt-4">
             <label for="member_email">可選擇溫度</label>
-            <div class="my-2 d-flex align-items-center">
+            <div class="my-2 d-flex align-items-center product-row-style">
               <div
-                class="form-check form-check-inline"
+                class="form-check form-check-inline product-ice-style"
                 v-for="(item, index) in temperatureChooses"
                 :key="index"
               >
@@ -404,7 +404,7 @@ onBeforeUnmount(() => {
                   v-model="newProductData.product_ice"
                   @change="onInputBlur($event, 'product_ice')"
                 />
-                <label :for="item.itemId" class="form-check-label">{{
+                <label :for="item.itemId" class="form-check-label product-label-name">{{
                   item.itemName
                 }}</label>
               </div>
@@ -434,7 +434,7 @@ onBeforeUnmount(() => {
                   :value="item.itemName"
                   v-model="newProductData.product_add"
                 />
-                <label :for="item.itemId" class="form-check-label">{{
+                <label :for="item.itemId" class="form-check-label product-label-name">{{
                   item.itemName
                 }}</label>
               </div>
@@ -457,7 +457,7 @@ onBeforeUnmount(() => {
                   v-model="newProductData.product_address"
                   @change="onInputBlur($event, 'product_address')"
                 />
-                <label :for="item.itemId" class="form-check-label">{{
+                <label :for="item.itemId" class="form-check-label product-label-name">{{
                   item.itemName
                 }}</label>
               </div>
@@ -523,5 +523,20 @@ onBeforeUnmount(() => {
 
 .cancel-btn:hover {
   opacity: 0.8;
+}
+
+.product-classify-style,
+.product-ice-style {
+  flex: 0 0 10%;
+}
+
+.product-label-name {
+  white-space: nowrap; /* 防止文字換行 */
+}
+
+@media (max-width: 760px) {
+  .product-row-style {
+    flex-wrap: wrap !important; /* 允許項目換行 */
+  }
 }
 </style>
