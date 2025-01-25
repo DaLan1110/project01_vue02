@@ -61,8 +61,8 @@ const imgAvatarUrl = computed(() => {
 
 @media (max-width: 600px) {
   .productList-style-img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 }
 </style>
