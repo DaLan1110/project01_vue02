@@ -330,7 +330,7 @@ onBeforeUnmount(() => {
             <label for="member_email">產品標籤</label>
             <div class="my-2 d-flex align-items-center product-row-style">
               <div
-                class="form-check form-check-inline product-classify-style"
+                class="form-check form-check-inline product-check-style"
                 v-for="(item, index) in productLabels"
                 :key="index"
               >
@@ -402,7 +402,7 @@ onBeforeUnmount(() => {
             <label for="member_email">可選擇溫度</label>
             <div class="my-2 d-flex align-items-center product-row-style">
               <div
-                class="form-check form-check-inline product-ice-style"
+                class="form-check form-check-inline product-check-style"
                 v-for="(item, index) in temperatureChooses"
                 :key="index"
               >
@@ -546,8 +546,7 @@ onBeforeUnmount(() => {
   opacity: 0.8;
 }
 
-.product-classify-style,
-.product-ice-style {
+.product-check-style {
   flex: 0 0 10%;
 }
 
