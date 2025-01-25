@@ -54,15 +54,15 @@ const imgAvatarUrl = computed(() => {
 
 @media (max-width: 835px) {
   .productList-style-img {
-    width: 160px;
-    height: 160px;
+    width: 100px;
+    height: 100px;
   }
 }
 
 @media (max-width: 600px) {
   .productList-style-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 }
 </style>
