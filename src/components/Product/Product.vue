@@ -211,7 +211,7 @@ onBeforeUnmount(() => {
         <!-- 卡片呈現方式 -->
         <div class="card-list col-12" v-else>
           <div
-            class="product-cardto910"
+            class="product-cardto910 col-12"
             v-for="(product, index) in paginatedMembers"
             :key="index"
           >
