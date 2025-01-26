@@ -78,9 +78,16 @@ const chartOptions = ref({
   },
 });
 
-// const updateChartOptions = () => {
-//   chartOptions.value.plugins.legend.display = window.innerWidth > 600;
-// };
+const updateChartOptions = () => {
+  const isSmallScreen = window.innerWidth <= 600;
+
+  chartOptions.value.plugins.legend.display = !isSmallScreen; // 小螢幕隱藏圖例
+  chartOptions.value.plugins.datalabels.display = isSmallScreen; // 小螢幕顯示數據
+  chartOptions.value.plugins.datalabels.formatter = (value, context) => {
+    const label = context.chart.data.labels[context.dataIndex];
+    return `${label}\n${value}`; // 顯示名稱與數量
+  };
+};
 
 const getHotProduct = async () => {
   try {
@@ -134,13 +141,13 @@ const getHotProduct = async () => {
 getHotProduct();
 
 // 監聽螢幕尺寸變化
-// onMounted(() => {
-//   updateChartOptions();
-//   window.addEventListener("resize", updateChartOptions);
-// });
-// onUnmounted(() => {
-//   window.removeEventListener("resize", updateChartOptions);
-// });
+onMounted(() => {
+  updateChartOptions();
+  window.addEventListener("resize", updateChartOptions);
+});
+onUnmounted(() => {
+  window.removeEventListener("resize", updateChartOptions);
+});
 </script>
 
 <template>
