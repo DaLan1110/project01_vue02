@@ -143,7 +143,8 @@ getHotProduct();
 
 .card-body-style-lb {
   display: flex;
-  height: 445px;
+  /* height: 445px; */
+  height: 300px;
   overflow: hidden;
   display: flex;
   justify-content: center;
