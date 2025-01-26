@@ -94,9 +94,8 @@ getOrderListToSix();
 }
 
 .card-body-style-rb {
-  display: flex;
   width: 100%;
-  height: 450px;
+  height: 450px !important;
   overflow: hidden;
   display: flex;
   justify-content: center;
