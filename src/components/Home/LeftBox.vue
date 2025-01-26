@@ -78,11 +78,9 @@ const chartOptions = ref({
   },
 });
 
-const updateChartOptions = () => {
-  chartOptions.value.plugins.legend.display = window.innerWidth > 600; // 600px 以下隱藏圖例
-  chartOptions.value.plugins.datalabels.font.size =
-    window.innerWidth <= 600 ? 14 : 12; // 調整標籤字體大小
-};
+// const updateChartOptions = () => {
+//   chartOptions.value.plugins.legend.display = window.innerWidth > 600;
+// };
 
 const getHotProduct = async () => {
   try {
@@ -136,13 +134,13 @@ const getHotProduct = async () => {
 getHotProduct();
 
 // 監聽螢幕尺寸變化
-onMounted(() => {
-  updateChartOptions();
-  window.addEventListener("resize", updateChartOptions);
-});
-onUnmounted(() => {
-  window.removeEventListener("resize", updateChartOptions);
-});
+// onMounted(() => {
+//   updateChartOptions();
+//   window.addEventListener("resize", updateChartOptions);
+// });
+// onUnmounted(() => {
+//   window.removeEventListener("resize", updateChartOptions);
+// });
 </script>
 
 <template>
