@@ -68,6 +68,7 @@ import LeftBox from "./LeftBox.vue";
   flex: 2;
   display: flex;
   justify-content: stretch;
+  align-items: center; /* 內容置中 */
   padding: 1rem;
   box-sizing: border-box;
 }
