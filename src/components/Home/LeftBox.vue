@@ -29,7 +29,7 @@ const chartOptions = ref({
   maintainAspectRatio: true, // 保持寬高比例
   plugins: {
     legend: {
-      display: window.innerWidth < 600, // 大於 600px 顯示圖例
+      display: window.innerWidth > 600, // 大於 600px 顯示圖例
       position: "right",
       align: "center",
       labels: {
@@ -137,6 +137,7 @@ getHotProduct();
 
 // 監聽螢幕尺寸變化
 onMounted(() => {
+  updateChartOptions();
   window.addEventListener("resize", updateChartOptions);
 });
 onUnmounted(() => {
