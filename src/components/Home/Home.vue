@@ -57,20 +57,12 @@ import LeftBox from "./LeftBox.vue";
 }
 
 .right-box {
-  /* height: 100%;
-  flex: 2;
-  display: flex;
-  justify-content: stretch;
-  padding: 1rem;
-  box-sizing: border-box; */
-
   height: 100%;
-  flex: 2;
-  display: flex;
-  justify-content: stretch;
-  align-items: center; /* 內容置中 */
+  flex: 2; /* 右側占 2 份空間 */
+  display: flex; /* 彈性佈局，讓子元素可以自適應填滿 */
+  justify-content: stretch; /* 子項目水平方向撐開 */
   padding: 1rem;
-  box-sizing: border-box;
+  box-sizing: border-box; /* 包含邊框與內邊距 */
 }
 
 @media (max-width: 1300px) {
