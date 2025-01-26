@@ -64,11 +64,11 @@ const chartOptions = ref({
       },
     },
     datalabels: {
-      display: true, // 在圖表上顯示數據
+      display: window.innerWidth <= 600, // 在圖表上顯示數據
       color: "#fff", // 標籤顏色
       font: {
         weight: "bold",
-        size: window.innerWidth <= 600 ? 14 : 12, // 螢幕寬度小於 600px 時文字更大
+        size: 14, // 螢幕寬度小於 600px 時文字更大
       },
       formatter: (value, context) => {
         const label = context.chart.data.labels[context.dataIndex];
