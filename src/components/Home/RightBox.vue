@@ -100,7 +100,6 @@ getOrderListToSix();
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .home-right-card-table thead th,

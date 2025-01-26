@@ -155,8 +155,8 @@ getHotProduct();
   /* width: 600px;
   height: 600px; */
 
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 600px;
 }
 
 .card-header h4 {
