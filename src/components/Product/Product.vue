@@ -10,7 +10,8 @@ const productStore = useProductStore();
 const { products, selectedIds } = storeToRefs(productStore);
 
 const menuStore = useMenuStore();
-const { hideAddImgProduct } = storeToRefs(menuStore);
+const { menuFlexible } = storeToRefs(menuStore);
+const hideAddImgProduct = menuFlexible;
 console.log("hideAddImgProduct", hideAddImgProduct);
 
 // 視窗 910px
