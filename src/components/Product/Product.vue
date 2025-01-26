@@ -10,7 +10,7 @@ const productStore = useProductStore();
 const { products, selectedIds } = storeToRefs(productStore);
 
 const menuStore = useMenuStore();
-const { menuFlexible } = storeToRefs(menuStore);
+const { hideAddImgProduct } = storeToRefs(menuStore);
 
 const toggleMenu = () => {
   menuStore.toggleMenu();
@@ -232,7 +232,7 @@ onBeforeUnmount(() => {
             <AddImgProduct
               :img_path="img_path"
               :img_avatar="product.product_img"
-              v-if="product.product_img && !menuFlexible"
+              v-if="product.product_img && !hideAddImgProduct"
               class="product-img-910"
             />
 
