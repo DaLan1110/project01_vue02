@@ -93,6 +93,16 @@ getOrderListToSix();
   width: 100%; /* 表格寬度 */
 }
 
+.card-body-style-rb {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .home-right-card-table thead th,
 .home-right-card-table tbody td {
   border: none;
@@ -169,7 +179,6 @@ getOrderListToSix();
   .card-body-style-rb table {
     table-layout: fixed;
     width: 100%;
-    height: 450px;
     justify-content: flex-start;
     padding-top: 0;
   }
