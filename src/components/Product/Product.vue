@@ -11,7 +11,6 @@ const { products, selectedIds } = storeToRefs(productStore);
 
 const menuStore = useMenuStore();
 const { hideAddImgProduct } = storeToRefs(menuStore);
-// const hideAddImgProduct = computed(() => !menuFlexible);
 
 // 視窗 910px
 const windowWidth = ref(window.innerWidth);
@@ -20,7 +19,7 @@ const updateWindowWidth = () => {
   // 視窗 910px
   windowWidth.value = window.innerWidth;
   // hideAddImgProduct
-  // hideAddImgProduct.value = window.matchMedia("(max-width: 600px)").matches;
+  hideAddImgProduct.value = window.matchMedia("(max-width: 600px)").matches;
 };
 
 const loading = ref(true);
