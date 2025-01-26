@@ -78,23 +78,9 @@ const chartOptions = ref({
   },
 });
 
-const initializeChart = () => {
-  const ctx = document.getElementById("myChart").getContext("2d");
-  chartInstance = new ChartJS(ctx, {
-    type: "doughnut",
-    data: chartData.value,
-    options: {
-      ...chartOptions.value, // 確保你的選項包含所有其他設定
-      plugins: {
-        legend: {
-          display: window.innerWidth > 600, // 大於 600px 顯示圖例
-        },
-        datalabels: {
-          display: window.innerWidth <= 600, // 小於或等於 600px 顯示數據標籤
-        },
-      },
-    },
-  });
+const updateChartOptions = () => {
+  chartInstance.options.plugins.legend.display = window.innerWidth > 600;
+  chartInstance.options.plugins.datalabels.display = window.innerWidth <= 600;
 };
 
 const getHotProduct = async () => {
@@ -150,20 +136,12 @@ getHotProduct();
 
 // 監聽螢幕尺寸變化
 onMounted(() => {
-  initializeChart();
-  // 監聽 resize 事件，動態更新 legend 和 datalabels 顯示設定
-  window.addEventListener("resize", () => {
-    if (chartInstance) {
-      // 動態更新圖例和數據標籤的顯示條件
-      chartInstance.options.plugins.legend.display = window.innerWidth > 600;
-      chartInstance.options.plugins.datalabels.display =
-        window.innerWidth <= 600;
-    }
-  });
+  updateChartOptions();
+  window.addEventListener("resize", updateChartOptions);
 });
-// onUnmounted(() => {
-//   window.removeEventListener("resize", updateChartOptions);
-// });
+onUnmounted(() => {
+  window.removeEventListener("resize", updateChartOptions);
+});
 </script>
 
 <template>
