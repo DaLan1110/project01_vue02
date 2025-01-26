@@ -29,6 +29,7 @@ const chartOptions = ref({
   maintainAspectRatio: true, // 保持寬高比例
   plugins: {
     legend: {
+      display: window.innerWidth > 600, // 大於 600px 顯示圖例
       position: "right",
       align: "center",
       labels: {
@@ -63,22 +64,24 @@ const chartOptions = ref({
       },
     },
     datalabels: {
-      display: (ctx) => window.innerWidth <= 600, // 僅在螢幕寬度小於等於600px時啟用
+      display: true, // 在圖表上顯示數據
       color: "#fff", // 標籤顏色
       font: {
         weight: "bold",
-        size: 12,
+        size: window.innerWidth <= 600 ? 14 : 12, // 螢幕寬度小於 600px 時文字更大
       },
       formatter: (value, context) => {
         const label = context.chart.data.labels[context.dataIndex];
-        return `${label}\n${value}`;
+        return `${label}: ${value}`; // 顯示名稱與數量
       },
     },
   },
 });
 
 const updateChartOptions = () => {
-  chartOptions.value.plugins.datalabels.display = window.innerWidth <= 600;
+  chartOptions.value.plugins.legend.display = window.innerWidth > 600; // 600px 以下隱藏圖例
+  chartOptions.value.plugins.datalabels.font.size =
+    window.innerWidth <= 600 ? 14 : 12; // 調整標籤字體大小
 };
 
 const getHotProduct = async () => {
