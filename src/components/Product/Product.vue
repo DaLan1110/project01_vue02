@@ -232,7 +232,7 @@ onBeforeUnmount(() => {
             <AddImgProduct
               :img_path="img_path"
               :img_avatar="product.product_img"
-              v-if="product.product_img && !hideAddImgProduct"
+              v-if="product.product_img && hideAddImgProduct"
               class="product-img-910"
             />
 
