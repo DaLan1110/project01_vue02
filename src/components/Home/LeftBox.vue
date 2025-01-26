@@ -4,9 +4,11 @@ import { storeToRefs } from "pinia";
 import { useOrderStore } from "@/stores/order";
 import { Doughnut } from "vue-chartjs";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 // 註冊 Chart.js 必需的模組
 ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ChartDataLabels);
 
 const orderStore = useOrderStore();
 const { hotProductToFiveName, hotProductToFiveCount } = storeToRefs(orderStore);
@@ -60,8 +62,24 @@ const chartOptions = ref({
         },
       },
     },
+    datalabels: {
+      display: (ctx) => window.innerWidth <= 600, // 僅在螢幕寬度小於等於600px時啟用
+      color: "#fff", // 標籤顏色
+      font: {
+        weight: "bold",
+        size: 12,
+      },
+      formatter: (value, context) => {
+        const label = context.chart.data.labels[context.dataIndex];
+        return `${label}\n${value}`;
+      },
+    },
   },
 });
+
+const updateChartOptions = () => {
+  chartOptions.value.plugins.datalabels.display = window.innerWidth <= 600;
+};
 
 const getHotProduct = async () => {
   try {
@@ -113,6 +131,14 @@ const getHotProduct = async () => {
   }
 };
 getHotProduct();
+
+// 監聽螢幕尺寸變化
+onMounted(() => {
+  window.addEventListener("resize", updateChartOptions);
+});
+onUnmounted(() => {
+  window.removeEventListener("resize", updateChartOptions);
+});
 </script>
 
 <template>
@@ -174,9 +200,5 @@ getHotProduct();
 }
 
 @media (max-width: 600px) {
-  .chart-container {
-    width: 200px;
-    height: 200px;
-  }
 }
 </style>
