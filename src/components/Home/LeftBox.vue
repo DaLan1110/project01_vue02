@@ -23,7 +23,7 @@ const chartData = ref({
 });
 
 const chartOptions = ref({
-  responsive: true,
+  responsive: false,
   maintainAspectRatio: true, // 保持寬高比例
   plugins: {
     legend: {
