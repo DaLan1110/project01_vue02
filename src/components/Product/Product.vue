@@ -19,7 +19,7 @@ const updateWindowWidth = () => {
   // 視窗 910px
   windowWidth.value = window.innerWidth;
   // hideAddImgProduct
-  hideAddImgProduct.value = window.matchMedia("(max-width: 600px)").matches;
+  // hideAddImgProduct.value = window.matchMedia("(max-width: 600px)").matches;
 };
 
 const loading = ref(true);
