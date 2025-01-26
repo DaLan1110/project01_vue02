@@ -78,15 +78,23 @@ const chartOptions = ref({
   },
 });
 
-const updateChartOptions = () => {
-  const isSmallScreen = window.innerWidth <= 600;
-
-  chartOptions.value.plugins.legend.display = !isSmallScreen; // 小螢幕隱藏圖例
-  chartOptions.value.plugins.datalabels.display = isSmallScreen; // 小螢幕顯示數據
-  chartOptions.value.plugins.datalabels.formatter = (value, context) => {
-    const label = context.chart.data.labels[context.dataIndex];
-    return `${label}\n${value}`; // 顯示名稱與數量
-  };
+const initializeChart = () => {
+  const ctx = document.getElementById("myChart").getContext("2d");
+  chartInstance = new ChartJS(ctx, {
+    type: "doughnut",
+    data: chartData.value,
+    options: {
+      ...chartOptions.value, // 確保你的選項包含所有其他設定
+      plugins: {
+        legend: {
+          display: window.innerWidth > 600, // 大於 600px 顯示圖例
+        },
+        datalabels: {
+          display: window.innerWidth <= 600, // 小於或等於 600px 顯示數據標籤
+        },
+      },
+    },
+  });
 };
 
 const getHotProduct = async () => {
@@ -142,12 +150,20 @@ getHotProduct();
 
 // 監聽螢幕尺寸變化
 onMounted(() => {
-  updateChartOptions();
-  window.addEventListener("resize", updateChartOptions);
+  initializeChart();
+  // 監聽 resize 事件，動態更新 legend 和 datalabels 顯示設定
+  window.addEventListener("resize", () => {
+    if (chartInstance) {
+      // 動態更新圖例和數據標籤的顯示條件
+      chartInstance.options.plugins.legend.display = window.innerWidth > 600;
+      chartInstance.options.plugins.datalabels.display =
+        window.innerWidth <= 600;
+    }
+  });
 });
-onUnmounted(() => {
-  window.removeEventListener("resize", updateChartOptions);
-});
+// onUnmounted(() => {
+//   window.removeEventListener("resize", updateChartOptions);
+// });
 </script>
 
 <template>
