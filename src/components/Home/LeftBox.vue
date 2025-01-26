@@ -13,10 +13,10 @@ const { hotProductToFiveName, hotProductToFiveCount } = storeToRefs(orderStore);
 
 // 定義圖表數據和選項
 const chartData = ref({
-  labels: ['1'],
+  labels: ["1"],
   datasets: [
     {
-      data: [1,],
+      data: [1],
       backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF"],
     },
   ],
@@ -143,8 +143,7 @@ getHotProduct();
 
 .card-body-style-lb {
   display: flex;
-  /* height: 445px; */
-  height: 300px;
+  height: 445px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -152,8 +151,11 @@ getHotProduct();
 }
 
 .chart-container {
-  width: 600px;
-  height: 600px;
+  /* width: 600px;
+  height: 600px; */
+
+  width: 300px;
+  height: 300px;
 }
 
 .card-header h4 {
