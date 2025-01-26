@@ -18,8 +18,6 @@ const windowWidth = ref(window.innerWidth);
 const updateWindowWidth = () => {
   // 視窗 910px
   windowWidth.value = window.innerWidth;
-  // hideAddImgProduct
-  hideAddImgProduct.value = window.matchMedia("(max-width: 600px)").matches;
 };
 
 const loading = ref(true);
@@ -231,7 +229,9 @@ onBeforeUnmount(() => {
             <AddImgProduct
               :img_path="img_path"
               :img_avatar="product.product_img"
-              v-if="product.product_img && !hideAddImgProduct"
+              v-if="
+                product.product_img && (windowWidth > 600 || !hideAddImgProduct)
+              "
               class="product-img-910"
             />
 
