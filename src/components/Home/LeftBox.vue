@@ -154,9 +154,9 @@ getHotProduct();
 .chart-container {
   width: 600px;
   height: 600px;
-
-  /* height: 600px;
-  width: 500px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-header h4 {
