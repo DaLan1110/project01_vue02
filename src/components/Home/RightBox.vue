@@ -169,6 +169,7 @@ getOrderListToSix();
   .card-body-style-rb table {
     table-layout: fixed;
     width: 100%;
+    height: 450px;
     justify-content: flex-start;
     padding-top: 0;
   }
