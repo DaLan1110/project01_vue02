@@ -11,8 +11,7 @@ const { products, selectedIds } = storeToRefs(productStore);
 
 const menuStore = useMenuStore();
 const { menuFlexible } = storeToRefs(menuStore);
-const hideAddImgProduct = menuFlexible;
-console.log("hideAddImgProduct", hideAddImgProduct);
+const hideAddImgProduct = !menuFlexible;
 
 // 視窗 910px
 const windowWidth = ref(window.innerWidth);
