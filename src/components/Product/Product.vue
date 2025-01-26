@@ -12,15 +12,14 @@ const { products, selectedIds } = storeToRefs(productStore);
 const menuStore = useMenuStore();
 const { hideAddImgProduct } = storeToRefs(menuStore);
 
-const toggleMenu = () => {
-  menuStore.toggleMenu();
-};
-
 // 視窗 910px
 const windowWidth = ref(window.innerWidth);
 
 const updateWindowWidth = () => {
+  // 視窗 910px
   windowWidth.value = window.innerWidth;
+  // hideAddImgProduct
+  hideAddImgProduct.value = window.matchMedia("(max-width: 600px)").matches;
 };
 
 const loading = ref(true);
@@ -91,7 +90,7 @@ const handleDeleteProduct = () => {
 };
 
 onMounted(() => {
-  // 視窗 910px
+  updateWindowWidth;
   window.addEventListener("resize", updateWindowWidth);
 });
 
@@ -233,7 +232,7 @@ onBeforeUnmount(() => {
               :img_path="img_path"
               :img_avatar="product.product_img"
               v-if="
-                product.product_img && (!hideAddImgProduct && windowWidth > 600)
+                product.product_img && !hideAddImgProduct && windowWidth > 600
               "
               class="product-img-910"
             />
