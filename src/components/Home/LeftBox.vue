@@ -152,8 +152,8 @@ getHotProduct();
 }
 
 .chart-container {
-  width: 450px;
-  height: 450px;
+  width: 440px;
+  height: 440px;
   display: flex;
   justify-content: center;
   align-items: center;
