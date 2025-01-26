@@ -38,7 +38,7 @@ getOrderListToSix();
       <h4 class="mt-3" style="font-weight: 600">最新訂單</h4>
     </div>
     <div class="card-body card-body-style-rb">
-      <table class="table home-right-card-table mt-4">
+      <!-- <table class="table home-right-card-table mt-4">
         <thead>
           <tr>
             <th width="22%" class="text-center">訂單編號</th>
@@ -70,7 +70,7 @@ getOrderListToSix();
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
   </div>
 </template>
