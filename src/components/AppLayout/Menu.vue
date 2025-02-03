@@ -87,10 +87,10 @@ onUnmounted(() => {
 <template>
   <div class="menu" :class="{ 'burger-menu-flexible': menuStore.menuFlexible }">
     <div class="logo" :class="{ 'logo-flexible': menuStore.menuFlexible }">
-      <RouterLink to="/home" class="url-logo-style">
-        <img src="../../assets/logo.svg" alt="" class="img-logo-style" />
-        <span class="font-logo-style">夏季</span>
-      </RouterLink>
+      <a href="https://project01-vue01.onrender.com" class="url-logo-style"
+        ><img src="../../assets/sun.png" alt="" class="img-logo-style" />
+        <span class="font-logo-style">夏季</span></a
+      >
     </div>
     <h3
       class="menu-title-text"
