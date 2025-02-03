@@ -87,7 +87,7 @@ onUnmounted(() => {
 <template>
   <div class="menu" :class="{ 'burger-menu-flexible': menuStore.menuFlexible }">
     <div class="logo" :class="{ 'logo-flexible': menuStore.menuFlexible }">
-      <a href="https://project01-vue01.onrender.com" class="url-logo-style"
+      <a href="https://project01-vue01.onrender.com" class="url-logo-style mr-3"
         ><img src="../../assets/sun.png" alt="" class="img-logo-style" />
         <span class="font-logo-style">夏季</span></a
       >
