@@ -134,7 +134,7 @@ onUnmounted(() => {
 }
 
 .meun-item-position {
-  margin-top: 0px;
+  margin-top: 30px;
 }
 
 .burger-menu-style {
