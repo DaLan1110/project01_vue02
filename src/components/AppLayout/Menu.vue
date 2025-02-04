@@ -210,4 +210,10 @@ onUnmounted(() => {
 .menu-title-text-flexible {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .menu {
+    width: 150px;
+  }
+}
 </style>
