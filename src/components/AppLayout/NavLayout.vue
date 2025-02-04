@@ -133,7 +133,7 @@ const logoutHandle = () => {
   } */
 
   .naylayout-width {
-    width: 90%;
+    width: 100%;
   }
 }
 </style>
