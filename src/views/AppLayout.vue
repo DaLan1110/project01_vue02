@@ -6,7 +6,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
 <template>
   <div class="app">
     <MenuLayout />
-    <NavLayout />
+    <NavLayout class="navlayout-move" />
   </div>
 </template>
 
@@ -20,5 +20,11 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
 
 .app {
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .navlayout-move {
+    margin-left: 60px;
+  }
 }
 </style>
