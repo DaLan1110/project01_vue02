@@ -113,7 +113,7 @@ const logoutHandle = () => {
 }
 
 .breadcrumbMove {
-  margin-left: 60px;
+  margin-left: 30px;
 }
 
 .circle-img {
