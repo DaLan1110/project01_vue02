@@ -132,9 +132,9 @@ const logoutHandle = () => {
     padding-left: 3rem;
   } */
 
-  /* .naylayout-width {
-    width: 100%;
-  } */
+  .naylayout-width {
+    width: 90%;
+  }
 
   .breadcrumbml {
     margin-left: 150px;
