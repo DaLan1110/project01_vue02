@@ -89,7 +89,7 @@ onUnmounted(() => {
     class="menu"
     :class="{
       'burger-menu-flexible': menuStore.menuFlexible,
-      'burger-menu-overlay': menuStore.menuFlexible && menuStore.isOverlay,
+      // 'burger-menu-overlay': menuStore.menuFlexible && menuStore.isOverlay,
     }"
   >
     <div class="logo" :class="{ 'logo-flexible': menuStore.menuFlexible }">
