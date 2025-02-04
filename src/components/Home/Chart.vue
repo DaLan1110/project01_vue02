@@ -5,7 +5,6 @@ import { useOrderStore } from "@/stores/order";
 import { Doughnut } from "vue-chartjs";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import Chart from "@/components/Home/Chart.vue";
 
 // 註冊 Chart.js 必需的模組
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -146,68 +145,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="card left-card-style">
-    <div class="card-header">
-      <h4 class="mt-3" style="font-weight: 600">每周前五名熱門商品</h4>
-    </div>
-    <div class="card-body card-body-style-lb">
-      <div class="chart-container">
-        <!-- <Doughnut id="myChart" :data="chartData" :options="chartOptions" /> -->
-        <Chart />
-      </div>
-    </div>
-  </div>
+  <Doughnut id="myChart" :data="chartData" :options="chartOptions" />
 </template>
 
 <style>
-.left-card-style {
-  height: 100%; /* 填滿父容器的高度 */
-  width: 100%; /* 填滿父容器的寬度 */
-  background-color: #fff; /* 白色背景 */
-  border: 1px solid #ddd; /* 邊框 */
-  border-radius: 10px; /* 圓角 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
-  display: flex;
-  flex-direction: column; /* 內容垂直排列 */
-  box-sizing: border-box;
-}
-
-.card-body-style-lb {
-  display: flex;
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-}
-
-.chart-container {
-  width: 600px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-header h4 {
-  font-weight: 600;
-}
-
-@media (max-width: 1300px) {
-  .chart-container {
-    width: 400px;
-    height: 400px;
-  }
-
-  .card-body-style-lb {
-    height: 300px;
-  }
-}
-
-@media (max-width: 600px) {
-  .chart-container {
-    width: 200px;
-    height: 200px;
-  }
-}
 </style>
