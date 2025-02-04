@@ -29,7 +29,7 @@ const chartOptions = ref({
   maintainAspectRatio: true, // 保持寬高比例
   plugins: {
     legend: {
-      display: window.innerWidth > 600, // 大於 600px 顯示圖例
+      display: true,
       position: "right",
       align: "center",
       labels: {
