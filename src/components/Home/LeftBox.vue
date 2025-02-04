@@ -203,5 +203,9 @@ onUnmounted(() => {
 }
 
 @media (max-width: 600px) {
+  .chart-container {
+    width: 200px;
+    height: 200px;
+  }
 }
 </style>
