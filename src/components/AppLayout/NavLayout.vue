@@ -1,6 +1,6 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/users";
 import { useMenuStore } from "@/stores/menu";
@@ -29,6 +29,27 @@ const logoutHandle = () => {
   userStore.logoutUserAccount(); // 調用 store 的登出方法
   router.push("/login"); // 導向登入頁面
 };
+
+// 監聽視窗大小，判斷是否小於 600px
+const isSmallScreen = ref(window.innerWidth < 600);
+
+const handleResize = () => {
+  isSmallScreen.value = window.innerWidth < 600;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+});
+
+// 計算要綁定的 class
+const breadcrumbClass = computed(() => ({
+  breadcrumbMove: menuStore.menuFlexible, // 無論寬度多少，都會判斷 menuFlexible
+  breadcrumbMoveToSmall: menuStore.menuFlexible && isSmallScreen.value, // 只有小於 600px 才會觸發
+}));
 </script>
 
 <template>
@@ -36,10 +57,7 @@ const logoutHandle = () => {
     <nav class="navbar bg-body-tertiary navbar-expand" style="height: 60px">
       <div class="container-fluid">
         <!-- <div class="collapse navbar-collapse"> -->
-        <Breadcrumb
-          class="breadcrumbml"
-          :class="{ breadcrumbMove: menuStore.menuFlexible }"
-        />
+        <Breadcrumb class="breadcrumbml" :class="breadcrumbClass" />
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <div class="circle-img">
@@ -125,6 +143,10 @@ const logoutHandle = () => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.breadcrumbMoveToSmall {
+  display: none;
 }
 
 @media (max-width: 768px) {
