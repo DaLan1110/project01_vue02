@@ -139,5 +139,9 @@ const logoutHandle = () => {
   .breadcrumbml {
     margin-left: 200px;
   }
+
+  .breadcrumbMove {
+    margin-left: 0px;
+  }
 }
 </style>
