@@ -3,7 +3,6 @@ import { defineStore } from 'pinia'
 
 export const useMenuStore = defineStore('menu', () => {
     const menuFlexible = ref(false);
-    const isOverlay = ref(window.innerWidth < 768);
     // 根據 menuFlexible 和是否為覆蓋模式計算 hideAddImgProduct
     const hideAddImgProduct = computed(() => {
         return !menuFlexible.value && !isOverlay.value;
@@ -13,9 +12,5 @@ export const useMenuStore = defineStore('menu', () => {
         hideAddImgProduct.value = !hideAddImgProduct.value
     }
 
-    watchEffect(() => {
-        isOverlay.value = window.innerWidth < 768;
-    });
-
-    return { menuFlexible, isOverlay, hideAddImgProduct, toggleMenu }
+    return { menuFlexible, hideAddImgProduct, toggleMenu }
 })

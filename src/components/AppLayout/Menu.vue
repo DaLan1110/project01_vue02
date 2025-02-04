@@ -85,13 +85,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-    class="menu"
-    :class="{
-      'burger-menu-flexible': menuStore.menuFlexible,
-      // 'burger-menu-overlay': menuStore.menuFlexible && menuStore.isOverlay,
-    }"
-  >
+  <div class="menu" :class="{ 'burger-menu-flexible': menuStore.menuFlexible }">
     <div class="logo" :class="{ 'logo-flexible': menuStore.menuFlexible }">
       <a href="https://project01-vue01.onrender.com" class="url-logo-style"
         ><img src="../../assets/sun.png" alt="" class="img-logo-style mr-3" />
@@ -216,16 +210,4 @@ onUnmounted(() => {
 .menu-title-text-flexible {
   display: none;
 }
-
-/* 768px 以下 menu 的覆蓋樣式 */
-/* .burger-menu-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  width: 60px;
-  height: 100vh;
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out;
-} */
 </style>
