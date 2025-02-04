@@ -48,7 +48,7 @@ onUnmounted(() => {
 // 計算要綁定的 class
 const breadcrumbClass = computed(() => ({
   breadcrumbMove: menuStore.menuFlexible, // 無論寬度多少，都會判斷 menuFlexible
-  breadcrumbMoveToSmall: menuStore.menuFlexible && isSmallScreen.value, // 只有小於 600px 才會觸發
+  breadcrumbMoveToSmall: !menuStore.menuFlexible && isSmallScreen.value, // 只有小於 600px 才會觸發
 }));
 </script>
 
