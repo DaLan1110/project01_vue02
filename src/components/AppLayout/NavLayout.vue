@@ -34,7 +34,7 @@ const logoutHandle = () => {
 <template>
   <div class="naylayout-width">
     <nav class="navbar bg-body-tertiary navbar-expand" style="height: 60px">
-      <div class="container-fluid" style="margin-left: 80px">
+      <div class="container-fluid" style="margin-left: 120px">
         <!-- <div class="collapse navbar-collapse"> -->
         <Breadcrumb
           class="breadcrumbml"
