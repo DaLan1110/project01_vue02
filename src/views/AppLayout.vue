@@ -31,11 +31,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
     position: absolute;
     top: 0;
     left: 0;
-    /* background-color: #fff;
-  width: 60px;
-  height: 100vh;
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out; */
+    z-index: 1000;
   }
 }
 </style>
