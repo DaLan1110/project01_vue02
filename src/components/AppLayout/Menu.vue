@@ -215,5 +215,9 @@ onUnmounted(() => {
   .menu {
     width: 150px;
   }
+
+  .burger-menu-flexible {
+    width: 60px;
+  }
 }
 </style>
