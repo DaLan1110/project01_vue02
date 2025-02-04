@@ -218,14 +218,14 @@ onUnmounted(() => {
 }
 
 /* 768px 以下 menu 的覆蓋樣式 */
-.burger-menu-overlay {
+/* .burger-menu-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* 可以調整背景顏色 */
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
-}
+} */
 </style>
