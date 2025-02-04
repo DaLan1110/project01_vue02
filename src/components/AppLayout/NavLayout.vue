@@ -109,11 +109,11 @@ const logoutHandle = () => {
 }
 
 .breadcrumbml {
-  margin-left: 120px;
+  margin-left: 60px;
 }
 
 .breadcrumbMove {
-  margin-left: 0px;
+  margin-left: 60px;
 }
 
 .circle-img {
