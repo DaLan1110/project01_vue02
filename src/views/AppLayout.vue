@@ -5,7 +5,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
 
 <template>
   <div class="app">
-    <MenuLayout />
+    <MenuLayout class="menulayout-move" />
     <NavLayout class="navlayout-move" />
   </div>
 </template>
@@ -25,6 +25,17 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
 @media (max-width: 768px) {
   .navlayout-move {
     margin-left: 60px;
+  }
+
+  .menulayout-move {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: #fff;
+  width: 60px;
+  height: 100vh;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out; */
   }
 }
 </style>

@@ -218,7 +218,7 @@ onUnmounted(() => {
 }
 
 /* 768px 以下 menu 的覆蓋樣式 */
-.burger-menu-overlay {
+/* .burger-menu-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -227,5 +227,5 @@ onUnmounted(() => {
   height: 100vh;
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
-}
+} */
 </style>
