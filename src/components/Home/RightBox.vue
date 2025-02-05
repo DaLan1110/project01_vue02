@@ -13,10 +13,10 @@ const { ordersToSix } = storeToRefs(orderStore);
 // };
 
 // 根據螢幕寬度計算顯示的訂單
-const filteredOrders = computed(() => {
-  const maxOrders = screenWidth.value < 1300 ? 3 : 6;
-  return ordersToSix.value.slice(0, maxOrders);
-});
+// const filteredOrders = computed(() => {
+//   const maxOrders = screenWidth.value < 1300 ? 3 : 6;
+//   return ordersToSix.value.slice(0, maxOrders);
+// });
 
 // 監聽螢幕大小變化
 // onMounted(() => {
