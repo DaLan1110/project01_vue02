@@ -24,7 +24,7 @@ import LeftBox from "./LeftBox.vue";
 .home-container {
   display: flex;
   flex-direction: column; /* 垂直排列 */
-  height: 90%; /* 滿版高度 */
+  height: 100%; /* 滿版高度 */
   width: 100%; /* 滿版寬度 */
   box-sizing: border-box;
 }
