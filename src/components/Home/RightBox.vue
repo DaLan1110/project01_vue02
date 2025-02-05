@@ -42,7 +42,9 @@ getOrderListToSix();
         <thead>
           <tr>
             <th width="22%" class="text-center">訂單編號</th>
-            <th width="21%" class="text-center">訂單價格</th>
+            <th width="21%" class="text-center" v-show="screenWidth > 1240">
+              訂單價格
+            </th>
             <th width="21%" class="text-center">訂單狀態</th>
             <th width="21%" class="text-center" v-show="screenWidth < 1150">
               下訂時間
@@ -122,11 +124,7 @@ getOrderListToSix();
 }
 
 .home-right-card-table tr:last-child td {
-  border-bottom: none; /* 最後一行移除下邊框 */
-}
-
-.right-box-show {
-  display: none;
+  border-bottom: none;
 }
 
 /* @media (max-width: 1400px) {
@@ -215,10 +213,10 @@ getOrderListToSix();
 }
 
 @media (max-width: 1240px) {
-  .home-right-card-table thead th:nth-child(2),
+  /* .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 1150px) {
