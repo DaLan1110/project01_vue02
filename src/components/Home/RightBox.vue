@@ -134,12 +134,12 @@ getOrderListToSix();
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 24%;
+    width: 25%;
   }
 
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
-    width: 16%;
+    width: 15%;
   }
 
   /* .home-right-card-table thead th:nth-child(5),
