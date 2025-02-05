@@ -211,6 +211,12 @@ onUnmounted(() => {
   display: none;
 }
 
+@media (max-width: 1150px) {
+  .menu {
+    min-height: 200vh;
+  }
+}
+
 @media (max-width: 768px) {
   .menu {
     width: 150px;
