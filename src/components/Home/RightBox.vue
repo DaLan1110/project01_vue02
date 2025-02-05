@@ -76,7 +76,7 @@ getOrderListToSix();
             <td class="text-center align-middle">{{ order.order_state }}</td>
             <td
               class="text-center align-middle"
-              v-show="screenWidth < 1150 && screenWidth >= 800"
+              v-show="screenWidth < 1150 && screenWidth >= 850"
             >
               {{ order.create_at }}
             </td>
