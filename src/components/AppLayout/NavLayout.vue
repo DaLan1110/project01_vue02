@@ -116,14 +116,13 @@ const breadcrumbClass = computed(() => ({
   width: 100%;
   height: 100vh; /* 讓它填滿整個視窗 */
   overflow: hidden; /* 禁止整體滾動，只讓 .work-page 滾動 */
-  margin-bottom: 100px;
 }
 
 .work-page {
   padding: 1rem;
   height: 100%;
   overflow-y: auto; /* 內部滾動 */
-  padding-bottom: 60px;
+  padding-bottom: 120px !important; /* 增加底部的空白 */
 }
 
 .breadcrumb-style {
