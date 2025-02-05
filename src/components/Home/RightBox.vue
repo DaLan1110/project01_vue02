@@ -202,7 +202,7 @@ getOrderListToSix();
   }
 }
 
-@media (max-width: 1310px) {
+@media (max-width: 1300px) {
   .card-body-style-rb table {
     table-layout: fixed;
     width: 100%;
