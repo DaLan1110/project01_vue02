@@ -176,7 +176,7 @@ getOrderListToSix();
 @media (max-width: 1320px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 33%;
+    width: 34%;
   }
 
   .home-right-card-table thead th:nth-child(2),
@@ -186,7 +186,7 @@ getOrderListToSix();
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 26%;
+    width: 25%;
   }
 
   .home-right-card-table thead th:nth-child(5),
