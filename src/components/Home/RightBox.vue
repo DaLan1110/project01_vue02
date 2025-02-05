@@ -149,7 +149,7 @@ getOrderListToSix();
 }
 
 @media (max-width: 1320px) {
-  .home-right-card-table thead th:nth-child(1),
+  /* .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
     width: 35%;
   }
@@ -167,7 +167,7 @@ getOrderListToSix();
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
     width: 20%;
-  }
+  } */
 
   /* .home-right-card-table thead th:nth-child(5),
   .home-right-card-table tbody td:nth-child(5) {
