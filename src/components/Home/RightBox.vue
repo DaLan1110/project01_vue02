@@ -124,55 +124,55 @@ getOrderListToSix();
 @media (max-width: 1420px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 20%; /* 第一列的寬度調整為 20% */
+    width: 40%;
   }
 
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
-    width: 20%; /* 第二列的寬度調整為 25% */
+    width: 20%;
   }
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 20%; /* 第三列的寬度調整為 15% */
+    width: 20%;
   }
 
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
-    width: 20%; /* 第四列的寬度調整為 30% */
+    width: 20%;
   }
 
-  .home-right-card-table thead th:nth-child(5),
+  /* .home-right-card-table thead th:nth-child(5),
   .home-right-card-table tbody td:nth-child(5) {
-    width: 20%; /* 第五列的寬度調整為 10% */
-  }
+    width: 20%;
+  } */
 }
 
 @media (max-width: 1320px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 20%; /* 第一列的寬度調整為 20% */
+    width: 40%;
   }
 
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
-    width: 20%; /* 第二列的寬度調整為 25% */
+    width: 20%;
   }
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 20%; /* 第三列的寬度調整為 15% */
+    width: 20%;
   }
 
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
-    width: 20%; /* 第四列的寬度調整為 30% */
+    width: 20%;
   }
 
-  .home-right-card-table thead th:nth-child(5),
+  /* .home-right-card-table thead th:nth-child(5),
   .home-right-card-table tbody td:nth-child(5) {
-    width: 20%; /* 第五列的寬度調整為 10% */
-  }
+    width: 20%;
+  } */
 
   .card-body-style-rb table {
     table-layout: fixed;
