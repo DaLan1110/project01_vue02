@@ -121,19 +121,19 @@ const breadcrumbClass = computed(() => ({
   overflow: hidden; /* 禁止整體滾動，只讓 .work-page 滾動 */
 }
 
-.position-nav {
+/* .position-nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* 確保導航欄不被其他元素覆蓋 */
-}
+  z-index: 100;
+} */
 
 .work-page {
   padding: 1rem;
   height: 100%;
   overflow-y: auto; /* 內部滾動 */
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .breadcrumb-style {
