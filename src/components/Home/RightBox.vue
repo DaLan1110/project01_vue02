@@ -59,7 +59,9 @@ getOrderListToSix();
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
-            <!-- <td class="text-center align-middle">{{ order.create_at }}</td> -->
+            <td class="text-center align-middle right-box-show">
+              {{ order.create_at }}
+            </td>
             <td class="text-center align-middle">
               <RouterLink
                 :to="{ path: 'order/' + order.id + '/data' }"
@@ -220,6 +222,12 @@ getOrderListToSix();
 @media (max-width: 1150px) {
   .card-body-style-rb {
     height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .right-box-show {
+    display: table-cell;
   }
 }
 </style>
