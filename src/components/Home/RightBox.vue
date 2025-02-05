@@ -121,20 +121,20 @@ getOrderListToSix();
   border-bottom: none; /* 最後一行移除下邊框 */
 }
 
-@media (max-width: 1420px) {
+@media (max-width: 1400px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 35%;
+    width: 30%;
   }
 
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
-    width: 25%;
+    width: 27%;
   }
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 25%;
+    width: 28%;
   }
 
   .home-right-card-table thead th:nth-child(4),
