@@ -152,9 +152,15 @@ const breadcrumbClass = computed(() => ({
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1150px) {
   .naylayout-width {
     overflow: hidden; /* 768px 以上時設置 overflow: hidden */
+  }
+}
+
+@media (max-width: 1150px) {
+  .naylayout-width {
+    overflow: visible; /* 768px 以下時設置 overflow: visible */
   }
 }
 
@@ -164,7 +170,6 @@ const breadcrumbClass = computed(() => ({
   } */
 
   .naylayout-width {
-    overflow: visible; /* 768px 以下時設置 overflow: visible */
     width: 90%;
   }
 
