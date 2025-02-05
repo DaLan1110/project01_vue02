@@ -44,7 +44,9 @@ getOrderListToSix();
             <th width="35%" class="text-center">訂單編號</th>
             <th width="25%" class="text-center">訂單價格</th>
             <th width="25%" class="text-center">訂單狀態</th>
-            <th width="21%" class="text-center right-box-show">下訂時間</th>
+            <th width="21%" class="text-center" v-show="screenWidth < 768">
+              下訂時間
+            </th>
             <th width="15%" class="text-center">查看</th>
           </tr>
         </thead>
