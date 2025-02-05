@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onBeforeUnmount, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useOrderStore } from "@/stores/order";
 import { Doughnut } from "vue-chartjs";
