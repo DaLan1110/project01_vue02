@@ -44,7 +44,7 @@ getOrderListToSix();
             <th width="35%" class="text-center">訂單編號</th>
             <th width="25%" class="text-center">訂單價格</th>
             <th width="25%" class="text-center">訂單狀態</th>
-            <!-- <th width="21%" class="text-center">下訂時間</th> -->
+            <th width="21%" class="text-center right-box-show">下訂時間</th>
             <th width="15%" class="text-center">查看</th>
           </tr>
         </thead>
@@ -121,6 +121,10 @@ getOrderListToSix();
   border-bottom: none; /* 最後一行移除下邊框 */
 }
 
+.right-box-show {
+  display: none;
+}
+
 /* @media (max-width: 1400px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
@@ -159,8 +163,8 @@ getOrderListToSix();
     width: 28%;
   }
 
-  .home-right-card-table thead th:nth-child(4),
-  .home-right-card-table tbody td:nth-child(4) {
+  .home-right-card-table thead th:nth-child(5),
+  .home-right-card-table tbody td:nth-child(5) {
     width: 15%;
   }
 }
@@ -181,8 +185,8 @@ getOrderListToSix();
     width: 27%;
   }
 
-  .home-right-card-table thead th:nth-child(4),
-  .home-right-card-table tbody td:nth-child(4) {
+  .home-right-card-table thead th:nth-child(5),
+  .home-right-card-table tbody td:nth-child(5) {
     width: 15%;
   }
 
