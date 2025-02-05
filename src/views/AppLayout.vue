@@ -24,7 +24,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
 
 .app {
   display: flex;
-  width: 100%; /* 使寬度隨螢幕大小調整 */
+  /* width: 100%; */
   height: 100%; /* 使高度隨螢幕大小調整 */
 }
 
