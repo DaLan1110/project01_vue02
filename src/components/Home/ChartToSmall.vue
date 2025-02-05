@@ -5,7 +5,6 @@ import { useOrderStore } from "@/stores/order";
 import { Doughnut } from "vue-chartjs";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import Chart from "@/components/Home/Chart.vue";
 
 // 註冊 Chart.js 必需的模組
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -30,25 +29,7 @@ const chartOptions = ref({
   maintainAspectRatio: true, // 保持寬高比例
   plugins: {
     legend: {
-      display: window.innerWidth > 600, // 大於 600px 顯示圖例
-      position: "right",
-      align: "center",
-      labels: {
-        padding: 20, // 調整圖例與圖表的距離
-        boxWidth: 15, // 圖例框的寬度
-        boxHeight: 15, // 圖例框的高度
-        font: {
-          size: 14, // 圖例文字的大小
-        },
-        generateLabels: (chart) => {
-          const { labels } = chart.data;
-          const dataset = chart.data.datasets[0];
-          return labels.map((label, index) => ({
-            text: `${label}: ${dataset.data[index]}`, // 顯示名稱和數量
-            fillStyle: dataset.backgroundColor[index],
-          }));
-        },
-      },
+      display: false, // 關閉右側圖例
     },
     tooltip: {
       enabled: true, // 啟用工具提示
@@ -65,24 +46,24 @@ const chartOptions = ref({
       },
     },
     datalabels: {
-      display: window.innerWidth <= 600, // 在圖表上顯示數據
-      color: "#fff", // 標籤顏色
+      color: "#fff", // 文字顏色
       font: {
+        size: 14, // 文字大小
         weight: "bold",
-        size: 14, // 螢幕寬度小於 600px 時文字更大
       },
+      align: "center", // 置中
       formatter: (value, context) => {
         const label = context.chart.data.labels[context.dataIndex];
-        return `${label}: ${value}`; // 顯示名稱與數量
+        const total = context.chart.data.datasets[0].data.reduce(
+          (sum, val) => sum + val,
+          0
+        );
+        const percentage = ((value / total) * 100).toFixed(1); // 計算百分比
+        return `${label}\n${value} (${percentage}%)`; // 顯示名稱、數量和百分比
       },
     },
   },
 });
-
-const updateChartOptions = () => {
-  chartInstance.options.plugins.legend.display = window.innerWidth > 600;
-  chartInstance.options.plugins.datalabels.display = window.innerWidth <= 600;
-};
 
 const getHotProduct = async () => {
   try {
@@ -134,87 +115,11 @@ const getHotProduct = async () => {
   }
 };
 getHotProduct();
-
-// 視窗 變化
-const windowWidth = ref(window.innerWidth);
-
-const updateWindowWidth = () => {
-  windowWidth.value = window.innerWidth;
-};
-
-onMounted(() => {
-  // 視窗 變化
-  window.addEventListener("resize", updateWindowWidth);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", updateWindowWidth);
-});
 </script>
 
 <template>
-  <div class="card left-card-style">
-    <div class="card-header">
-      <h4 class="mt-3" style="font-weight: 600">每周前五名熱門商品</h4>
-    </div>
-    <div class="card-body card-body-style-lb">
-      <div class="chart-container">
-        <!-- <Doughnut id="myChart" :data="chartData" :options="chartOptions" /> -->
-        <Chart v-if="windowWidth > 600"/>
-      </div>
-    </div>
-  </div>
+  <Doughnut id="myChart" :data="chartData" :options="chartOptions" />
 </template>
 
 <style>
-.left-card-style {
-  height: 100%; /* 填滿父容器的高度 */
-  width: 100%; /* 填滿父容器的寬度 */
-  background-color: #fff; /* 白色背景 */
-  border: 1px solid #ddd; /* 邊框 */
-  border-radius: 10px; /* 圓角 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影效果 */
-  display: flex;
-  flex-direction: column; /* 內容垂直排列 */
-  box-sizing: border-box;
-}
-
-.card-body-style-lb {
-  display: flex;
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-}
-
-.chart-container {
-  width: 600px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-header h4 {
-  font-weight: 600;
-}
-
-@media (max-width: 1300px) {
-  .chart-container {
-    width: 400px;
-    height: 400px;
-  }
-
-  .card-body-style-lb {
-    height: 300px;
-  }
-}
-
-@media (max-width: 600px) {
-  .chart-container {
-    width: 200px;
-    height: 200px;
-  }
-}
 </style>

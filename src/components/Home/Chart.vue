@@ -133,15 +133,6 @@ const getHotProduct = async () => {
   }
 };
 getHotProduct();
-
-// 監聽螢幕尺寸變化
-onMounted(() => {
-  updateChartOptions();
-  window.addEventListener("resize", updateChartOptions);
-});
-onUnmounted(() => {
-  window.removeEventListener("resize", updateChartOptions);
-});
 </script>
 
 <template>
