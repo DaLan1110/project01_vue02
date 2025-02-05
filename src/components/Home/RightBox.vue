@@ -45,7 +45,7 @@ getOrderListToSix();
             <th
               width="21%"
               class="text-center"
-              v-show="screenWidth > 1240 || screenWidth < 768"
+              v-show="screenWidth > 1240 || screenWidth < 1150"
             >
               訂單價格
             </th>
@@ -65,7 +65,7 @@ getOrderListToSix();
             <td class="text-center align-middle">{{ order.order_number }}</td>
             <td
               class="text-center align-middle"
-              v-show="screenWidth > 1240 || screenWidth < 768"
+              v-show="screenWidth > 1240 || screenWidth < 1150"
             >
               NT. ${{ order.order_total }}
             </td>
