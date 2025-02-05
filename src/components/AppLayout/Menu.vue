@@ -124,8 +124,7 @@ onUnmounted(() => {
   display: flex;
   position: relative;
   flex-direction: column;
-  /* min-height: 100vh; */
-  height: 100vh;
+  min-height: 100vh;
   width: 200px;
   left: 0;
   top: 0;

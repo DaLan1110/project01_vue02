@@ -115,7 +115,6 @@ const breadcrumbClass = computed(() => ({
 .naylayout-width {
   width: 100%;
   height: 100vh; /* 讓它填滿整個視窗 */
-  /* overflow: hidden; */
 }
 
 .work-page {
@@ -153,12 +152,19 @@ const breadcrumbClass = computed(() => ({
   display: none;
 }
 
+@media (min-width: 768px) {
+  .naylayout-width {
+    overflow: hidden; /* 768px 以上時設置 overflow: hidden */
+  }
+}
+
 @media (max-width: 768px) {
   /* .work-page {
     padding-left: 3rem;
   } */
 
   .naylayout-width {
+    overflow: visible; /* 768px 以下時設置 overflow: visible */
     width: 90%;
   }
 
