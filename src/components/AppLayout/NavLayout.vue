@@ -117,7 +117,8 @@ const breadcrumbClass = computed(() => ({
 <style>
 .naylayout-width {
   width: 100%;
-  overflow: auto;
+  height: 100vh; /* 讓它填滿整個視窗 */
+  overflow: hidden; /* 禁止整體滾動，只讓 .work-page 滾動 */
 }
 
 .position-nav {
@@ -137,6 +138,7 @@ const breadcrumbClass = computed(() => ({
   display: flex;
   align-items: center;
   height: 100%;
+  overflow-y: auto; /* 內部滾動 */
 }
 
 .breadcrumbml {
