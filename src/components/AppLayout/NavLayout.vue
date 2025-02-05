@@ -105,7 +105,7 @@ const breadcrumbClass = computed(() => ({
         <!-- </div> -->
       </div>
     </nav>
-    <div class="work-page">
+    <div class="work-page" style="margin-top: 120px">
       <RouterView />
     </div>
   </div>
@@ -122,7 +122,7 @@ const breadcrumbClass = computed(() => ({
   padding: 1rem;
   height: 100%;
   overflow-y: auto; /* 內部滾動 */
-  padding-bottom: 120px !important; /* 增加底部的空白 */
+  /* padding-bottom: 120px !important; */
 }
 
 .breadcrumb-style {
