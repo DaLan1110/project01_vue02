@@ -41,10 +41,10 @@ getOrderListToSix();
       <table class="table home-right-card-table mt-4">
         <thead>
           <tr>
-            <th width="22%" class="text-center">訂單編號</th>
-            <th width="21%" class="text-center">訂單價格</th>
-            <th width="21%" class="text-center">訂單狀態</th>
-            <th width="21%" class="text-center">下訂時間</th>
+            <th width="35%" class="text-center">訂單編號</th>
+            <th width="25%" class="text-center">訂單價格</th>
+            <th width="25%" class="text-center">訂單狀態</th>
+            <!-- <th width="21%" class="text-center">下訂時間</th> -->
             <th width="15%" class="text-center">查看</th>
           </tr>
         </thead>
@@ -59,7 +59,7 @@ getOrderListToSix();
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
-            <td class="text-center align-middle">{{ order.create_at }}</td>
+            <!-- <td class="text-center align-middle">{{ order.create_at }}</td> -->
             <td class="text-center align-middle">
               <RouterLink
                 :to="{ path: 'order/' + order.id + '/data' }"

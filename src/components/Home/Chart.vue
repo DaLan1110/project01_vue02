@@ -63,25 +63,8 @@ const chartOptions = ref({
         },
       },
     },
-    // datalabels: {
-    //   display: window.innerWidth <= 600, // 在圖表上顯示數據
-    //   color: "#fff", // 標籤顏色
-    //   font: {
-    //     weight: "bold",
-    //     size: 14, // 螢幕寬度小於 600px 時文字更大
-    //   },
-    //   formatter: (value, context) => {
-    //     const label = context.chart.data.labels[context.dataIndex];
-    //     return `${label}: ${value}`; // 顯示名稱與數量
-    //   },
-    // },
   },
 });
-
-// const updateChartOptions = () => {
-//   chartInstance.options.plugins.legend.display = window.innerWidth > 600;
-//   chartInstance.options.plugins.datalabels.display = window.innerWidth <= 600;
-// };
 
 const getHotProduct = async () => {
   try {
