@@ -41,10 +41,10 @@ getOrderListToSix();
       <table class="table home-right-card-table mt-4">
         <thead>
           <tr>
-            <th width="35%" class="text-center">訂單編號</th>
-            <th width="25%" class="text-center">訂單價格</th>
-            <th width="25%" class="text-center">訂單狀態</th>
-            <!-- <th width="21%" class="text-center">下訂時間</th> -->
+            <th width="22%" class="text-center">訂單編號</th>
+            <th width="21%" class="text-center">訂單價格</th>
+            <th width="21%" class="text-center">訂單狀態</th>
+            <th width="21%" class="text-center">下訂時間</th>
             <th width="15%" class="text-center">查看</th>
           </tr>
         </thead>
@@ -59,7 +59,7 @@ getOrderListToSix();
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
-            <!-- <td class="text-center align-middle">{{ order.create_at }}</td> -->
+            <td class="text-center align-middle">{{ order.create_at }}</td>
             <td class="text-center align-middle">
               <RouterLink
                 :to="{ path: 'order/' + order.id + '/data' }"
@@ -121,47 +121,57 @@ getOrderListToSix();
   border-bottom: none; /* 最後一行移除下邊框 */
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1420px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 30%;
+    width: 20%; /* 第一列的寬度調整為 20% */
   }
 
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
-    width: 27%;
+    width: 20%; /* 第二列的寬度調整為 25% */
   }
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 28%;
+    width: 20%; /* 第三列的寬度調整為 15% */
   }
 
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
-    width: 15%;
+    width: 20%; /* 第四列的寬度調整為 30% */
+  }
+
+  .home-right-card-table thead th:nth-child(5),
+  .home-right-card-table tbody td:nth-child(5) {
+    width: 20%; /* 第五列的寬度調整為 10% */
   }
 }
 
 @media (max-width: 1320px) {
   .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 32%;
+    width: 20%; /* 第一列的寬度調整為 20% */
   }
 
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
-    width: 26%;
+    width: 20%; /* 第二列的寬度調整為 25% */
   }
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 27%;
+    width: 20%; /* 第三列的寬度調整為 15% */
   }
 
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
-    width: 15%;
+    width: 20%; /* 第四列的寬度調整為 30% */
+  }
+
+  .home-right-card-table thead th:nth-child(5),
+  .home-right-card-table tbody td:nth-child(5) {
+    width: 20%; /* 第五列的寬度調整為 10% */
   }
 
   .card-body-style-rb table {
