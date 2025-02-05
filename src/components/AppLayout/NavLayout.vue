@@ -133,6 +133,7 @@ const breadcrumbClass = computed(() => ({
   padding: 1rem;
   height: 100%;
   overflow-y: auto; /* 內部滾動 */
+  margin-bottom: 60px;
 }
 
 .breadcrumb-style {
