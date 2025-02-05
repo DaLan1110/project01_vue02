@@ -25,9 +25,9 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", updateScreenWidth);
 });
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", updateScreenWidth);
-});
+// onBeforeUnmount(() => {
+//   window.removeEventListener("resize", updateScreenWidth);
+// });
 
 const getOrderListToSix = () => {
   orderStore.getOrdersListToSix();
@@ -47,7 +47,7 @@ getOrderListToSix();
             <th width="22%" class="text-center">訂單編號</th>
             <th width="21%" class="text-center">訂單價格</th>
             <th width="21%" class="text-center">訂單狀態</th>
-            <th width="21%" class="text-center" v-show="screenWidth < 768">
+            <th width="21%" class="text-center" v-show="screenWidth < 1150">
               下訂時間
             </th>
             <th width="15%" class="text-center">查看</th>
@@ -64,7 +64,7 @@ getOrderListToSix();
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
-            <td class="text-center align-middle" v-show="screenWidth < 768">
+            <td class="text-center align-middle" v-show="screenWidth < 1150">
               {{ order.create_at }}
             </td>
             <td class="text-center align-middle">
