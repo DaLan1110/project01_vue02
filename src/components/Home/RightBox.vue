@@ -50,7 +50,11 @@ getOrderListToSix();
               訂單價格
             </th>
             <th width="21%" class="text-center">訂單狀態</th>
-            <th width="21%" class="text-center" v-show="screenWidth < 1150">
+            <th
+              width="21%"
+              class="text-center"
+              v-show="screenWidth < 1150 && screenWidth >= 800"
+            >
               下訂時間
             </th>
             <th width="15%" class="text-center">查看</th>
@@ -70,7 +74,10 @@ getOrderListToSix();
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
-            <td class="text-center align-middle" v-show="screenWidth < 1150">
+            <td
+              class="text-center align-middle"
+              v-show="screenWidth < 1150 && screenWidth >= 800"
+            >
               {{ order.create_at }}
             </td>
             <td class="text-center align-middle">
