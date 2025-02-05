@@ -6,6 +6,7 @@ import { Doughnut } from "vue-chartjs";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import Chart from "@/components/Home/Chart.vue";
+import ChartToSmall from "@/components/Home/ChartToSmall.vue";
 
 // 註冊 Chart.js 必需的模組
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -160,7 +161,8 @@ onBeforeUnmount(() => {
     <div class="card-body card-body-style-lb">
       <div class="chart-container">
         <!-- <Doughnut id="myChart" :data="chartData" :options="chartOptions" /> -->
-        <Chart v-if="windowWidth > 600"/>
+        <Chart v-if="windowWidth > 600" />
+        <ChartToSmall v-else />
       </div>
     </div>
   </div>
