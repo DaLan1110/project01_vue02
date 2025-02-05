@@ -7,24 +7,24 @@ const orderStore = useOrderStore();
 const { ordersToSix } = storeToRefs(orderStore);
 
 // 監聽螢幕寬度
-// const screenWidth = ref(window.innerWidth);
-// const updateScreenWidth = () => {
-//   screenWidth.value = window.innerWidth;
-// };
+const screenWidth = ref(window.innerWidth);
+const updateScreenWidth = () => {
+  screenWidth.value = window.innerWidth;
+};
 
 // 根據螢幕寬度計算顯示的訂單
-// const filteredOrders = computed(() => {
-//   const maxOrders = screenWidth.value < 1300 ? 3 : 6;
-//   return ordersToSix.value.slice(0, maxOrders);
-// });
+const filteredOrders = computed(() => {
+  const maxOrders = screenWidth.value < 1300 ? 3 : 6;
+  return ordersToSix.value.slice(0, maxOrders);
+});
 
 // 監聽螢幕大小變化
-// onMounted(() => {
-//   window.addEventListener("resize", updateScreenWidth);
-// });
-// onUnmounted(() => {
-//   window.removeEventListener("resize", updateScreenWidth);
-// });
+onMounted(() => {
+  window.addEventListener("resize", updateScreenWidth);
+});
+onUnmounted(() => {
+  window.removeEventListener("resize", updateScreenWidth);
+});
 
 const getOrderListToSix = () => {
   orderStore.getOrdersListToSix();
