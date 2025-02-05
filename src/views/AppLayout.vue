@@ -26,6 +26,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
   display: flex;
   /* width: 100%; */
   height: 100%; /* 使高度隨螢幕大小調整 */
+  overflow: auto; /* 如果內容超過容器，啟用滾動條 */
 }
 
 @media (max-width: 768px) {
