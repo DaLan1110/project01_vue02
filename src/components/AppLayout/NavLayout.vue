@@ -121,7 +121,6 @@ const breadcrumbClass = computed(() => ({
 .work-page {
   padding: 1rem;
   height: 100%;
-  overflow-y: auto; /* 內部滾動 */
   padding-bottom: 120px !important;
 }
 
