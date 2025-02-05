@@ -206,6 +206,13 @@ getOrderListToSix();
   }
 }
 
+@media (max-width: 1235px) {
+  .home-right-card-table thead th:nth-child(2),
+  .home-right-card-table tbody td:nth-child(2) {
+    display: none;
+  }
+}
+
 @media (max-width: 1150px) {
   .card-body-style-rb {
     height: 250px;
