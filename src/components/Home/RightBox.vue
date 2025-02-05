@@ -53,7 +53,7 @@ getOrderListToSix();
             <th
               width="21%"
               class="text-center"
-              v-show="screenWidth < 1150 && screenWidth >= 800"
+              v-show="screenWidth < 1150 && screenWidth >= 850"
             >
               下訂時間
             </th>
