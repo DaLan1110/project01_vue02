@@ -119,6 +119,7 @@ const breadcrumbClass = computed(() => ({
 .work-page {
   padding: 1rem;
   height: 100%;
+  overflow: auto;
 }
 
 .breadcrumb-style {
