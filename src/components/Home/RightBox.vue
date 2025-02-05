@@ -141,38 +141,28 @@ getOrderListToSix();
   .home-right-card-table tbody td:nth-child(4) {
     width: 15%;
   }
-
-  /* .home-right-card-table thead th:nth-child(5),
-  .home-right-card-table tbody td:nth-child(5) {
-    width: 20%;
-  } */
 }
 
 @media (max-width: 1320px) {
-  /* .home-right-card-table thead th:nth-child(1),
+  .home-right-card-table thead th:nth-child(1),
   .home-right-card-table tbody td:nth-child(1) {
-    width: 35%;
+    width: 32%;
   }
 
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
-    width: 25%;
+    width: 26%;
   }
 
   .home-right-card-table thead th:nth-child(3),
   .home-right-card-table tbody td:nth-child(3) {
-    width: 20%;
+    width: 27%;
   }
 
   .home-right-card-table thead th:nth-child(4),
   .home-right-card-table tbody td:nth-child(4) {
-    width: 20%;
-  } */
-
-  /* .home-right-card-table thead th:nth-child(5),
-  .home-right-card-table tbody td:nth-child(5) {
-    width: 20%;
-  } */
+    width: 15%;
+  }
 
   .card-body-style-rb table {
     table-layout: fixed;
