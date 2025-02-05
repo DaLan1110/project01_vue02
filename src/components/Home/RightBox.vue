@@ -7,10 +7,10 @@ const orderStore = useOrderStore();
 const { ordersToSix } = storeToRefs(orderStore);
 
 // 監聽螢幕寬度
-const screenWidth = ref(window.innerWidth);
-const updateScreenWidth = () => {
-  screenWidth.value = window.innerWidth;
-};
+// const screenWidth = ref(window.innerWidth);
+// const updateScreenWidth = () => {
+//   screenWidth.value = window.innerWidth;
+// };
 
 // 根據螢幕寬度計算顯示的訂單
 const filteredOrders = computed(() => {
@@ -19,12 +19,12 @@ const filteredOrders = computed(() => {
 });
 
 // 監聽螢幕大小變化
-onMounted(() => {
-  window.addEventListener("resize", updateScreenWidth);
-});
-onUnmounted(() => {
-  window.removeEventListener("resize", updateScreenWidth);
-});
+// onMounted(() => {
+//   window.addEventListener("resize", updateScreenWidth);
+// });
+// onUnmounted(() => {
+//   window.removeEventListener("resize", updateScreenWidth);
+// });
 
 const getOrderListToSix = () => {
   orderStore.getOrdersListToSix();
@@ -41,12 +41,10 @@ getOrderListToSix();
       <table class="table home-right-card-table mt-1">
         <thead>
           <tr>
-            <th width="35%" class="text-center">訂單編號</th>
-            <th width="25%" class="text-center">訂單價格</th>
-            <th width="25%" class="text-center">訂單狀態</th>
-            <th width="21%" class="text-center" v-show="screenWidth < 768">
-              下訂時間
-            </th>
+            <th width="22%" class="text-center">訂單編號</th>
+            <th width="21%" class="text-center">訂單價格</th>
+            <th width="21%" class="text-center">訂單狀態</th>
+            <th width="21%" class="text-center">下訂時間</th>
             <th width="15%" class="text-center">查看</th>
           </tr>
         </thead>
