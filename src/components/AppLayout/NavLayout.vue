@@ -105,7 +105,7 @@ const breadcrumbClass = computed(() => ({
         <!-- </div> -->
       </div>
     </nav>
-    <div class="work-page" style="margin-top: 120px">
+    <div class="work-page">
       <RouterView />
     </div>
   </div>
@@ -115,14 +115,14 @@ const breadcrumbClass = computed(() => ({
 .naylayout-width {
   width: 100%;
   height: 100vh; /* 讓它填滿整個視窗 */
-  overflow: hidden; /* 禁止整體滾動，只讓 .work-page 滾動 */
+  /* overflow: hidden; */
 }
 
 .work-page {
   padding: 1rem;
   height: 100%;
   overflow-y: auto; /* 內部滾動 */
-  /* padding-bottom: 120px !important; */
+  padding-bottom: 120px !important;
 }
 
 .breadcrumb-style {
