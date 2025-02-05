@@ -45,7 +45,7 @@ getOrderListToSix();
             <th
               width="21%"
               class="text-center"
-              v-show="screenWidth > 1240 || screenWidth < 1150"
+              v-show="screenWidth > 1240 || (screenWidth < 1150 && screenWidth >= 600)"
             >
               訂單價格
             </th>
