@@ -25,9 +25,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", updateScreenWidth);
 });
-// onBeforeUnmount(() => {
-//   window.removeEventListener("resize", updateScreenWidth);
-// });
 
 const getOrderListToSix = () => {
   orderStore.getOrdersListToSix();
@@ -205,7 +202,7 @@ getOrderListToSix();
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1310px) {
   .card-body-style-rb table {
     table-layout: fixed;
     width: 100%;
@@ -217,7 +214,7 @@ getOrderListToSix();
   }
 }
 
-@media (max-width: 1235px) {
+@media (max-width: 1240px) {
   .home-right-card-table thead th:nth-child(2),
   .home-right-card-table tbody td:nth-child(2) {
     display: none;
