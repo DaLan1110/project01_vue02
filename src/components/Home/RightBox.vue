@@ -42,7 +42,11 @@ getOrderListToSix();
         <thead>
           <tr>
             <th width="22%" class="text-center">訂單編號</th>
-            <th width="21%" class="text-center" v-show="screenWidth > 1240">
+            <th
+              width="21%"
+              class="text-center"
+              v-show="screenWidth > 1240 || screenWidth < 768"
+            >
               訂單價格
             </th>
             <th width="21%" class="text-center">訂單狀態</th>
@@ -59,7 +63,10 @@ getOrderListToSix();
             :key="index"
           >
             <td class="text-center align-middle">{{ order.order_number }}</td>
-            <td class="text-center align-middle" v-show="screenWidth > 1240">
+            <td
+              class="text-center align-middle"
+              v-show="screenWidth > 1240 || screenWidth < 768"
+            >
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
