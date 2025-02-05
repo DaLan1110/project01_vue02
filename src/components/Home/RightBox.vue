@@ -59,7 +59,7 @@ getOrderListToSix();
               NT. ${{ order.order_total }}
             </td>
             <td class="text-center align-middle">{{ order.order_state }}</td>
-            <td class="text-center align-middle right-box-show">
+            <td class="text-center align-middle">
               {{ order.create_at }}
             </td>
             <td class="text-center align-middle">
