@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, onBeforeUnmount } from "vue";
 import { storeToRefs } from "pinia";
 import { useOrderStore } from "@/stores/order";
 
@@ -23,6 +23,9 @@ onMounted(() => {
   window.addEventListener("resize", updateScreenWidth);
 });
 onUnmounted(() => {
+  window.removeEventListener("resize", updateScreenWidth);
+});
+onBeforeUnmount(() => {
   window.removeEventListener("resize", updateScreenWidth);
 });
 
