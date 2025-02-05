@@ -114,12 +114,12 @@ const breadcrumbClass = computed(() => ({
 <style>
 .naylayout-width {
   width: 100%;
+  overflow: auto;
 }
 
 .work-page {
   padding: 1rem;
   height: 100%;
-  overflow: auto;
 }
 
 .breadcrumb-style {
