@@ -382,18 +382,11 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 1200px) {
-  .order-table thead th:nth-child(4),
-  .order-table tbody td:nth-child(4),
+  .order-table thead th:nth-child(6),
+  .order-table tbody td:nth-child(6),
   .order-table thead th:nth-child(7),
-  .order-table tbody td:nth-child(7),
-  .order-table thead th:nth-child(9),
-  .order-table tbody td:nth-child(9) {
+  .order-table tbody td:nth-child(7) {
     display: none;
-  }
-
-  .order-table thead th:nth-child(11),
-  .order-table tbody td:nth-child(11) {
-    width: 3%;
   }
 }
 
