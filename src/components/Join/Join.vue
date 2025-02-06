@@ -559,7 +559,7 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 1210px) {
+@media (max-width: 1220px) {
   /* join-1-table */
   .join-1-table thead th:nth-child(4),
   .join-1-table tbody td:nth-child(4) {
