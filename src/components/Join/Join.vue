@@ -322,9 +322,9 @@ onBeforeUnmount(() => {
               <th width="10%" class="text-center">姓名</th>
               <th width="10%" class="text-center">電話</th>
               <th width="15%" class="text-center">電子郵件</th>
-              <th width="39%" class="text-center">地址</th>
+              <th width="35%" class="text-center">地址</th>
               <th width="10%" class="text-center">申請時間</th>
-              <th width="11%" class="text-center">申請</th>
+              <th width="15%" class="text-center">申請</th>
             </tr>
           </thead>
           <tbody v-if="!loading && paginatedFilteredJoins.length > 0">
