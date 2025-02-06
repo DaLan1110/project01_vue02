@@ -559,33 +559,18 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1210px) {
   /* join-1-table */
-  /* .join-1-table thead th:nth-child(5),
-  .join-1-table tbody td:nth-child(5) {
-    width: 33%;
+  .join-1-table thead th:nth-child(4),
+  .join-1-table tbody td:nth-child(4) {
+    display: none;
   }
-
-  .join-1-table thead th:nth-child(7),
-  .join-1-table tbody td:nth-child(7) {
-    width: 9%;
-  }
-
-  .join-1-table thead th:nth-child(8),
-  .join-1-table tbody td:nth-child(8) {
-    width: 8%;
-  } */
 
   /* join-2-table */
-  /* .join-2-table thead th:nth-child(5),
-  .join-2-table tbody td:nth-child(5) {
-    width: 33%;
+  .join-1-table thead th:nth-child(4),
+  .join-1-table tbody td:nth-child(4) {
+    display: none;
   }
-
-  .join-2-table thead th:nth-child(7),
-  .join-2-table tbody td:nth-child(7) {
-    width: 17%;
-  } */
 }
 
 @media (max-width: 1100px) {
