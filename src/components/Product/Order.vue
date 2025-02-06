@@ -391,21 +391,16 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 1000px) {
-  /* .order-table thead th:nth-child(2),
-  .order-table tbody td:nth-child(2),
-  .order-table thead th:nth-child(3),
-  .order-table tbody td:nth-child(3) {
-    width: 6%;
+  .order-table thead th:nth-child(4),
+  .order-table tbody td:nth-child(4),
+  .order-table thead th:nth-child(5),
+  .order-table tbody td:nth-child(5) {
+    width: 12%;
   }
 
-  .order-table thead th:nth-child(6),
-  .order-table tbody td:nth-child(6) {
-    width: 6%;
+  .order-table thead th:nth-child(2),
+  .order-table tbody td:nth-child(2) {
+    width: 14%;
   }
-
-  .order-table thead th:nth-child(11),
-  .order-table tbody td:nth-child(11) {
-    width: 3%;
-  } */
 }
 </style>
