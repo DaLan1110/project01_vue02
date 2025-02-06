@@ -370,10 +370,15 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 1310px) {
-  /* .order-table thead th:nth-child(11),
-  .order-table tbody td:nth-child(11) {
-    width: 3%;
-  } */
+  .order-table thead th:nth-child(2),
+  .order-table tbody td:nth-child(2) {
+    width: 17%;
+  }
+
+  .order-table thead th:nth-child(8),
+  .order-table tbody td:nth-child(8) {
+    width: 10%;
+  }
 }
 
 @media (max-width: 1200px) {
