@@ -535,7 +535,7 @@ onBeforeUnmount(() => {
   }
 } */
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
   .join-1-table thead th:nth-child(3),
   .join-1-table tbody td:nth-child(3) {
     display: none;
