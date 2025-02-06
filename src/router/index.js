@@ -92,7 +92,7 @@ const router = createRouter({
               link: '/company'
             },
             {
-              name: '修改公司人員資料'
+              name: '修改人員資料'
             }
             ]
           },
@@ -112,7 +112,7 @@ const router = createRouter({
               link: '/company'
             },
             {
-              name: '修改個人人員資料'
+              name: '修改人員資料'
             }
             ]
           },
