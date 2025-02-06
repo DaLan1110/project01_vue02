@@ -149,7 +149,7 @@ onUnmounted(() => {
 }
 
 .burger-menu-flexible {
-  overflow: hidden;
+  overflow: visible;
   width: 60px;
   padding-top: 90px;
 }
