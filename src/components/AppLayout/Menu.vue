@@ -149,7 +149,7 @@ onUnmounted(() => {
 }
 
 .burger-menu-flexible {
-  overflow: inherit;
+  overflow: hidden;
   width: 60px;
   padding-top: 90px;
 }
