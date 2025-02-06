@@ -194,12 +194,12 @@ onBeforeUnmount(() => {
               <th width="5%" class="text-center">編號</th>
               <th width="14%" class="text-center">訂單編號</th>
               <th width="10%" class="text-center">訂單會員帳號</th>
-              <th width="10%" class="text-center">訂單會員名稱</th>
+              <!-- <th width="10%" class="text-center">訂單會員名稱</th> -->
               <th width="10%" class="text-center">訂單價格</th>
               <th width="10%" class="text-center">訂單狀態</th>
               <th width="10%" class="text-center">付款方式</th>
               <th width="10%" class="text-center">下訂時間</th>
-              <th width="10%" class="text-center">更新時間</th>
+              <!-- <th width="10%" class="text-center">更新時間</th> -->
               <th width="6%" class="text-center">查看</th>
               <th width="5%" class="text-center">
                 <div class="checkbox-title-style">
@@ -227,14 +227,14 @@ onBeforeUnmount(() => {
               <td class="text-center align-middle">
                 {{ order.member_account }}
               </td>
-              <td class="text-center align-middle">{{ order.member_name }}</td>
+              <!-- <td class="text-center align-middle">{{ order.member_name }}</td> -->
               <td class="text-center align-middle">
                 NT. ${{ order.order_total }}
               </td>
               <td class="text-center align-middle">{{ order.order_state }}</td>
               <td class="text-center align-middle">{{ order.order_pay }}</td>
               <td class="text-center align-middle">{{ order.create_at }}</td>
-              <td class="text-center align-middle">{{ order.update_at }}</td>
+              <!-- <td class="text-center align-middle">{{ order.update_at }}</td> -->
               <td class="text-center align-middle">
                 <RouterLink
                   :to="{ path: 'order/' + order.id + '/data' }"
