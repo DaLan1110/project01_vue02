@@ -372,12 +372,12 @@ onBeforeUnmount(() => {
 @media (max-width: 1250px) {
   .order-table thead th:nth-child(2),
   .order-table tbody td:nth-child(2) {
-    width: 17%;
+    width: 18%;
   }
 
   .order-table thead th:nth-child(9),
   .order-table tbody td:nth-child(9) {
-    width: 10%;
+    width: 9%;
   }
 }
 
