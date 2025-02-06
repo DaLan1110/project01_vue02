@@ -527,12 +527,17 @@ onBeforeUnmount(() => {
   } */
 }
 
-/* @media (max-width: 1250px) {
+@media (max-width: 1250px) {
+  .join-1-table thead th:nth-child(1),
+  .join-1-table tbody td:nth-child(1) {
+    width: 7%;
+  }
+
   .join-1-table thead th:nth-child(5),
   .join-1-table tbody td:nth-child(5) {
     width: 33%;
   }
-} */
+}
 
 @media (max-width: 1200px) {
   /* join-1-table */
