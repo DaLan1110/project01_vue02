@@ -537,11 +537,31 @@ onBeforeUnmount(() => {
   .join-1-table tbody td:nth-child(5) {
     width: 33%;
   }
+
+  .join-1-table thead th:nth-child(8),
+  .join-1-table tbody td:nth-child(8) {
+    width: 10%;
+  }
+
+  .join-2-table thead th:nth-child(1),
+  .join-2-table tbody td:nth-child(1) {
+    width: 7%;
+  }
+
+  .join-2-table thead th:nth-child(5),
+  .join-2-table tbody td:nth-child(5) {
+    width: 30%;
+  }
+
+  .join-2-table thead th:nth-child(8),
+  .join-2-table tbody td:nth-child(8) {
+    width: 10%;
+  }
 }
 
 @media (max-width: 1200px) {
   /* join-1-table */
-  .join-1-table thead th:nth-child(5),
+  /* .join-1-table thead th:nth-child(5),
   .join-1-table tbody td:nth-child(5) {
     width: 33%;
   }
@@ -554,10 +574,10 @@ onBeforeUnmount(() => {
   .join-1-table thead th:nth-child(8),
   .join-1-table tbody td:nth-child(8) {
     width: 8%;
-  }
+  } */
 
   /* join-2-table */
-  .join-2-table thead th:nth-child(5),
+  /* .join-2-table thead th:nth-child(5),
   .join-2-table tbody td:nth-child(5) {
     width: 33%;
   }
@@ -565,7 +585,7 @@ onBeforeUnmount(() => {
   .join-2-table thead th:nth-child(7),
   .join-2-table tbody td:nth-child(7) {
     width: 17%;
-  }
+  } */
 }
 
 @media (max-width: 1100px) {
