@@ -192,16 +192,16 @@ onBeforeUnmount(() => {
           <thead>
             <tr>
               <th width="5%" class="text-center">編號</th>
-              <th width="14%" class="text-center">訂單編號</th>
-              <th width="10%" class="text-center">訂單會員帳號</th>
+              <th width="20%" class="text-center">訂單編號</th>
+              <th width="15%" class="text-center">訂單會員帳號</th>
               <!-- <th width="10%" class="text-center">訂單會員名稱</th> -->
               <th width="10%" class="text-center">訂單價格</th>
               <th width="10%" class="text-center">訂單狀態</th>
               <th width="10%" class="text-center">付款方式</th>
-              <th width="10%" class="text-center">下訂時間</th>
+              <th width="15%" class="text-center">下訂時間</th>
               <!-- <th width="10%" class="text-center">更新時間</th> -->
-              <th width="6%" class="text-center">查看</th>
-              <th width="5%" class="text-center">
+              <th width="8%" class="text-center">查看</th>
+              <th width="7%" class="text-center">
                 <div class="checkbox-title-style">
                   全選
                   <input
@@ -370,11 +370,6 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 1310px) {
-  /* .order-table thead th:nth-child(4),
-  .order-table tbody td:nth-child(4) {
-    width: 8%;
-  }
-
   .order-table thead th:nth-child(5),
   .order-table tbody td:nth-child(5) {
     width: 8%;
@@ -398,7 +393,7 @@ onBeforeUnmount(() => {
   .order-table thead th:nth-child(9),
   .order-table tbody td:nth-child(9) {
     width: 8%;
-  } */
+  }
 }
 
 @media (max-width: 1200px) {
