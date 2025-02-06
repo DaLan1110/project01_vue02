@@ -526,9 +526,26 @@ onBeforeUnmount(() => {
   }
 
   /* join-2-table */
-  .join-2-table thead th:nth-child(1),
-  .join-2-table tbody td:nth-child(1) {
-    width: 6%;
+  .join-2-table thead th:nth-child(5),
+  .join-2-table tbody td:nth-child(5) {
+    width: 28%;
+  }
+
+  .join-2-table thead th:nth-child(6),
+  .join-2-table tbody td:nth-child(6) {
+    width: 12%;
+  }
+}
+
+@media (max-width: 1090px) {
+  .join-1-table thead th:nth-child(3),
+  .join-1-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .join-2-table thead th:nth-child(3),
+  .join-2-table tbody td:nth-child(3) {
+    display: none;
   }
 }
 </style>
