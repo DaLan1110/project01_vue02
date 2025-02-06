@@ -553,9 +553,9 @@ onBeforeUnmount(() => {
     width: 30%;
   }
 
-  .join-2-table thead th:nth-child(8),
-  .join-2-table tbody td:nth-child(8) {
-    width: 10%;
+  .join-2-table thead th:nth-child(7),
+  .join-2-table tbody td:nth-child(7) {
+    width: 18%;
   }
 }
 
