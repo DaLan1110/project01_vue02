@@ -132,13 +132,11 @@ const handleJoin = (id) => {
 
 // 視窗 991px
 const isSmallScreen = ref(window.innerWidth < 992);
-const isSoSmallScreen = ref(window.innerWidth < 768);
 const windowWidth = ref(window.innerWidth);
 
 const updateWindowWidth = () => {
   windowWidth.value = window.innerWidth;
   isSmallScreen.value = window.innerWidth < 992;
-  isSoSmallScreen.value = window.innerWidth < 768;
 };
 
 onMounted(() => {
@@ -195,7 +193,7 @@ onBeforeUnmount(() => {
       <div class="card-body">
         <table
           class="table table-bordered join-1-table"
-          v-if="currentFilter === '加盟' && windowWidth > 768"
+          v-if="currentFilter === '加盟' && windowWidth > 930"
         >
           <thead>
             <tr>
@@ -262,7 +260,7 @@ onBeforeUnmount(() => {
         <!-- 卡片呈現方式 -->
         <div
           class="card-list col-12"
-          v-else-if="currentFilter === '加盟' && windowWidth <= 768"
+          v-else-if="currentFilter === '加盟' && windowWidth <= 930"
         >
           <div v-if="paginatedFilteredJoins.length > 0">
             <div
@@ -314,7 +312,7 @@ onBeforeUnmount(() => {
         <!-- 加盟申請 -->
         <table
           class="table table-bordered join-2-table"
-          v-if="currentFilter === '加盟申請' && windowWidth > 768"
+          v-if="currentFilter === '加盟申請' && windowWidth > 930"
         >
           <thead>
             <tr>
@@ -373,7 +371,7 @@ onBeforeUnmount(() => {
         <!-- 卡片呈現方式 -->
         <div
           class="card-list col-12"
-          v-else-if="currentFilter === '加盟申請' && windowWidth <= 768"
+          v-else-if="currentFilter === '加盟申請' && windowWidth <= 930"
         >
           <div v-if="paginatedFilteredJoins.length > 0">
             <div
@@ -532,33 +530,5 @@ onBeforeUnmount(() => {
   .join-2-table tbody td:nth-child(1) {
     width: 6%;
   }
-}
-
-@media (max-width: 990px) {
-  /* join-1-table */
-  /* .join-1-table thead th:nth-child(4),
-  .join-1-table tbody td:nth-child(4) {
-    display: none;
-  } */
-
-  /* join-2-table */
-  /* .join-2-table thead th:nth-child(4),
-  .join-2-table tbody td:nth-child(4) {
-    display: none;
-  } */
-}
-
-@media (max-width: 850px) {
-  /* join-1-table */
-  /* .join-1-table thead th:nth-child(3),
-  .join-1-table tbody td:nth-child(3) {
-    display: none;
-  } */
-
-  /* join-2-table */
-  /* .join-2-table thead th:nth-child(3),
-  .join-2-table tbody td:nth-child(3) {
-    display: none;
-  } */
 }
 </style>
