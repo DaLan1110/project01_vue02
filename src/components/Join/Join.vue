@@ -203,10 +203,10 @@ onBeforeUnmount(() => {
               <th width="10%" class="text-center">姓名</th>
               <th width="10%" class="text-center">電話</th>
               <th width="15%" class="text-center">電子郵件</th>
-              <th width="39%" class="text-center">地址</th>
+              <th width="35%" class="text-center">地址</th>
               <th width="10%" class="text-center">建立時間</th>
-              <th width="6%" class="text-center">查看</th>
-              <th width="5%" class="text-center">
+              <th width="8%" class="text-center">查看</th>
+              <th width="7%" class="text-center">
                 <div class="checkbox-title-style">
                   全選
                   <input
