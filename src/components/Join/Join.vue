@@ -475,11 +475,9 @@ onBeforeUnmount(() => {
   z-index: 1;
 }
 
-/* .member-cardlist-item strong {
-  display: inline-block;
-  width: 80px;
-  text-align: right;
-} */
+.member-cardlist-item strong {
+  white-space: nowrap;
+}
 
 /* .strong_text_right {
   display: inline-block;
