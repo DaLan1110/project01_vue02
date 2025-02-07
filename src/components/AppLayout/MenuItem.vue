@@ -64,6 +64,8 @@ const menuItemProps = defineProps({
   },
 });
 
+console.log("show", menuItemProps.show);
+
 const showLabel = computed(() => {
   return menuItemProps.menuFlexible ? menuItemProps.depth > 0 : true;
 });
