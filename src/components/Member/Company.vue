@@ -526,6 +526,16 @@ const deleteUser = () => {
 }
 
 @media (max-width: 1250px) {
+  .company-table thead th:nth-child(2),
+  .company-table tbody td:nth-child(2) {
+    width: 12%;
+  }
+
+  .company-table thead th:nth-child(3),
+  .company-table tbody td:nth-child(3) {
+    width: 12%;
+  }
+
   .company-table thead th:nth-child(4),
   .company-table tbody td:nth-child(4) {
     display: none; /* 隱藏第4欄 */
@@ -539,6 +549,16 @@ const deleteUser = () => {
   .company-table thead th:nth-child(7),
   .company-table tbody td:nth-child(7) {
     display: none;
+  }
+
+  .company-table thead th:nth-child(8),
+  .company-table tbody td:nth-child(8) {
+    width: 8%;
+  }
+
+  .company-table thead th:nth-child(9),
+  .company-table tbody td:nth-child(9) {
+    width: 5%;
   }
 }
 
