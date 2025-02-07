@@ -1,8 +1,11 @@
 <script setup>
 import { computed, nextTick, ref } from "vue";
+import { useMenuStore } from "@/stores/menu";
+import { storeToRefs } from "pinia";
 
-// 追蹤目前展開的 menu 項目
-const activeMenuItem = ref(null);
+const menuStore = useMenuStore();
+
+const isOpen = computed(() => menuStore.activeMenu === props.label);
 
 const showChildren = ref(false);
 
@@ -12,29 +15,35 @@ const containerHeight = ref(0);
 
 const containerRef = ref(null);
 
-// const toggleMenu = () => {
-//   isExpand.value = !isExpand.value;
-//   // If the menu item is closed
-//   if (!showChildren.value) {
-//     showChildren.value = true;
-//     nextTick(() => {
-//       containerHeight.value = containerRef.value.scrollHeight + "px";
-//       setTimeout(() => {
-//         containerHeight.value = "fit-content";
-//         containerRef.value.style.overflow = "visible";
-//       }, 300);
-//     });
-//   } else {
-//     containerHeight.value = containerRef.value.scrollHeight + "px";
-//     containerRef.value.style.overflow = "hidden";
-//     setTimeout(() => {
-//       containerHeight.value = 0 + "px";
-//     }, 10);
-//     setTimeout(() => {
-//       showChildren.value = false;
-//     }, 300);
-//   }
-// };
+const toggleMenu = () => {
+  isExpand.value = !isExpand.value;
+  // If the menu item is closed
+  if (!showChildren.value) {
+    showChildren.value = true;
+    nextTick(() => {
+      containerHeight.value = containerRef.value.scrollHeight + "px";
+      setTimeout(() => {
+        containerHeight.value = "fit-content";
+        containerRef.value.style.overflow = "visible";
+      }, 300);
+    });
+  } else {
+    containerHeight.value = containerRef.value.scrollHeight + "px";
+    containerRef.value.style.overflow = "hidden";
+    setTimeout(() => {
+      containerHeight.value = 0 + "px";
+    }, 10);
+    setTimeout(() => {
+      showChildren.value = false;
+    }, 300);
+  }
+};
+
+const toggleSubMenu = () => {
+  if (props.data) {
+    menuStore.toggleSubMenu(props.label);
+  }
+};
 
 const menuItemProps = defineProps({
   label: {
@@ -63,56 +72,6 @@ const menuItemProps = defineProps({
 const showLabel = computed(() => {
   return menuItemProps.menuFlexible ? menuItemProps.depth > 0 : true;
 });
-
-// 切換選單展開/收合
-const toggleMenu = () => {
-  if (activeMenuItem.value === menuItemProps.path) {
-    // 如果目前點擊的選單已展開，則收起
-    closeMenu();
-    activeMenuItem.value = null;
-  } else {
-    // 先關閉已展開的選單，再展開新的
-    if (activeMenuItem.value) {
-      closeMenu(() => {
-        openMenu();
-      });
-    } else {
-      openMenu();
-    }
-    activeMenuItem.value = menuItemProps.path;
-  }
-};
-
-// 展開選單
-const openMenu = () => {
-  showChildren.value = true;
-  isExpand.value = true;
-  nextTick(() => {
-    containerHeight.value = containerRef.value.scrollHeight + "px";
-    setTimeout(() => {
-      containerHeight.value = "fit-content";
-      containerRef.value.style.overflow = "visible";
-    }, 300);
-  });
-};
-
-// 收起選單
-const closeMenu = (callback) => {
-  if (showChildren.value) {
-    containerHeight.value = containerRef.value.scrollHeight + "px";
-    containerRef.value.style.overflow = "hidden";
-    setTimeout(() => {
-      containerHeight.value = "0px";
-    }, 10);
-    setTimeout(() => {
-      showChildren.value = false;
-      isExpand.value = false;
-      if (callback) callback();
-    }, 300);
-  } else if (callback) {
-    callback();
-  }
-};
 </script>
 
 <template>
@@ -122,9 +81,9 @@ const closeMenu = (callback) => {
         class="menu-item-label"
         :class="{ 'menu-children-btn-style': menuFlexible }"
         :style="{ paddingLeft: depth * 30 + 20 + 'px' }"
-        @click="toggleMenu"
+        @click="toggleSubMenu"
       >
-        <div class="left menu-item-icon-row" @click.stop="toggleMenu">
+        <div class="left menu-item-icon-row">
           <i v-if="icon" class="material-icons menu-item-icon-left">{{
             menuItemProps.icon
           }}</i>
