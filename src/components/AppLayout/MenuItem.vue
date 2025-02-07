@@ -61,6 +61,7 @@ const menuItemProps = defineProps({
   },
   show: {
     type: Boolean,
+    default: false,
   },
 });
 
