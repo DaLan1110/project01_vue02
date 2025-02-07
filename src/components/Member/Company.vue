@@ -211,9 +211,7 @@ const deleteUser = () => {
                     <option selected disabled>請選擇</option>
                     <option
                       value="老闆"
-                      v-if="
-                        user_data.permissions === item.permissions
-                      "
+                      v-if="user_data.permissions === item.permissions"
                     >
                       老闆
                     </option>
@@ -230,10 +228,11 @@ const deleteUser = () => {
                 {{ item.update_at }}
               </td>
               <td
-                class="middle-style"
+                class="text-center align-middle"
                 v-if="user_data.permissions !== '員工'"
                 data-label="修改"
               >
+                <!-- class="middle-style" -->
                 <RouterLink
                   v-if="!(item.permissions === '老闆')"
                   :to="{ path: 'company/' + item.id + '/update' }"
