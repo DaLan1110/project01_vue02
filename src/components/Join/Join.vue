@@ -380,22 +380,30 @@ onBeforeUnmount(() => {
               :key="index"
             >
               <p class="member-cardlist-item">
-                <strong>姓名:</strong>{{ join.join_us_name }}
+                <strong>姓名</strong><strong class="strong_text_right">:</strong
+                >{{ join.join_us_name }}
               </p>
               <p class="member-cardlist-item">
-                <strong>電話:</strong>{{ join.join_us_phone }}
+                <strong>電話</strong><strong class="strong_text_right">:</strong
+                >{{ join.join_us_phone }}
               </p>
               <p class="member-cardlist-item">
-                <strong>電子郵件:</strong>{{ join.join_us_email }}
+                <strong>電子郵件</strong
+                ><strong class="strong_text_right">:</strong
+                >{{ join.join_us_email }}
               </p>
               <p class="member-cardlist-item">
-                <strong>地址:</strong>{{ join.join_us_address }}
+                <strong>地址</strong><strong class="strong_text_right">:</strong
+                >{{ join.join_us_address }}
               </p>
               <p class="member-cardlist-item">
-                <strong>申請時間:</strong>{{ join.create_at }}
+                <strong>申請時間</strong
+                ><strong class="strong_text_right">:</strong
+                >{{ join.create_at }}
               </p>
               <p class="member-cardlist-item">
-                <strong>申請:</strong>
+                <strong>申請</strong
+                ><strong class="strong_text_right">:</strong>
                 <button
                   class="edit-btn-style add-user-btn ms-2"
                   @click="handleJoin(join.id)"
@@ -467,7 +475,13 @@ onBeforeUnmount(() => {
   z-index: 1;
 }
 
-.member-cardlist-item strong {
+/* .member-cardlist-item strong {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+} */
+
+.strong_text_right {
   display: inline-block;
   width: 80px; /* 固定寬度，讓標題對齊 */
   text-align: right; /* 讓標題靠右對齊 */
