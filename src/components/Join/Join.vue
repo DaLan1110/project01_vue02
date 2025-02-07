@@ -535,5 +535,15 @@ onBeforeUnmount(() => {
   .join-1-table tbody td:nth-child(6) {
     width: 13%;
   }
+
+  .join-2-table thead th:nth-child(5),
+  .join-2-table tbody td:nth-child(5) {
+    width: 27%;
+  }
+
+  .join-2-table thead th:nth-child(6),
+  .join-2-table tbody td:nth-child(6) {
+    width: 13%;
+  }
 }
 </style>
