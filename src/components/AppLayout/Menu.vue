@@ -112,6 +112,7 @@ onUnmounted(() => {
         :data="item.children"
         :menuFlexible="menuStore.menuFlexible"
         :show="item.show"
+        @toggle="toggleMenu(item)"
       />
       <i
         class="material-icons burger-menu-style"

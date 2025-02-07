@@ -34,13 +34,13 @@ const containerRef = ref(null);
 // };
 
 const toggleMenu = (menuItem) => {
-  // 如果當前菜單已經開啟，則關閉它
+  // 如果当前菜单项已经展开，则关闭它
   menuItem.show = !menuItem.show;
 
-  // 如果開啟該菜單，則關閉其他菜單
+  // 如果展开该菜单项，关闭其他菜单
   if (menuItem.show) {
-    // 在切換菜單狀態時，將其他的菜單項目收起
-    menuItemProps.forEach((item) => {
+    // 在切换菜单状态时，收起其他的菜单项
+    menuItemProps.data.forEach((item) => {
       if (item !== menuItem) {
         item.show = false;
       }
@@ -139,6 +139,7 @@ const showLabel = computed(() => {
         :path="item.path"
         :data="item.children"
         :menuFlexible="menuFlexible"
+        :show="item.show"
       />
     </div>
   </div>
