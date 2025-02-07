@@ -346,7 +346,7 @@ onBeforeUnmount(() => {
                   同意
                 </RouterLink> -->
                 <button
-                  class="edit-btn-style add-user-btn ms-2"
+                  class="edit-btn-style add-user-btn"
                   @click="handleJoin(join.id)"
                 >
                   同意
