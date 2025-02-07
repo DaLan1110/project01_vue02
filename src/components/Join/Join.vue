@@ -380,22 +380,22 @@ onBeforeUnmount(() => {
               :key="index"
             >
               <p class="member-cardlist-item">
-                <strong>姓名:</strong>{{ join.join_us_name }}
+                <strong>姓名 :</strong>{{ join.join_us_name }}
               </p>
               <p class="member-cardlist-item">
-                <strong>電話:</strong>{{ join.join_us_phone }}
+                <strong>電話 :</strong>{{ join.join_us_phone }}
               </p>
               <p class="member-cardlist-item">
-                <strong>電子郵件:</strong>{{ join.join_us_email }}
+                <strong>電子郵件 :</strong>{{ join.join_us_email }}
               </p>
               <p class="member-cardlist-item">
-                <strong>地址:</strong>{{ join.join_us_address }}
+                <strong>地址 :</strong>{{ join.join_us_address }}
               </p>
               <p class="member-cardlist-item">
-                <strong>申請時間:</strong>{{ join.create_at }}
+                <strong>申請時間 :</strong>{{ join.create_at }}
               </p>
               <p class="member-cardlist-item">
-                <strong>申請:</strong>
+                <strong>申請 :</strong>
                 <button
                   class="edit-btn-style add-user-btn ms-2"
                   @click="handleJoin(join.id)"
