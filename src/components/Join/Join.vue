@@ -471,11 +471,11 @@ onBeforeUnmount(() => {
   white-space: nowrap;
 }
 
-/* .strong_text_right {
-  display: inline-block;
-  width: 80px;
-  text-align: right;
-} */
+.member-cardlist-item span {
+  flex: 1; /* 讓 span 內容填滿剩餘空間 */
+  align-self: flex-start; /* 讓內容對齊左上角 */
+  word-break: break-word; /* 長內容換行 */
+}
 
 @media (max-width: 1250px) {
   .join-1-table thead th:nth-child(1),
