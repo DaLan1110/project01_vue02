@@ -15,13 +15,38 @@ const containerHeight = ref(0);
 
 const containerRef = ref(null);
 
+// const toggleMenu = () => {
+//   isExpand.value = !isExpand.value;
+//   // If the menu item is closed
+//   if (!showChildren.value) {
+//     showChildren.value = true;
+//     nextTick(() => {
+//       containerHeight.value = containerRef.value.scrollHeight + "px";
+//       setTimeout(() => {
+//         containerHeight.value = "fit-content";
+//         containerRef.value.style.overflow = "visible";
+//       }, 300);
+//     });
+//   } else {
+//     containerHeight.value = containerRef.value.scrollHeight + "px";
+//     containerRef.value.style.overflow = "hidden";
+//     setTimeout(() => {
+//       containerHeight.value = 0 + "px";
+//     }, 10);
+//     setTimeout(() => {
+//       showChildren.value = false;
+//     }, 300);
+//   }
+// };
+
 const toggleMenu = () => {
   isExpand.value = !isExpand.value;
-  // If the menu item is closed
+
   if (!showChildren.value) {
     showChildren.value = true;
     nextTick(() => {
       containerHeight.value = containerRef.value.scrollHeight + "px";
+      containerRef.value.style.overflow = "hidden";
       setTimeout(() => {
         containerHeight.value = "fit-content";
         containerRef.value.style.overflow = "visible";
@@ -29,10 +54,12 @@ const toggleMenu = () => {
     });
   } else {
     containerHeight.value = containerRef.value.scrollHeight + "px";
-    containerRef.value.style.overflow = "hidden";
-    setTimeout(() => {
-      containerHeight.value = 0 + "px";
-    }, 10);
+    containerRef.value.style.overflow = "hidden"; // 確保 overflow 設定
+    nextTick(() => {
+      setTimeout(() => {
+        containerHeight.value = "0px";
+      }, 10);
+    });
     setTimeout(() => {
       showChildren.value = false;
     }, 300);
@@ -104,7 +131,7 @@ const showLabel = computed(() => {
     <div
       class="menu-items-container"
       :class="{ 'menu-children-item-flexible-style': menuFlexible }"
-      v-show="showChildren"
+      v-if="showChildren"
       ref="containerRef"
       :style="{ height: containerHeight }"
     >
