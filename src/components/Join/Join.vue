@@ -481,11 +481,11 @@ onBeforeUnmount(() => {
   text-align: right;
 } */
 
-.strong_text_right {
+/* .strong_text_right {
   display: inline-block;
-  width: 80px; /* 固定寬度，讓標題對齊 */
-  text-align: right; /* 讓標題靠右對齊 */
-}
+  width: 80px;
+  text-align: right;
+} */
 
 @media (max-width: 1250px) {
   .join-1-table thead th:nth-child(1),
