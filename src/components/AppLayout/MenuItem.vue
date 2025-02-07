@@ -1,13 +1,7 @@
 <script setup>
 import { computed, nextTick, ref } from "vue";
-import { useMenuStore } from "@/stores/menu";
-import { storeToRefs } from "pinia";
-
-const menuStore = useMenuStore();
 
 const showChildren = ref(false);
-
-showChildren.value = menuItemProps.show;
 
 const isExpand = ref(false);
 
@@ -15,11 +9,43 @@ const containerHeight = ref(0);
 
 const containerRef = ref(null);
 
-const toggleMenu = () => {
-  isExpand.value = !isExpand.value;
-  // If the menu item is closed
-  if (!showChildren.value) {
-    showChildren.value = true;
+// const toggleMenu = () => {
+//   isExpand.value = !isExpand.value;
+//   // If the menu item is closed
+//   if (!showChildren.value) {
+//     showChildren.value = true;
+//     nextTick(() => {
+//       containerHeight.value = containerRef.value.scrollHeight + "px";
+//       setTimeout(() => {
+//         containerHeight.value = "fit-content";
+//         containerRef.value.style.overflow = "visible";
+//       }, 300);
+//     });
+//   } else {
+//     containerHeight.value = containerRef.value.scrollHeight + "px";
+//     containerRef.value.style.overflow = "hidden";
+//     setTimeout(() => {
+//       containerHeight.value = 0 + "px";
+//     }, 10);
+//     setTimeout(() => {
+//       showChildren.value = false;
+//     }, 300);
+//   }
+// };
+
+const toggleMenu = (menuItem) => {
+  // 如果當前菜單已經開啟，則關閉它
+  menuItem.show = !menuItem.show;
+
+  // 如果開啟該菜單，則關閉其他菜單
+  if (menuItem.show) {
+    // 在切換菜單狀態時，將其他的菜單項目收起
+    menuItemProps.forEach((item) => {
+      if (item !== menuItem) {
+        item.show = false;
+      }
+    });
+
     nextTick(() => {
       containerHeight.value = containerRef.value.scrollHeight + "px";
       setTimeout(() => {
@@ -33,9 +59,6 @@ const toggleMenu = () => {
     setTimeout(() => {
       containerHeight.value = 0 + "px";
     }, 10);
-    setTimeout(() => {
-      showChildren.value = false;
-    }, 300);
   }
 };
 
@@ -81,7 +104,7 @@ const showLabel = computed(() => {
         class="menu-item-label"
         :class="{ 'menu-children-btn-style': menuFlexible }"
         :style="{ paddingLeft: depth * 30 + 20 + 'px' }"
-        @click="toggleMenu"
+        @click="toggleMenu(menuItemProps)"
       >
         <div class="left menu-item-icon-row">
           <i v-if="icon" class="material-icons menu-item-icon-left">{{
@@ -103,7 +126,7 @@ const showLabel = computed(() => {
     <div
       class="menu-items-container"
       :class="{ 'menu-children-item-flexible-style': menuFlexible }"
-      v-if="showChildren"
+      v-if="menuItemProps.show"
       ref="containerRef"
       :style="{ height: containerHeight }"
     >
