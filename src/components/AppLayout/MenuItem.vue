@@ -13,44 +13,11 @@ const containerHeight = ref(0);
 
 const containerRef = ref(null);
 
-// const toggleMenu = () => {
-//   isExpand.value = !isExpand.value;
-//   // If the menu item is closed
-//   if (!showChildren.value) {
-//     showChildren.value = true;
-//     nextTick(() => {
-//       containerHeight.value = containerRef.value.scrollHeight + "px";
-//       setTimeout(() => {
-//         containerHeight.value = "fit-content";
-//         containerRef.value.style.overflow = "visible";
-//       }, 300);
-//     });
-//   } else {
-//     containerHeight.value = containerRef.value.scrollHeight + "px";
-//     containerRef.value.style.overflow = "hidden";
-//     setTimeout(() => {
-//       containerHeight.value = 0 + "px";
-//     }, 10);
-//     setTimeout(() => {
-//       showChildren.value = false;
-//     }, 300);
-//   }
-// };
-
 const toggleMenu = () => {
   isExpand.value = !isExpand.value;
-
-  // 如果選單尚未展開
+  // If the menu item is closed
   if (!showChildren.value) {
     showChildren.value = true;
-
-    // 關閉其他選單
-    menuStore.menuItems.forEach((item) => {
-      if (item.label !== menuItemProps.label) {
-        item.showChildren = false;
-      }
-    });
-
     nextTick(() => {
       containerHeight.value = containerRef.value.scrollHeight + "px";
       setTimeout(() => {
@@ -69,6 +36,39 @@ const toggleMenu = () => {
     }, 300);
   }
 };
+
+// const toggleMenu = () => {
+//   isExpand.value = !isExpand.value;
+
+//   // 如果選單尚未展開
+//   if (!showChildren.value) {
+//     showChildren.value = true;
+
+//     // 關閉其他選單
+//     menuStore.menuItems.forEach((item) => {
+//       if (item.label !== menuItemProps.label) {
+//         item.showChildren = false;
+//       }
+//     });
+
+//     nextTick(() => {
+//       containerHeight.value = containerRef.value.scrollHeight + "px";
+//       setTimeout(() => {
+//         containerHeight.value = "fit-content";
+//         containerRef.value.style.overflow = "visible";
+//       }, 300);
+//     });
+//   } else {
+//     containerHeight.value = containerRef.value.scrollHeight + "px";
+//     containerRef.value.style.overflow = "hidden";
+//     setTimeout(() => {
+//       containerHeight.value = 0 + "px";
+//     }, 10);
+//     setTimeout(() => {
+//       showChildren.value = false;
+//     }, 300);
+//   }
+// };
 
 const toggleSubMenu = () => {
   if (menuItemProps.data) {
