@@ -563,9 +563,9 @@ const deleteUser = () => {
 }
 
 @media (max-width: 945px) {
-  .company-table thead th:nth-child(1),
+  /* .company-table thead th:nth-child(1),
   .company-table tbody td:nth-child(1) {
-    width: 5%; /* 第一列的寬度調整為 5% */
+    width: 5%;
   }
 
   .company-table thead th:nth-child(2),
@@ -581,6 +581,6 @@ const deleteUser = () => {
   .company-table thead th:nth-child(4),
   .company-table tbody td:nth-child(4) {
     width: 10%;
-  }
+  } */
 }
 </style>
