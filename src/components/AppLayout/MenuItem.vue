@@ -1,11 +1,12 @@
 <script setup>
 import { computed, nextTick, ref } from "vue";
 import { useMenuStore } from "@/stores/menu";
-import { storeToRefs } from "pinia";
 
 const menuStore = useMenuStore();
 
 const showChildren = ref(false);
+
+showChildren.value = menuItemProps.show || false;
 
 const isExpand = ref(false);
 
@@ -36,39 +37,6 @@ const toggleMenu = () => {
     }, 300);
   }
 };
-
-// const toggleMenu = () => {
-//   isExpand.value = !isExpand.value;
-
-//   // 如果選單尚未展開
-//   if (!showChildren.value) {
-//     showChildren.value = true;
-
-//     // 關閉其他選單
-//     menuStore.menuItems.forEach((item) => {
-//       if (item.label !== menuItemProps.label) {
-//         item.showChildren = false;
-//       }
-//     });
-
-//     nextTick(() => {
-//       containerHeight.value = containerRef.value.scrollHeight + "px";
-//       setTimeout(() => {
-//         containerHeight.value = "fit-content";
-//         containerRef.value.style.overflow = "visible";
-//       }, 300);
-//     });
-//   } else {
-//     containerHeight.value = containerRef.value.scrollHeight + "px";
-//     containerRef.value.style.overflow = "hidden";
-//     setTimeout(() => {
-//       containerHeight.value = 0 + "px";
-//     }, 10);
-//     setTimeout(() => {
-//       showChildren.value = false;
-//     }, 300);
-//   }
-// };
 
 const menuItemProps = defineProps({
   label: {
