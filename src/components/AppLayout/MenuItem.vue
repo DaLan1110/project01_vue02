@@ -68,14 +68,18 @@ const showLabel = computed(() => {
 const toggleMenu = () => {
   if (activeMenuItem.value === menuItemProps.path) {
     // 如果目前點擊的選單已展開，則收起
-    activeMenuItem.value = null;
     closeMenu();
+    activeMenuItem.value = null;
   } else {
-    // 先收起已展開的選單
-    activeMenuItem.value = menuItemProps.path;
-    closeMenu(() => {
+    // 先關閉已展開的選單，再展開新的
+    if (activeMenuItem.value) {
+      closeMenu(() => {
+        openMenu();
+      });
+    } else {
       openMenu();
-    });
+    }
+    activeMenuItem.value = menuItemProps.path;
   }
 };
 
