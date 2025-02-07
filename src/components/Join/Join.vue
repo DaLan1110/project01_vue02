@@ -525,7 +525,7 @@ onBeforeUnmount(() => {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .join-1-table thead th:nth-child(5),
   .join-1-table tbody td:nth-child(5) {
     width: 27%;
