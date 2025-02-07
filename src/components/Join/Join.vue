@@ -269,22 +269,22 @@ onBeforeUnmount(() => {
               :key="index"
             >
               <p class="member-cardlist-item">
-                <strong>姓名:</strong><span>{{ join.join_us_name }}</span>
+                <strong>姓名 :</strong><span>{{ join.join_us_name }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>電話:</strong><span>{{ join.join_us_phone }}</span>
+                <strong>電話 :</strong><span>{{ join.join_us_phone }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>電子郵件:</strong><span>{{ join.join_us_email }}</span>
+                <strong>電子郵件 :</strong><span>{{ join.join_us_email }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>地址:</strong><span>{{ join.join_us_address }}</span>
+                <strong>地址 :</strong><span>{{ join.join_us_address }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>建立時間:</strong><span>{{ join.create_at }}</span>
+                <strong>建立時間 :</strong><span>{{ join.create_at }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>查看:</strong>
+                <strong>查看 :</strong>
                 <RouterLink
                   :to="{ path: 'address/' + join.id + '/data' }"
                   class="edit-btn-style add-user-btn"
