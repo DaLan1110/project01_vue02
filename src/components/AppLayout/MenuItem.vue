@@ -1,6 +1,9 @@
 <script setup>
 import { computed, nextTick, ref } from "vue";
 
+// 追蹤目前展開的 menu 項目
+const activeMenuItem = ref(null);
+
 const showChildren = ref(false);
 
 const isExpand = ref(false);
@@ -9,29 +12,29 @@ const containerHeight = ref(0);
 
 const containerRef = ref(null);
 
-const toggleMenu = () => {
-  isExpand.value = !isExpand.value;
-  // If the menu item is closed
-  if (!showChildren.value) {
-    showChildren.value = true;
-    nextTick(() => {
-      containerHeight.value = containerRef.value.scrollHeight + "px";
-      setTimeout(() => {
-        containerHeight.value = "fit-content";
-        containerRef.value.style.overflow = "visible";
-      }, 300);
-    });
-  } else {
-    containerHeight.value = containerRef.value.scrollHeight + "px";
-    containerRef.value.style.overflow = "hidden";
-    setTimeout(() => {
-      containerHeight.value = 0 + "px";
-    }, 10);
-    setTimeout(() => {
-      showChildren.value = false;
-    }, 300);
-  }
-};
+// const toggleMenu = () => {
+//   isExpand.value = !isExpand.value;
+//   // If the menu item is closed
+//   if (!showChildren.value) {
+//     showChildren.value = true;
+//     nextTick(() => {
+//       containerHeight.value = containerRef.value.scrollHeight + "px";
+//       setTimeout(() => {
+//         containerHeight.value = "fit-content";
+//         containerRef.value.style.overflow = "visible";
+//       }, 300);
+//     });
+//   } else {
+//     containerHeight.value = containerRef.value.scrollHeight + "px";
+//     containerRef.value.style.overflow = "hidden";
+//     setTimeout(() => {
+//       containerHeight.value = 0 + "px";
+//     }, 10);
+//     setTimeout(() => {
+//       showChildren.value = false;
+//     }, 300);
+//   }
+// };
 
 const menuItemProps = defineProps({
   label: {
@@ -60,6 +63,52 @@ const menuItemProps = defineProps({
 const showLabel = computed(() => {
   return menuItemProps.menuFlexible ? menuItemProps.depth > 0 : true;
 });
+
+// 切換選單展開/收合
+const toggleMenu = () => {
+  if (activeMenuItem.value === menuItemProps.path) {
+    // 如果目前點擊的選單已展開，則收起
+    activeMenuItem.value = null;
+    closeMenu();
+  } else {
+    // 先收起已展開的選單
+    activeMenuItem.value = menuItemProps.path;
+    closeMenu(() => {
+      openMenu();
+    });
+  }
+};
+
+// 展開選單
+const openMenu = () => {
+  showChildren.value = true;
+  isExpand.value = true;
+  nextTick(() => {
+    containerHeight.value = containerRef.value.scrollHeight + "px";
+    setTimeout(() => {
+      containerHeight.value = "fit-content";
+      containerRef.value.style.overflow = "visible";
+    }, 300);
+  });
+};
+
+// 收起選單
+const closeMenu = (callback) => {
+  if (showChildren.value) {
+    containerHeight.value = containerRef.value.scrollHeight + "px";
+    containerRef.value.style.overflow = "hidden";
+    setTimeout(() => {
+      containerHeight.value = "0px";
+    }, 10);
+    setTimeout(() => {
+      showChildren.value = false;
+      isExpand.value = false;
+      if (callback) callback();
+    }, 300);
+  } else if (callback) {
+    callback();
+  }
+};
 </script>
 
 <template>
@@ -71,7 +120,7 @@ const showLabel = computed(() => {
         :style="{ paddingLeft: depth * 30 + 20 + 'px' }"
         @click="toggleMenu"
       >
-        <div class="left menu-item-icon-row">
+        <div class="left menu-item-icon-row" @click.stop="toggleMenu">
           <i v-if="icon" class="material-icons menu-item-icon-left">{{
             menuItemProps.icon
           }}</i>
