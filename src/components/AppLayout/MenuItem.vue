@@ -9,43 +9,11 @@ const containerHeight = ref(0);
 
 const containerRef = ref(null);
 
-// const toggleMenu = () => {
-//   isExpand.value = !isExpand.value;
-//   // If the menu item is closed
-//   if (!showChildren.value) {
-//     showChildren.value = true;
-//     nextTick(() => {
-//       containerHeight.value = containerRef.value.scrollHeight + "px";
-//       setTimeout(() => {
-//         containerHeight.value = "fit-content";
-//         containerRef.value.style.overflow = "visible";
-//       }, 300);
-//     });
-//   } else {
-//     containerHeight.value = containerRef.value.scrollHeight + "px";
-//     containerRef.value.style.overflow = "hidden";
-//     setTimeout(() => {
-//       containerHeight.value = 0 + "px";
-//     }, 10);
-//     setTimeout(() => {
-//       showChildren.value = false;
-//     }, 300);
-//   }
-// };
-
-const toggleMenu = (menuItem) => {
-  // 如果当前菜单项已经展开，则关闭它
-  menuItem.show = !menuItem.show;
-
-  // 如果展开该菜单项，关闭其他菜单
-  if (menuItem.show) {
-    // 在切换菜单状态时，收起其他的菜单项
-    menuItemProps.data.forEach((item) => {
-      if (item !== menuItem) {
-        item.show = false;
-      }
-    });
-
+const toggleMenu = () => {
+  isExpand.value = !isExpand.value;
+  // If the menu item is closed
+  if (!showChildren.value) {
+    showChildren.value = true;
     nextTick(() => {
       containerHeight.value = containerRef.value.scrollHeight + "px";
       setTimeout(() => {
@@ -59,6 +27,9 @@ const toggleMenu = (menuItem) => {
     setTimeout(() => {
       containerHeight.value = 0 + "px";
     }, 10);
+    setTimeout(() => {
+      showChildren.value = false;
+    }, 300);
   }
 };
 
@@ -84,13 +55,7 @@ const menuItemProps = defineProps({
   menuFlexible: {
     type: Boolean,
   },
-  show: {
-    type: Boolean,
-    default: false,
-  },
 });
-
-console.log("show", menuItemProps.show);
 
 const showLabel = computed(() => {
   return menuItemProps.menuFlexible ? menuItemProps.depth > 0 : true;
@@ -104,7 +69,7 @@ const showLabel = computed(() => {
         class="menu-item-label"
         :class="{ 'menu-children-btn-style': menuFlexible }"
         :style="{ paddingLeft: depth * 30 + 20 + 'px' }"
-        @click="toggleMenu(menuItemProps)"
+        @click="toggleMenu"
       >
         <div class="left menu-item-icon-row">
           <i v-if="icon" class="material-icons menu-item-icon-left">{{
@@ -126,7 +91,7 @@ const showLabel = computed(() => {
     <div
       class="menu-items-container"
       :class="{ 'menu-children-item-flexible-style': menuFlexible }"
-      v-if="menuItemProps.show"
+      v-show="showChildren"
       ref="containerRef"
       :style="{ height: containerHeight }"
     >
@@ -139,7 +104,6 @@ const showLabel = computed(() => {
         :path="item.path"
         :data="item.children"
         :menuFlexible="menuFlexible"
-        :show="item.show"
       />
     </div>
   </div>

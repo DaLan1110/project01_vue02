@@ -21,7 +21,6 @@ const menuTree = ref([
   {
     label: "成員",
     icon: "group",
-    show: false,
     children: [
       {
         label: "公司",
@@ -36,7 +35,6 @@ const menuTree = ref([
   {
     label: "產品",
     icon: "inventory_2",
-    show: false,
     children: [
       {
         label: "商品",
@@ -51,7 +49,6 @@ const menuTree = ref([
   {
     label: "加盟",
     icon: "storefront",
-    show: false,
     children: [
       {
         label: "加盟地址",
@@ -111,8 +108,6 @@ onUnmounted(() => {
         :path="item.path"
         :data="item.children"
         :menuFlexible="menuStore.menuFlexible"
-        :show="item.show"
-        @toggle="toggleMenu(item)"
       />
       <i
         class="material-icons burger-menu-style"
