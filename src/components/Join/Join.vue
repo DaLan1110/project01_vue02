@@ -352,8 +352,7 @@ onBeforeUnmount(() => {
                   同意
                 </button>
                 <button
-                  class="edit-btn-style add-user-btn ms-2 mt-2"
-                  :class="[]"
+                  class="edit-btn-style add-user-btn ms-2"
                   @click="handleDeleteJoin(join.id)"
                 >
                   取消
