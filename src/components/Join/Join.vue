@@ -269,19 +269,19 @@ onBeforeUnmount(() => {
               :key="index"
             >
               <p class="member-cardlist-item">
-                <strong>姓名:</strong>{{ join.join_us_name }}
+                <strong>姓名:</strong><span>{{ join.join_us_name }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>電話:</strong>{{ join.join_us_phone }}
+                <strong>電話:</strong><span>{{ join.join_us_phone }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>電子郵件:</strong>{{ join.join_us_email }}
+                <strong>電子郵件:</strong><span>{{ join.join_us_email }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>地址:</strong>{{ join.join_us_address }}
+                <strong>地址:</strong><span>{{ join.join_us_address }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>建立時間:</strong>{{ join.create_at }}
+                <strong>建立時間:</strong><span>{{ join.create_at }}</span>
               </p>
               <p class="member-cardlist-item">
                 <strong>查看:</strong>
@@ -380,30 +380,22 @@ onBeforeUnmount(() => {
               :key="index"
             >
               <p class="member-cardlist-item">
-                <strong>姓名</strong><strong class="strong_text_right">:</strong
-                >{{ join.join_us_name }}
+                <strong>姓名:</strong>{{ join.join_us_name }}
               </p>
               <p class="member-cardlist-item">
-                <strong>電話</strong><strong class="strong_text_right">:</strong
-                >{{ join.join_us_phone }}
+                <strong>電話:</strong>{{ join.join_us_phone }}
               </p>
               <p class="member-cardlist-item">
-                <strong>電子郵件</strong
-                ><strong class="strong_text_right">:</strong
-                >{{ join.join_us_email }}
+                <strong>電子郵件:</strong>{{ join.join_us_email }}
               </p>
               <p class="member-cardlist-item">
-                <strong>地址</strong><strong class="strong_text_right">:</strong
-                >{{ join.join_us_address }}
+                <strong>地址:</strong>{{ join.join_us_address }}
               </p>
               <p class="member-cardlist-item">
-                <strong>申請時間</strong
-                ><strong class="strong_text_right">:</strong
-                >{{ join.create_at }}
+                <strong>申請時間:</strong>{{ join.create_at }}
               </p>
               <p class="member-cardlist-item">
-                <strong>申請</strong
-                ><strong class="strong_text_right">:</strong>
+                <strong>申請:</strong>
                 <button
                   class="edit-btn-style add-user-btn ms-2"
                   @click="handleJoin(join.id)"
