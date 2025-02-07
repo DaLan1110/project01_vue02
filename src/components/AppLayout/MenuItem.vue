@@ -7,6 +7,8 @@ const menuStore = useMenuStore();
 
 const showChildren = ref(false);
 
+showChildren.value = menuItemProps.show;
+
 const isExpand = ref(false);
 
 const containerHeight = ref(0);
