@@ -182,7 +182,7 @@ onBeforeUnmount(() => {
               </td>
               <td class="text-center align-middle">{{ item.create_at }}</td>
               <td class="text-center align-middle">{{ item.update_at }}</td>
-              <td class="middle-style">
+              <td class="text-center align-middle">
                 <RouterLink
                   :to="{ path: 'member/' + item.memberId + '/update' }"
                   class="edit-btn-style add-user-btn me-2"
