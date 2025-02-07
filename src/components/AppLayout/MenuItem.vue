@@ -1,6 +1,7 @@
 <script setup>
 import { computed, nextTick, ref } from "vue";
 import { useMenuStore } from "@/stores/menu";
+import { storeToRefs } from "pinia";
 
 const menuStore = useMenuStore();
 
@@ -56,9 +57,6 @@ const menuItemProps = defineProps({
     type: Array,
   },
   menuFlexible: {
-    type: Boolean,
-  },
-  show: {
     type: Boolean,
   },
 });
