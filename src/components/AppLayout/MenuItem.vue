@@ -59,6 +59,9 @@ const menuItemProps = defineProps({
   menuFlexible: {
     type: Boolean,
   },
+  show: {
+    type: Boolean,
+  },
 });
 
 const showLabel = computed(() => {
