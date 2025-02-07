@@ -467,6 +467,12 @@ onBeforeUnmount(() => {
   z-index: 1;
 }
 
+.member-cardlist-item strong {
+  display: inline-block;
+  width: 80px; /* 固定寬度，讓標題對齊 */
+  text-align: right; /* 讓標題靠右對齊 */
+}
+
 @media (max-width: 1250px) {
   .join-1-table thead th:nth-child(1),
   .join-1-table tbody td:nth-child(1) {
