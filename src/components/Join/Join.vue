@@ -380,19 +380,19 @@ onBeforeUnmount(() => {
               :key="index"
             >
               <p class="member-cardlist-item">
-                <strong>姓名 :</strong>{{ join.join_us_name }}
+                <strong>姓名 :</strong><span>{{ join.join_us_name }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>電話 :</strong>{{ join.join_us_phone }}
+                <strong>電話 :</strong><span>{{ join.join_us_phone }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>電子郵件 :</strong>{{ join.join_us_email }}
+                <strong>電子郵件 :</strong><span>{{ join.join_us_email }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>地址 :</strong>{{ join.join_us_address }}
+                <strong>地址 :</strong><span>{{ join.join_us_address }}</span>
               </p>
               <p class="member-cardlist-item">
-                <strong>申請時間 :</strong>{{ join.create_at }}
+                <strong>申請時間 :</strong><span>{{ join.create_at }}</span>
               </p>
               <p class="member-cardlist-item">
                 <strong>申請 :</strong>
@@ -472,10 +472,10 @@ onBeforeUnmount(() => {
 }
 
 .member-cardlist-item span {
-  flex: 1; /* 讓 span 佔據剩餘空間 */
-  display: block; /* 讓 span 生效 */
-  text-align: left; /* 強制文字靠左 */
-  word-break: break-word; /* 讓長文字換行 */
+  flex: 1;
+  display: block;
+  text-align: left;
+  word-break: break-word;
 }
 
 @media (max-width: 1250px) {
