@@ -472,9 +472,10 @@ onBeforeUnmount(() => {
 }
 
 .member-cardlist-item span {
-  flex: 1; /* 讓 span 內容填滿剩餘空間 */
-  align-self: flex-start; /* 讓內容對齊左上角 */
-  word-break: break-word; /* 長內容換行 */
+  flex: 1; /* 讓 span 佔據剩餘空間 */
+  display: block; /* 讓 span 生效 */
+  text-align: left; /* 強制文字靠左 */
+  word-break: break-word; /* 讓長文字換行 */
 }
 
 @media (max-width: 1250px) {
