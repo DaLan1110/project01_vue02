@@ -40,8 +40,9 @@ const toggleMenu = () => {
 };
 
 const toggleSubMenu = () => {
-  if (props.data) {
-    menuStore.toggleSubMenu(props.label);
+  if (menuItemProps.data) {
+    menuStore.toggleSubMenu(menuItemProps.label);
+    toggleMenu(); // 這裡加上 toggleMenu()，讓展開/收起動畫正常運作
   }
 };
 
