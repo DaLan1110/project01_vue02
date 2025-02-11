@@ -184,29 +184,22 @@ const onInputBlur = (e, inputText) => {
 
 const isFormValid = computed(() => {
   // 確保 newProductData 存在並且所有屬性都有值
-  // watch(
-  //   () => [
-  //     product.value.product_name
-  //   ],
-  //   ([newSweet, newIce, newAddress, newAdd], [oldIce, oldAddress]) => {
-  //     console.log(newSweet, newIce, newAddress, newAdd);
-  //     product.value.product_sweetness = selectedSweetness.value;
-  //     product.value.product_ice = selectedIce.value;
-  //     product.value.product_address = selectedAddress.value;
-  //     product.value.product_add = selectedAdd.value;
-  //   }
-  // );
+  watch(
+    () => [product.value.product_name],
+    ([newName]) => {
+      console.log(newName);
+    }
+  );
 
   watch(
     () => [
-      product.value.product_name,
       selectedSweetness.value,
       selectedIce.value,
       selectedAddress.value,
       selectedAdd.value,
     ],
-    ([newName, newSweet, newIce, newAddress, newAdd], [oldIce, oldAddress]) => {
-      console.log(newName, newSweet, newIce, newAddress, newAdd);
+    ([newSweet, newIce, newAddress, newAdd], [oldIce, oldAddress]) => {
+      console.log(newSweet, newIce, newAddress, newAdd);
       product.value.product_sweetness = selectedSweetness.value;
       product.value.product_ice = selectedIce.value;
       product.value.product_address = selectedAddress.value;
