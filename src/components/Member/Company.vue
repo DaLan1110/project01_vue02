@@ -232,36 +232,38 @@ const deleteUser = () => {
                 v-if="user_data.permissions !== '員工'"
                 data-label="修改"
               >
-                <!-- class="middle-style" -->
-                <RouterLink
-                  v-if="!(item.permissions === '老闆')"
-                  :to="{ path: 'company/' + item.id + '/update' }"
-                  class="edit-btn-style add-user-btn me-2"
-                  >修改</RouterLink
-                >
-                <RouterLink
-                  v-else-if="user_data.permissions === '老闆'"
-                  :to="{ path: 'company/' + item.id + '/update' }"
-                  class="edit-btn-style add-user-btn me-2"
-                  >修改</RouterLink
-                >
-                <button
-                  v-else
-                  class="edit-btn-style add-user-btn me-2"
-                  disabled
-                >
-                  修改
-                </button>
-                <button
-                  class="edit-btn-style add-user-btn"
-                  v-if="
-                    user_data.permissions === '老闆' &&
-                    item.permissions !== '老闆'
-                  "
-                  @click="saveHandle(item.userId, item.permissions)"
-                >
-                  儲存
-                </button>
+                <div class="company-button-container">
+                  <!-- class="middle-style" -->
+                  <RouterLink
+                    v-if="!(item.permissions === '老闆')"
+                    :to="{ path: 'company/' + item.id + '/update' }"
+                    class="edit-btn-style add-user-btn me-2"
+                    >修改</RouterLink
+                  >
+                  <RouterLink
+                    v-else-if="user_data.permissions === '老闆'"
+                    :to="{ path: 'company/' + item.id + '/update' }"
+                    class="edit-btn-style add-user-btn me-2"
+                    >修改</RouterLink
+                  >
+                  <button
+                    v-else
+                    class="edit-btn-style add-user-btn company-button-gap"
+                    disabled
+                  >
+                    修改
+                  </button>
+                  <button
+                    class="edit-btn-style add-user-btn"
+                    v-if="
+                      user_data.permissions === '老闆' &&
+                      item.permissions !== '老闆'
+                    "
+                    @click="saveHandle(item.userId, item.permissions)"
+                  >
+                    儲存
+                  </button>
+                </div>
               </td>
               <td
                 class="text-center align-middle"
@@ -502,6 +504,10 @@ const deleteUser = () => {
   writing-mode: unset; /* 確保文字水平方向 */
 }
 
+.company-button-gap {
+  margin-inline-end: 8px;
+}
+
 @media (max-width: 1500px) {
   .company-table thead th:nth-child(1),
   .company-table tbody td:nth-child(1) {
@@ -558,6 +564,12 @@ const deleteUser = () => {
   .company-table thead th:nth-child(9),
   .company-table tbody td:nth-child(9) {
     width: 5%;
+  }
+}
+
+@media (max-width: 991px) {
+  .company-button-gap {
+    margin-inline-end: 0px;
   }
 }
 
