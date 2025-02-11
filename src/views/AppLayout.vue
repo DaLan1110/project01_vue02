@@ -18,9 +18,9 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
   font-family: "Fira sans", sans-serif;
 }
 
-.menulayout-move {
+/* .menulayout-move {
   height: 100vh;
-}
+} */
 
 .app {
   display: flex;
