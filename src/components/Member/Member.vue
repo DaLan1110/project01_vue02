@@ -186,7 +186,7 @@ onBeforeUnmount(() => {
                 <div class="member-button-container">
                   <RouterLink
                     :to="{ path: 'member/' + item.memberId + '/update' }"
-                    class="edit-btn-style add-user-btn"
+                    class="edit-btn-style add-user-btn member-button-gap"
                     >修改</RouterLink
                   >
                   <button
@@ -398,6 +398,10 @@ onBeforeUnmount(() => {
   writing-mode: unset; /* 確保文字水平方向 */
 }
 
+.member-button-gap {
+  margin-inline-start: 8px;
+}
+
 @media (max-width: 1510px) {
   .member-table thead th:nth-child(1),
   .member-table tbody td:nth-child(1) {
@@ -484,6 +488,10 @@ onBeforeUnmount(() => {
     display: flex;
     flex-direction: column; /* 让按钮垂直排列 */
     gap: 10px; /* 按钮之间的间距 */
+  }
+
+  .member-button-gap {
+    margin-inline-start: 0px;
   }
 }
 </style>
