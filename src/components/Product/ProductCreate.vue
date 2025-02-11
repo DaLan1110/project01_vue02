@@ -189,7 +189,8 @@ const isFormValid = computed(() => {
     !newProductData.value.product_classify ||
     !newProductData.value.product_sweetness ||
     !newProductData.value.product_ice ||
-    !newProductData.value.product_address
+    !newProductData.value.product_address ||
+    !newProductData.value.product_img
   ) {
     return false; // 當任一屬性不存在時返回 false
   }
