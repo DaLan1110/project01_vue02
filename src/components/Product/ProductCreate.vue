@@ -129,6 +129,7 @@ const errors = ref({});
 const handleAvatarUpdate = ({ name, data }) => {
   tempImageUrl.value = data; // 可以將數據保存到本地狀態
   tempImageUrlName.value = name;
+  newProductData.value.product_img = name;
   console.log("文件名字:", name);
   console.log("文件數據:", data); // 可以看到文件的 Data URL
   // 可以繼續上船數據到服務器或處理器
@@ -194,6 +195,12 @@ const isFormValid = computed(() => {
   ) {
     return false; // 當任一屬性不存在時返回 false
   }
+
+  // 檢查是否有圖片，確保 product_img 有值
+  if (!newProductData.value.product_img) {
+    return false; // 如果沒有圖片資料則返回 false
+  }
+
   const {
     product_name,
     product_price,
