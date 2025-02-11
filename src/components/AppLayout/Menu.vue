@@ -161,6 +161,7 @@ onUnmounted(() => {
   width: 60px;
   padding: 10px;
   transition: all 0.3s ease;
+  margin-top: 0 !important;
 }
 
 .logo-flexible .font-logo-style {
