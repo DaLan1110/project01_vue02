@@ -152,11 +152,11 @@ const breadcrumbClass = computed(() => ({
   display: none;
 }
 
-@media (min-width: 1150px) {
+/* @media (min-width: 1150px) {
   .naylayout-width {
-    overflow: hidden; /* 768px 以上時設置 overflow: hidden */
+    overflow: hidden;
   }
-}
+} */
 
 @media (max-width: 1150px) {
   .naylayout-width {
