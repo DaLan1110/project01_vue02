@@ -190,7 +190,6 @@ const isFormValid = computed(() => {
       selectedIce.value,
       selectedAddress.value,
       selectedAdd.value,
-      product.value.product_name,
     ],
     ([newSweet, newIce, newAddress, newAdd], [oldIce, oldAddress]) => {
       console.log(newSweet, newIce, newAddress, newAdd);
