@@ -186,6 +186,7 @@ const isFormValid = computed(() => {
   // 確保 newProductData 存在並且所有屬性都有值
   watch(
     () => [
+      product.value.product_name,
       selectedSweetness.value,
       selectedIce.value,
       selectedAddress.value,
