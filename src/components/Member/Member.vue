@@ -399,7 +399,7 @@ onBeforeUnmount(() => {
 }
 
 .member-button-gap {
-  margin-inline-start: 8px;
+  margin-inline-end: 8px;
 }
 
 @media (max-width: 1510px) {
@@ -491,7 +491,7 @@ onBeforeUnmount(() => {
   }
 
   .member-button-gap {
-    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 }
 </style>
