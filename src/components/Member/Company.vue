@@ -571,6 +571,12 @@ const deleteUser = () => {
   .company-button-gap {
     margin-inline-end: 0px;
   }
+
+  .company-button-container {
+    display: flex;
+    flex-direction: column; /* 让按钮垂直排列 */
+    gap: 10px; /* 按钮之间的间距 */
+  }
 }
 
 @media (max-width: 945px) {
