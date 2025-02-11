@@ -119,7 +119,6 @@ const breadcrumbClass = computed(() => ({
 
 .work-page {
   padding: 1rem;
-  height: 100%;
   padding-bottom: 120px !important;
 }
 
