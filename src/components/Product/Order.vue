@@ -409,7 +409,7 @@ onBeforeUnmount(() => {
 
 @media (max-width: 600px) {
   .order-delete-btn-position {
-    bottom: 100%;
+    bottom: 60%;
   }
 }
 </style>
