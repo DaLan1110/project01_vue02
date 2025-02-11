@@ -186,7 +186,7 @@ onBeforeUnmount(() => {
                 <div class="member-button-container">
                   <RouterLink
                     :to="{ path: 'member/' + item.memberId + '/update' }"
-                    class="edit-btn-style add-user-btn me-2"
+                    class="edit-btn-style add-user-btn"
                     >修改</RouterLink
                   >
                   <button
