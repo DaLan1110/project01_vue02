@@ -69,7 +69,7 @@ export const useOrderStore = defineStore('orderStore', () => {
                 },
             });
 
-            console.log("刪除成功:", response.data);
+            console.log("刪除成功:", response);
             alert("刪除成功！");
             await getOrdersList();
         } catch (error) {
