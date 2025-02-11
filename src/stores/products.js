@@ -351,6 +351,7 @@ export const useProductStore = defineStore('productStore', () => {
             console.log("資料已更新成功");
             console.log(product);
             alert(response.data.message);
+            await getOneProductData(routePathId);
         } catch (error) {
             // 錯誤處理邏輯不變
             if (error.response) {
