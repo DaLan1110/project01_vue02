@@ -114,7 +114,7 @@ const breadcrumbClass = computed(() => ({
 <style>
 .naylayout-width {
   width: 100%;
-  height: 100vh; /* 讓它填滿整個視窗 */
+  height: auto;
 }
 
 .work-page {
