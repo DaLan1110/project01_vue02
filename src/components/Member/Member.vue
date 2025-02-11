@@ -183,22 +183,24 @@ onBeforeUnmount(() => {
               <td class="text-center align-middle">{{ item.create_at }}</td>
               <td class="text-center align-middle">{{ item.update_at }}</td>
               <td class="text-center align-middle">
-                <RouterLink
-                  :to="{ path: 'member/' + item.memberId + '/update' }"
-                  class="edit-btn-style add-user-btn me-2"
-                  >修改</RouterLink
-                >
-                <button
-                  class="edit-btn-style add-user-btn"
-                  @click="
-                    updateMemberPermissions(
-                      item.memberId,
-                      item.member_permissions
-                    )
-                  "
-                >
-                  儲存
-                </button>
+                <div class="member-button-container">
+                  <RouterLink
+                    :to="{ path: 'member/' + item.memberId + '/update' }"
+                    class="edit-btn-style add-user-btn me-2"
+                    >修改</RouterLink
+                  >
+                  <button
+                    class="edit-btn-style add-user-btn"
+                    @click="
+                      updateMemberPermissions(
+                        item.memberId,
+                        item.member_permissions
+                      )
+                    "
+                  >
+                    儲存
+                  </button>
+                </div>
               </td>
               <td class="text-center align-middle">
                 <input
@@ -474,6 +476,14 @@ onBeforeUnmount(() => {
   .member-table thead th:nth-child(2),
   .member-table tbody td:nth-child(2) {
     width: 11%;
+  }
+}
+
+@media (max-width: 991px) {
+  .member-button-container {
+    display: flex;
+    flex-direction: column; /* 让按钮垂直排列 */
+    gap: 10px; /* 按钮之间的间距 */
   }
 }
 </style>
