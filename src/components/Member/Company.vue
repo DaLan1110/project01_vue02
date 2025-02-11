@@ -237,13 +237,13 @@ const deleteUser = () => {
                   <RouterLink
                     v-if="!(item.permissions === '老闆')"
                     :to="{ path: 'company/' + item.id + '/update' }"
-                    class="edit-btn-style add-user-btn me-2"
+                    class="edit-btn-style add-user-btn company-button-gap"
                     >修改</RouterLink
                   >
                   <RouterLink
                     v-else-if="user_data.permissions === '老闆'"
                     :to="{ path: 'company/' + item.id + '/update' }"
-                    class="edit-btn-style add-user-btn me-2"
+                    class="edit-btn-style add-user-btn company-button-gap"
                     >修改</RouterLink
                   >
                   <button
