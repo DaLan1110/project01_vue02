@@ -352,7 +352,24 @@ export const useProductStore = defineStore('productStore', () => {
             console.log(product);
             alert(response.data.message);
         } catch (error) {
-            console.error("更新資料時發生錯誤:", error);
+            // 錯誤處理邏輯不變
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+                if (error.response.data && error.response.data.message) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("發生錯誤，請稍後再試。");
+                }
+            } else if (error.request) {
+                console.log(error.request);
+                alert("請求未收到回應。");
+            } else {
+                console.log("Error", error.message);
+                alert("發生錯誤，請稍後再試。");
+            }
+            throw error;
         }
     }
 
