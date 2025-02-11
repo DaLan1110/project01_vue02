@@ -188,6 +188,7 @@ const isFormValid = computed(() => {
     () => [product.value.product_name],
     ([newName]) => {
       console.log(newName);
+      product.value.product_name = product.value.product_name;
     }
   );
 
