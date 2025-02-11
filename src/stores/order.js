@@ -86,6 +86,41 @@ export const useOrderStore = defineStore('orderStore', () => {
         }
     };
 
+    // 更新 訂單狀態 完成訂單
+    const updateCompleteOrderState = async (orderId) => {
+        try {
+            const updateData = ({
+                orderState: '已完成'
+            });
+            const response = await axios.put(`https://project01-back-end.onrender.com/orders/updateOrderState/${orderId}`, updateData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                },
+            });
+            // 處理成功響應
+            console.log('訂單狀態更新成功:', response.data);
+            alert('完成訂單');
+
+            // 重新獲取訂單資料以確保狀態同步
+            await getOneOrderData(orderId);
+        } catch (error) {
+            // 處理錯誤
+            console.error('更新訂單狀態時發生錯誤:', error);
+            let errorMsg = '發生錯誤，請稍後再試。';
+
+            if (error.response) {
+                if (error.response.data && error.response.data.message) {
+                    errorMsg = error.response.data.message;
+                }
+            } else if (error.request) {
+                errorMsg = '請求未收到回應。';
+            }
+
+            alert(errorMsg);
+        }
+    }
+
     // 取得前 5 筆資料
     const ordersToSix = ref([])
     const getOrdersListToSix = async () => {
@@ -133,6 +168,8 @@ export const useOrderStore = defineStore('orderStore', () => {
         order, getOneOrderData,
         // 刪除訂單
         selectedIds, deleteSelectedOrders,
+        // 更新 訂單狀態 完成訂單
+        updateCompleteOrderState,
         // 取得前 6 筆資料
         ordersToSix, getOrdersListToSix,
         // 取得前 5 筆熱門商品

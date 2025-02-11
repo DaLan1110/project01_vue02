@@ -33,6 +33,13 @@ const getOneOrderData = () => {
 };
 getOneOrderData();
 
+const completeOrderState = () => {
+  const confirmation = confirm("確定要完成訂單嗎?");
+  if (confirmation) {
+    orderStore.updateCompleteOrderState(routePathId);
+  }
+};
+
 // 視窗 910px
 const windowWidth = ref(window.innerWidth);
 
@@ -266,6 +273,13 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="d-flex justify-content-end order-btnto910">
+          <button
+            v-if="order.order_state === '已收款'"
+            class="btn-style add-btn me-3"
+            @click="completeOrderState"
+          >
+            完成訂單
+          </button>
           <RouterLink to="/order" class="btn-style cancel-btn">返回</RouterLink>
         </div>
       </div>
@@ -312,6 +326,19 @@ onBeforeUnmount(() => {
 
 .orderdata-cardto910 p:last-child {
   border-bottom: none; /* 最後一個 p 元素去掉底部邊框 */
+}
+
+.add-btn {
+  border: 1px solid #6c6c6c;
+  color: #272727;
+  background-color: #ffffff;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.add-btn:hover {
+  color: #ffffff;
+  background-color: #272727;
 }
 
 @media (max-width: 1325px) {
