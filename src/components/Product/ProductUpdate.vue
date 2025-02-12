@@ -210,10 +210,10 @@ const isFormValid = computed(() => {
     !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
-    !product.value.product_classify ||
-    !selectedSweetness.value ||
-    !selectedIce.value ||
-    !selectedAddress.value
+    !product.value.product_classify 
+    // !selectedSweetness.value ||
+    // !selectedIce.value ||
+    // !selectedAddress.value
   ) {
     return false; // 當任一屬性不存在時返回 false
   }
