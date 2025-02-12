@@ -185,18 +185,23 @@ const onInputBlur = (e, inputText) => {
 // 確保 newProductData 存在並且所有屬性都有值
 watch(
   () => [
+    product.value.product_name
+  ],
+  ([newName]) => {
+    console.log(newName);
+  }
+);
+
+
+watch(
+  () => [
     selectedSweetness.value,
     selectedIce.value,
     selectedAddress.value,
     selectedAdd.value,
-    product.value?.product_name,
   ],
-  ([newSweet, newIce, newAddress, newAdd, newName]) => {
-    console.log(newSweet, newIce, newAddress, newAdd, newName);
-    // 確保 product.value 存在
-    if (!product.value) {
-      product.value = {};
-    }
+  ([newSweet, newIce, newAddress, newAdd]) => {
+    console.log(newSweet, newIce, newAddress, newAdd);
     product.value.product_sweetness = selectedSweetness.value;
     product.value.product_ice = selectedIce.value;
     product.value.product_address = selectedAddress.value;
