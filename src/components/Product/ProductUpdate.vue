@@ -183,15 +183,9 @@ const onInputBlur = (e, inputText) => {
 };
 
 // 確保 newProductData 存在並且所有屬性都有值
-watch(
-  () => [
-    product.value.product_name
-  ],
-  ([newName]) => {
-    console.log(newName);
-  }
-);
-
+watch(product, (newVal) => {
+  console.log("product 變更:", newVal);
+});
 
 watch(
   () => [
