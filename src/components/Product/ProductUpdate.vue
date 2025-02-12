@@ -189,30 +189,15 @@ watch(
     selectedIce.value,
     selectedAddress.value,
     selectedAdd.value,
+    product.value.product_name,
   ],
-  ([newSweet, newIce, newAddress, newAdd], [oldIce, oldAddress]) => {
-    console.log(newSweet, newIce, newAddress, newAdd);
+  ([newSweet, newIce, newAddress, newAdd, newName]) => {
+    console.log(newSweet, newIce, newAddress, newAdd, newName);
     product.value.product_sweetness = selectedSweetness.value;
     product.value.product_ice = selectedIce.value;
     product.value.product_address = selectedAddress.value;
     product.value.product_add = selectedAdd.value;
   }
-);
-
-watch(
-  [product, selectedSweetness, selectedIce, selectedAddress],
-  () => {
-    isFormValid.value =
-      product.value &&
-      product.value.product_name &&
-      product.value.product_price &&
-      product.value.product_exhibit &&
-      product.value.product_classify &&
-      selectedSweetness.value &&
-      selectedIce.value &&
-      selectedAddress.value;
-  },
-  { deep: true }
 );
 
 const isFormValid = computed(() => {
