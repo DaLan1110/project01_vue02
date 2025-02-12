@@ -161,7 +161,6 @@ handleProductDataById();
 const handleUpdateProductData = async () => {
   await productStore.updateProductData(routePathId);
   await productStore.getOneProductData(routePathId);
-  productStore.initSelected();
 };
 
 // hook
@@ -182,11 +181,6 @@ const onInputBlur = (e, inputText) => {
     ? (errors.value[inputText] = inputErrors)
     : (errors.value[inputText] = null);
 };
-
-// 確保 newProductData 存在並且所有屬性都有值
-watch(product, (newVal) => {
-  console.log("product 變更:", newVal);
-});
 
 watch(
   () => [
@@ -210,7 +204,7 @@ const isFormValid = computed(() => {
     !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
-    !product.value.product_classify 
+    !product.value.product_classify
     // !selectedSweetness.value ||
     // !selectedIce.value ||
     // !selectedAddress.value
