@@ -161,6 +161,7 @@ handleProductDataById();
 const handleUpdateProductData = async () => {
   await productStore.updateProductData(routePathId);
   await productStore.getOneProductData(routePathId);
+  productStore.initSelected();
 };
 
 // hook
