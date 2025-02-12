@@ -189,10 +189,14 @@ watch(
     selectedIce.value,
     selectedAddress.value,
     selectedAdd.value,
-    product.value.product_name,
+    product.value?.product_name,
   ],
   ([newSweet, newIce, newAddress, newAdd, newName]) => {
     console.log(newSweet, newIce, newAddress, newAdd, newName);
+    // 確保 product.value 存在
+    if (!product.value) {
+      product.value = {};
+    }
     product.value.product_sweetness = selectedSweetness.value;
     product.value.product_ice = selectedIce.value;
     product.value.product_address = selectedAddress.value;
