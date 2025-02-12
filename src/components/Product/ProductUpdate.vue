@@ -161,7 +161,7 @@ handleProductDataById();
 const handleUpdateProductData = async () => {
   await productStore.updateProductData(routePathId);
   await productStore.getOneProductData(routePathId);
-  // productStore.initSelected();
+  productStore.initSelected();
 };
 
 // hook
@@ -184,9 +184,9 @@ const onInputBlur = (e, inputText) => {
 };
 
 // 確保 newProductData 存在並且所有屬性都有值
-watch(product, (newVal) => {
-  console.log("product 變更:", newVal);
-});
+// watch(product, (newVal) => {
+//   console.log("product 變更:", newVal);
+// });
 
 watch(
   () => [
