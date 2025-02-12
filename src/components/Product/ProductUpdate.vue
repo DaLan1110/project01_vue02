@@ -161,6 +161,7 @@ handleProductDataById();
 const handleUpdateProductData = async () => {
   await productStore.updateProductData(routePathId);
   await productStore.getOneProductData(routePathId);
+  productStore.initSelected();
 };
 
 // hook
@@ -204,7 +205,7 @@ const isFormValid = computed(() => {
     !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
-    !product.value.product_classify
+    !product.value.product_classify 
     // !selectedSweetness.value ||
     // !selectedIce.value ||
     // !selectedAddress.value
