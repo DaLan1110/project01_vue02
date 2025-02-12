@@ -160,7 +160,7 @@ handleProductDataById();
 // 更新產品資料
 const handleUpdateProductData = async () => {
   await productStore.updateProductData(routePathId);
-  productStore.getOneProductData(routePathId);
+  await productStore.getOneProductData(routePathId);
 };
 
 // hook
@@ -206,7 +206,7 @@ watch(
 const isFormValid = computed(() => {
   if (
     !product.value ||
-    // !product.value.product_name ||
+    !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
     !product.value.product_classify ||
