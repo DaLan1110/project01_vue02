@@ -205,8 +205,8 @@ watch(
 
 const isFormValid = computed(() => {
   if (
-    // !product.value ||
-    !product.value.product_name ||
+    !product.value ||
+    // !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
     !product.value.product_classify ||
