@@ -129,7 +129,7 @@ export const useProductStore = defineStore('productStore', () => {
                 const randomFileName = `${generateRandomString(10)}.${fileExtension}`; // 10 為隨機字符長度
 
                 const file = new File([blob], randomFileName, {
-                    type: "image/png",
+                    type: `image/${fileExtension}`,
                 }); // 創建文件對象
 
                 productFilename = `${randomFileName}`;
@@ -157,7 +157,7 @@ export const useProductStore = defineStore('productStore', () => {
 
 
                 const formData = new FormData();
-                formData.append("product", file);
+                formData.append("image", file);
 
                 // try {
                 //     const uploadResponse = await axios.post(
@@ -190,7 +190,6 @@ export const useProductStore = defineStore('productStore', () => {
                     );
 
                     console.log("產品圖上傳成功:", uploadResponse.data.filename);
-
 
                 } catch (uploadError) {
                     console.error("上傳產品圖時發生錯誤:", uploadError);
