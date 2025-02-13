@@ -9,10 +9,10 @@ const propsImg = defineProps({
 
 const imgAvatarUrl = computed(() => {
   const avatar = propsImg.img_avatar;
-  const path = propsImg.img_path;
+  // const path = propsImg.img_path;
   if (avatar) {
     // 確保圖片路徑是正確的
-    return new URL(`${path}${avatar}`, import.meta.url).href;
+    return new URL(`${avatar}`, import.meta.url).href;
   }
   // 如果没有頭像，返回一个默認圖片或空字符串
   return ""; // 可以换成一個默認圖片 URL

@@ -22,7 +22,7 @@ const updateWindowWidth = () => {
 
 const loading = ref(true);
 const selectAll = ref(false); // 用於控制「全選」狀態
-const img_path = "https://project01-back-end.onrender.com/img/product/";
+// const img_path = "https://project01-back-end.onrender.com/img/product/";
 
 // 分頁
 const paginatedMembers = ref({});
@@ -157,7 +157,6 @@ onBeforeUnmount(() => {
               </td>
               <td class="text-center align-middle">
                 <AddImgProduct
-                  :img_path="img_path"
                   :img_avatar="product.product_img"
                   v-if="product.product_img"
                 />
