@@ -137,7 +137,7 @@ export const useProductStore = defineStore('productStore', () => {
 
                 try {
                     const uploadResponse = await axios.post(
-                        "https://project01-back-end.onrender.com/uploadImg/uploadImg",
+                        "https://project01-back-end.onrender.com/uploadImg/uploadImgToProduct",
                         formData,
                         {
                             headers: {
@@ -229,7 +229,7 @@ export const useProductStore = defineStore('productStore', () => {
                     // 2. 刪除圖檔（如果存在且不為空）
                     if (publicIdToImg && publicIdToImg.trim() !== "") {
                         try {
-                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImage/${publicIdToImg}`);
+                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToProduct/${publicIdToImg}`);
                             console.log("圖檔已刪除:", productFilename);
                         } catch (error) {
                             console.error(`刪除產品圖示失敗，ID: ${Id}, 頭像: ${productFilename}`, error);
@@ -301,7 +301,7 @@ export const useProductStore = defineStore('productStore', () => {
                 // 刪除舊的圖檔（如果存在且不為空）
                 if (publicIdToImg && publicIdToImg.trim() !== "") {
                     try {
-                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImage/${publicIdToImg}`);
+                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToProduct/${publicIdToImg}`);
                         console.log("舊圖檔已刪除:", oldProductFilename);
                     } catch (error) {
                         console.error("刪除舊圖檔時發生錯誤:", error);
@@ -325,7 +325,7 @@ export const useProductStore = defineStore('productStore', () => {
                 formData.append("image", file);
 
                 const uploadResponse = await axios.post(
-                    "https://project01-back-end.onrender.com/uploadImg/uploadImg",
+                    "https://project01-back-end.onrender.com/uploadImg/uploadImgToProduct",
                     formData,
                     {
                         headers: {
