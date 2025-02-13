@@ -159,9 +159,28 @@ export const useProductStore = defineStore('productStore', () => {
                 const formData = new FormData();
                 formData.append("product", file);
 
+                // try {
+                //     const uploadResponse = await axios.post(
+                //         "https://project01-back-end.onrender.com/products/uploadProductImg",
+                //         formData,
+                //         {
+                //             headers: {
+                //                 "Content-Type": "multipart/form-data",
+                //             },
+                //         }
+                //     );
+
+                //     console.log("產品圖上傳成功:", uploadResponse.data.filename);
+
+
+                // } catch (uploadError) {
+                //     console.error("上傳產品圖時發生錯誤:", uploadError);
+                //     throw new Error("產品圖上傳失敗"); // 拋出錯誤以終止後續操作
+                // }
+
                 try {
                     const uploadResponse = await axios.post(
-                        "https://project01-back-end.onrender.com/products/uploadProductImg",
+                        "https://project01-back-end.onrender.com/uploadImg/uploadImg",
                         formData,
                         {
                             headers: {
