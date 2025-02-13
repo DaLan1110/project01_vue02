@@ -293,7 +293,8 @@ export const useProductStore = defineStore('productStore', () => {
 
                 const publicIdToImg = oldProductFilename
                     .split("/")          // 先按 "/" 切割
-                    .pop()                // 取得最後一段（即檔名和副檔名）
+                    .slice(-2)           // 取最後兩段（資料夾 + 檔名）
+                    .join("/")           // 用 "/" 重新組合
                     .replace(/\.[^.]+$/, ""); // 移除副檔名
 
                 console.log('publicIdToImg', publicIdToImg);
