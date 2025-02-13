@@ -139,7 +139,7 @@ const {
   selectedAddress,
 } = storeToRefs(productStore);
 
-const img_path = "https://project01-back-end.onrender.com/img/product/";
+// const img_path = "https://project01-back-end.onrender.com/img/product/";
 const errors = ref({});
 
 const handleAvatarUpdate = ({ name, data }) => {
@@ -210,7 +210,7 @@ const isFormValid = computed(() => {
     !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
-    !product.value.product_classify 
+    !product.value.product_classify
     // !selectedSweetness.value ||
     // !selectedIce.value ||
     // !selectedAddress.value
@@ -265,7 +265,6 @@ onBeforeUnmount(() => {
       >
         <div class="col-6 col-xl-5">
           <AddImgProductUpdate
-            :img_path="img_path"
             :img_avatar="product.product_img"
             @updateAvatar="handleAvatarUpdate"
           />

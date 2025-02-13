@@ -4,7 +4,7 @@ import { ref, computed } from "vue";
 // 接收來自父元件的 props
 const propsImg = defineProps({
   img_avatar: String, // 父元件會傳入 img_avatar
-  img_path: String, // 父元件會傳入 img_path
+  // img_path: String, // 父元件會傳入 img_path
 });
 
 const imgAvatarUrl = computed(() => {
