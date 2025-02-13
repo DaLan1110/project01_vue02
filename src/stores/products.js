@@ -189,7 +189,7 @@ export const useProductStore = defineStore('productStore', () => {
                         }
                     );
 
-                    console.log("產品圖上傳成功:", uploadResponse.data.filename);
+                    console.log("產品圖上傳成功:", uploadResponse.data.data.imageUrl);
 
                 } catch (uploadError) {
                     console.error("上傳產品圖時發生錯誤:", uploadError);
