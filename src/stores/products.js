@@ -218,11 +218,18 @@ export const useProductStore = defineStore('productStore', () => {
                     const getDeleteProductData = await axios.get(`https://project01-back-end.onrender.com/products/get/${Id}`);
                     const productFilename = getDeleteProductData.data.product_img;
 
+                    const publicIdToImg = productFilename
+                        .split("/")          // 先按 "/" 切割
+                        .pop()                // 取得最後一段（即檔名和副檔名）
+                        .replace(/\.[^.]+$/, ""); // 移除副檔名
+
+                    console.log('publicIdToImg', publicIdToImg);
+
                     // 2. 刪除圖檔（如果存在且不為空）
-                    if (productFilename && productFilename.trim() !== "") {
+                    if (publicIdToImg && publicIdToImg.trim() !== "") {
                         try {
-                            await axios.delete(`https://project01-back-end.onrender.com/products/deleteProductImg/${productFilename}`);
-                            console.log("頭像已刪除:", productFilename);
+                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImage/${publicIdToImg}`);
+                            console.log("圖檔已刪除:", productFilename);
                         } catch (error) {
                             console.error(`刪除產品圖示失敗，ID: ${Id}, 頭像: ${productFilename}`, error);
                         }
