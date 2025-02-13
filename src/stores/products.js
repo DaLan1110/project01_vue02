@@ -176,30 +176,6 @@ export const useProductStore = defineStore('productStore', () => {
                 );
 
                 console.log("檔案建立成功", res.data);
-
-
-
-
-                // try {
-                //     const uploadResponse = await axios.post(
-                //         "https://project01-back-end.onrender.com/products/uploadProductImg",
-                //         formData,
-                //         {
-                //             headers: {
-                //                 "Content-Type": "multipart/form-data",
-                //             },
-                //         }
-                //     );
-
-                //     console.log("產品圖上傳成功:", uploadResponse.data.filename);
-
-
-                // } catch (uploadError) {
-                //     console.error("上傳產品圖時發生錯誤:", uploadError);
-                //     throw new Error("產品圖上傳失敗"); // 拋出錯誤以終止後續操作
-                // }
-
-
             }
 
             alert("建立成功");
@@ -309,10 +285,10 @@ export const useProductStore = defineStore('productStore', () => {
                 // 刪除舊的圖檔（如果存在且不為空）
                 if (oldProductFilename && oldProductFilename.trim() !== "") {
                     try {
-                        await axios.delete(`https://project01-back-end.onrender.com/products/deleteProductImg/${oldProductFilename}`);
-                        console.log("舊頭像已刪除:", oldProductFilename);
+                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImage/${oldProductFilename}`);
+                        console.log("舊圖檔已刪除:", oldProductFilename);
                     } catch (error) {
-                        console.error("刪除舊頭像時發生錯誤:", error);
+                        console.error("刪除舊圖檔時發生錯誤:", error);
                     }
                 }
 
@@ -326,14 +302,14 @@ export const useProductStore = defineStore('productStore', () => {
                 const randomFileName = `${generateRandomString(10)}.${fileExtension}`; // 10 為隨機字符長度
 
                 const file = new File([blob], randomFileName, {
-                    type: "image/png",
+                    type: `image/${fileExtension}`,
                 }); // 創建文件對象
 
                 const formData = new FormData();
-                formData.append("product", file);
+                formData.append("image", file);
 
                 const uploadResponse = await axios.post(
-                    "https://project01-back-end.onrender.com/products/uploadProductImg",
+                    "https://project01-back-end.onrender.com/uploadImg/uploadImg",
                     formData,
                     {
                         headers: {
@@ -343,8 +319,8 @@ export const useProductStore = defineStore('productStore', () => {
                 );
 
                 // 上传成功后，获取文件名
-                productFilename = uploadResponse.data.filename;
-                console.log("頭像上傳成功:", productFilename);
+                productFilename = uploadResponse.data.data.imageUrl;
+                console.log("圖檔上傳成功:", productFilename);
             }
 
             // 2. 將 product_sweetness 陣列轉換為逗號分隔的字串
