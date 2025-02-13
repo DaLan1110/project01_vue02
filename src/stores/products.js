@@ -132,10 +132,32 @@ export const useProductStore = defineStore('productStore', () => {
                     type: `image/${fileExtension}`,
                 }); // 創建文件對象
 
-                productFilename = `${randomFileName}`;
-                console.log("產品檔名:", productFilename);
+                const formData = new FormData();
+                formData.append("image", file);
+
+                try {
+                    const uploadResponse = await axios.post(
+                        "https://project01-back-end.onrender.com/uploadImg/uploadImg",
+                        formData,
+                        {
+                            headers: {
+                                "Content-Type": "multipart/form-data",
+                            },
+                        }
+                    );
+
+                    productFilename = uploadResponse.data.data.imageUrl;
+                    console.log("產品圖上傳成功:", productFilename);
+
+                } catch (uploadError) {
+                    console.error("上傳產品圖時發生錯誤:", uploadError);
+                    throw new Error("產品圖上傳失敗"); // 拋出錯誤以終止後續操作
+                }
+
                 // 將上傳成功的文件名賦值給 newProductData.product_img
-                newProductData.value.product_img = productFilename;
+                if (productFilename) {
+                    newProductData.value.product_img = productFilename; // 設置圖片 URL
+                }
 
                 // 2. 將 product_sweetness 陣列轉換為逗號分隔的字串
                 newProductData.value.product_sweetness = newProductData.value.product_sweetness.join(',');
@@ -156,8 +178,7 @@ export const useProductStore = defineStore('productStore', () => {
                 console.log("檔案建立成功", res.data);
 
 
-                const formData = new FormData();
-                formData.append("image", file);
+
 
                 // try {
                 //     const uploadResponse = await axios.post(
@@ -178,23 +199,7 @@ export const useProductStore = defineStore('productStore', () => {
                 //     throw new Error("產品圖上傳失敗"); // 拋出錯誤以終止後續操作
                 // }
 
-                try {
-                    const uploadResponse = await axios.post(
-                        "https://project01-back-end.onrender.com/uploadImg/uploadImg",
-                        formData,
-                        {
-                            headers: {
-                                "Content-Type": "multipart/form-data",
-                            },
-                        }
-                    );
 
-                    console.log("產品圖上傳成功:", uploadResponse.data.data.imageUrl);
-
-                } catch (uploadError) {
-                    console.error("上傳產品圖時發生錯誤:", uploadError);
-                    throw new Error("產品圖上傳失敗"); // 拋出錯誤以終止後續操作
-                }
             }
 
             alert("建立成功");
