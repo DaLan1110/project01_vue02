@@ -282,10 +282,16 @@ export const useProductStore = defineStore('productStore', () => {
                 const currentProductData = await axios.get(`https://project01-back-end.onrender.com/products/get/${routePathId}`);
                 const oldProductFilename = currentProductData.data.product_img;
 
+                const publicIdToImg = oldProductFilename
+                    .split("/")
+                    .slice(-2) // 取得最後兩段路徑
+                    .join("/")
+                    .replace(/\.[^.]+$/, ""); // 移除副檔名
+
                 // 刪除舊的圖檔（如果存在且不為空）
-                if (oldProductFilename && oldProductFilename.trim() !== "") {
+                if (publicIdToImg && publicIdToImg.trim() !== "") {
                     try {
-                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImage/${oldProductFilename}`);
+                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImage/${publicIdToImg}`);
                         console.log("舊圖檔已刪除:", oldProductFilename);
                     } catch (error) {
                         console.error("刪除舊圖檔時發生錯誤:", error);
