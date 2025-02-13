@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import axios from "axios";
+import { c } from 'vite/dist/node/types.d-aGj9QkWt';
 
 export const useProductStore = defineStore('productStore', () => {
     // 取得所有產品資料
@@ -281,12 +282,15 @@ export const useProductStore = defineStore('productStore', () => {
                 // 獲取當前的用戶數據以便刪除舊的圖檔
                 const currentProductData = await axios.get(`https://project01-back-end.onrender.com/products/get/${routePathId}`);
                 const oldProductFilename = currentProductData.data.product_img;
+                console.log('oldProductFilename', oldProductFilename);
 
                 const publicIdToImg = oldProductFilename
                     .split("/")
                     .slice(-2) // 取得最後兩段路徑
                     .join("/")
                     .replace(/\.[^.]+$/, ""); // 移除副檔名
+
+                console.log('publicIdToImg', publicIdToImg);
 
                 // 刪除舊的圖檔（如果存在且不為空）
                 if (publicIdToImg && publicIdToImg.trim() !== "") {
