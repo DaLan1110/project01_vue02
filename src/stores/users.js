@@ -300,10 +300,17 @@ export const useUserStore = defineStore('userStore', () => {
                     const getDeleteUserData = await axios.get(`https://project01-back-end.onrender.com/users/get/${Id}`);
                     const avatarFilename = getDeleteUserData.data.user_avatar;
 
+                    const publicIdToImg = avatarFilename
+                        .split("/")          // 先按 "/" 切割
+                        .pop()                // 取得最後一段（即檔名和副檔名）
+                        .replace(/\.[^.]+$/, ""); // 移除副檔名
+
+                    console.log('publicIdToImg', publicIdToImg);
+
                     // 2. 刪除圖檔（如果存在且不為空）
-                    if (avatarFilename && avatarFilename.trim() !== "") {
+                    if (publicIdToImg && publicIdToImg.trim() !== "") {
                         try {
-                            await axios.delete(`https://project01-back-end.onrender.com/users/delete-avatar/${avatarFilename}`);
+                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToUser/${publicIdToImg}`);
                             console.log("頭像已刪除:", avatarFilename);
                         } catch (error) {
                             console.error(`刪除頭像失敗，成員ID: ${Id}, 頭像: ${avatarFilename}`, error);
@@ -374,10 +381,15 @@ export const useUserStore = defineStore('userStore', () => {
                 const currentUserData = await axios.get(`https://project01-back-end.onrender.com/users/get/${routePathId}`);
                 const oldAvatarFilename = currentUserData.data.user_avatar;
 
+                const publicIdToImg = oldAvatarFilename
+                    .split("/")          // 先按 "/" 切割
+                    .pop()                // 取得最後一段（即檔名和副檔名）
+                    .replace(/\.[^.]+$/, ""); // 移除副檔名
+
                 // 2. 刪除舊的圖檔（如果存在且不為空）
-                if (oldAvatarFilename && oldAvatarFilename.trim() !== "") {
+                if (publicIdToImg && publicIdToImg.trim() !== "") {
                     try {
-                        await axios.delete(`https://project01-back-end.onrender.com/users/delete-avatar/${oldAvatarFilename}`);
+                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToUser/${publicIdToImg}`);
                         console.log("舊頭像已刪除:", oldAvatarFilename);
                     } catch (error) {
                         console.error("刪除舊頭像時發生錯誤:", error);
@@ -394,14 +406,14 @@ export const useUserStore = defineStore('userStore', () => {
                 const randomFileName = `${generateRandomString(10)}.${fileExtension}`; // 10 為隨機字符長度
 
                 const file = new File([blob], randomFileName, {
-                    type: "image/png",
+                    type: `image/${fileExtension}`,
                 }); // 創建文件對象
 
                 const formData = new FormData();
                 formData.append("avatar", file);
 
                 const uploadResponse = await axios.post(
-                    "https://project01-back-end.onrender.com/users/upload-avatar",
+                    "https://project01-back-end.onrender.com/uploadImg/uploadImgToUser",
                     formData,
                     {
                         headers: {
@@ -411,7 +423,7 @@ export const useUserStore = defineStore('userStore', () => {
                 );
 
                 // 上传成功后，获取文件名
-                avatarFilename = uploadResponse.data.filename;
+                avatarFilename = uploadResponse.data.data.filename;
                 console.log("頭像上傳成功:", avatarFilename);
             }
 
