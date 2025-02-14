@@ -299,22 +299,25 @@ export const useUserStore = defineStore('userStore', () => {
                     // 1. 獲取每個成員的資料以便刪除頭像
                     const getDeleteUserData = await axios.get(`https://project01-back-end.onrender.com/users/get/${Id}`);
                     const avatarFilename = getDeleteUserData.data.user_avatar;
+                    if (avatarFilename && avatarFilename.trim() !== "") {
+                        const publicIdToImg = avatarFilename
+                            .split("/")          // 先按 "/" 切割
+                            .pop()                // 取得最後一段（即檔名和副檔名）
+                            .replace(/\.[^.]+$/, ""); // 移除副檔名
 
-                    const publicIdToImg = avatarFilename
-                        .split("/")          // 先按 "/" 切割
-                        .pop()                // 取得最後一段（即檔名和副檔名）
-                        .replace(/\.[^.]+$/, ""); // 移除副檔名
+                        console.log('publicIdToImg', publicIdToImg);
 
-                    console.log('publicIdToImg', publicIdToImg);
-
-                    // 2. 刪除圖檔（如果存在且不為空）
-                    if (publicIdToImg && publicIdToImg.trim() !== "") {
-                        try {
-                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToUser/${publicIdToImg}`);
-                            console.log("頭像已刪除:", avatarFilename);
-                        } catch (error) {
-                            console.error(`刪除頭像失敗，成員ID: ${Id}, 頭像: ${avatarFilename}`, error);
+                        // 2. 刪除圖檔（如果存在且不為空）
+                        if (publicIdToImg && publicIdToImg.trim() !== "") {
+                            try {
+                                await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToUser/${publicIdToImg}`);
+                                console.log("頭像已刪除:", avatarFilename);
+                            } catch (error) {
+                                console.error(`刪除頭像失敗，成員ID: ${Id}, 頭像: ${avatarFilename}`, error);
+                            }
                         }
+                    } else {
+                        console.log("頭像不存在");
                     }
                 } catch (error) {
                     console.error(`獲取成員資料失敗，成員ID: ${Id}`, error);
