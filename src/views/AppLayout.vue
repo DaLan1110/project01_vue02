@@ -18,28 +18,13 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
   font-family: "Fira sans", sans-serif;
 }
 
-/* .menulayout-move {
-  height: 100vh;
-} */
-
 .app {
   display: flex;
-  /* width: 100%; */
-  /* height: 100%; */
 }
 
 @media (max-width: 768px) {
   .navlayout-move {
     margin-left: 60px;
   }
-
-  /* .menulayout-move {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: #fff;
-    height: 100vh;
-  } */
 }
 </style>

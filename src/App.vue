@@ -11,11 +11,11 @@ const router = useRouter();
 </template>
 
 <style>
-html,
+/* html,
 body {
-  height: auto; /* 讓 body 可以隨內容變長 */
+  height: auto;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-}
+} */
 </style>
