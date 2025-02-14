@@ -30,7 +30,7 @@ const { userDataInUpdate, tempImageUrl, tempImageUrlName } =
 const errors = ref({});
 
 const pathUserId = ref(null);
-const img_path = "https://project01-back-end.onrender.com/img/member/company/";
+// const img_path = "https://project01-back-end.onrender.com/img/member/company/";
 
 const fetchUserData = async () => {
   try {
@@ -97,7 +97,6 @@ onMounted(() => {
       <div class="card-body col-10 mx-auto">
         <div class="mt-4">
           <AddImg
-            :img_path="img_path"
             :img_avatar="userDataInUpdate.user_avatar"
             @updateAvatar="handleAvatarUpdate"
           />
