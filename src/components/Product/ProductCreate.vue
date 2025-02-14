@@ -248,6 +248,8 @@ onMounted(() => {
     }
   });
 
+  productStore.resetNewMemberData();
+
   // 視窗 910px
   window.addEventListener("resize", updateWindowWidth);
 });
