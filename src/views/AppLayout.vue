@@ -22,14 +22,6 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
   display: flex;
 }
 
-.menulayout-move {
-  z-index: 2000;
-}
-
-.navlayout-move {
-  z-index: 1900;
-}
-
 @media (max-width: 768px) {
   .navlayout-move {
     margin-left: 60px;

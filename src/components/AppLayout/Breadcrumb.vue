@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div style="margin-top: 10px">
+  <div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li
