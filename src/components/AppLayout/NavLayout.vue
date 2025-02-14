@@ -17,11 +17,11 @@ const { user_data } = storeToRefs(userStore); // 从 store 中提取数据
 const pathId = user_data.value.id;
 console.log(pathId);
 
-const img_path = "https://project01-back-end.onrender.com/img/member/company/";
+// const img_path = "https://project01-back-end.onrender.com/img/member/company/";
 
 const userAvatarUrl = computed(() => {
   return user_data.value.user_avatar
-    ? new URL(`${img_path}${user_data.value.user_avatar}`, import.meta.url).href
+    ? new URL(`${user_data.value.user_avatar}`, import.meta.url).href
     : ""; // 如果没有头像，返回空字符串
 });
 
