@@ -227,7 +227,7 @@ onUnmounted(() => {
     left: 0;
     z-index: 1000;
     background-color: #fff;
-    height: auto;
+    height: 100vh; /* 讓 menu 延伸到底 */
   }
 
   .burger-menu-flexible {
