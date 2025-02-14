@@ -13,7 +13,8 @@ const router = useRouter();
 <style>
 html,
 body {
-  height: 100%;
+  height: auto; /* 讓 body 可以隨內容變長 */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }

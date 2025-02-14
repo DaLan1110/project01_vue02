@@ -220,14 +220,24 @@ onUnmounted(() => {
 } */
 
 @media (max-width: 768px) {
-  .menu {
+  /* .menu {
     width: 150px;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
     background-color: #fff;
-    height: 100vh; /* 讓 menu 延伸到底 */
+    height: 100vh;
+  } */
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    min-height: 100%; /* 讓 menu 高度至少與 body 一樣 */
+    background-color: #fff;
+    z-index: 1000;
   }
 
   .burger-menu-flexible {
