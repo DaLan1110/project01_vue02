@@ -413,7 +413,7 @@ export const useUserStore = defineStore('userStore', () => {
                 }); // 創建文件對象
 
                 const formData = new FormData();
-                formData.append("avatar", file);
+                formData.append("image", file);
 
                 const uploadResponse = await axios.post(
                     "https://project01-back-end.onrender.com/uploadImg/uploadImgToUser",
