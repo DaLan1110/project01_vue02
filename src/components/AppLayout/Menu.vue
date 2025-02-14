@@ -219,7 +219,7 @@ onUnmounted(() => {
   }
 } */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .menu {
     width: 150px;
   }
@@ -227,5 +227,5 @@ onUnmounted(() => {
   .burger-menu-flexible {
     width: 60px;
   }
-}
+} */
 </style>
