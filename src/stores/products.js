@@ -370,6 +370,7 @@ export const useProductStore = defineStore('productStore', () => {
             console.log(product);
             alert(response.data.message);
             await getOneProductData(routePathId);
+            product.value.product_img = "";
         } catch (error) {
             // 錯誤處理邏輯不變
             if (error.response) {
