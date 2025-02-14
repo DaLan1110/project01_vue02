@@ -60,7 +60,7 @@ const breadcrumbClass = computed(() => ({
     >
       <div class="container-fluid">
         <!-- <div class="collapse navbar-collapse"> -->
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav mt-3">
           <Breadcrumb class="breadcrumbml" :class="breadcrumbClass" />
         </ul>
 
