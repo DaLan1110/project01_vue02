@@ -123,7 +123,7 @@ const breadcrumbClass = computed(() => ({
 .navbar-position {
   position: fixed !important;
   top: 0;
-  width: 90%;
+  width: 100%;
   z-index: 900;
 }
 
