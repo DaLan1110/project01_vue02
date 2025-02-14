@@ -380,23 +380,27 @@ export const useUserStore = defineStore('userStore', () => {
                 // 獲取當前的用戶數據以便刪除舊的圖檔
                 const currentUserData = await axios.get(`https://project01-back-end.onrender.com/users/get/${routePathId}`);
                 const oldAvatarFilename = currentUserData.data.user_avatar;
-                console.log('oldAvatarFilename', oldAvatarFilename);
+                if (oldAvatarFilename && oldAvatarFilename.trim() !== "") {
+                    console.log('oldAvatarFilename', oldAvatarFilename);
 
-                const publicIdToImg = oldAvatarFilename
-                    .split("/")          // 先按 "/" 切割
-                    .pop()                // 取得最後一段（即檔名和副檔名）
-                    .replace(/\.[^.]+$/, ""); // 移除副檔名
+                    const publicIdToImg = oldAvatarFilename
+                        .split("/")          // 先按 "/" 切割
+                        .pop()                // 取得最後一段（即檔名和副檔名）
+                        .replace(/\.[^.]+$/, ""); // 移除副檔名
 
-                console.log('publicIdToImg', publicIdToImg);
+                    console.log('publicIdToImg', publicIdToImg);
 
-                // 2. 刪除舊的圖檔（如果存在且不為空）
-                if (publicIdToImg && publicIdToImg.trim() !== "") {
-                    try {
-                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToUser/${publicIdToImg}`);
-                        console.log("舊頭像已刪除:", oldAvatarFilename);
-                    } catch (error) {
-                        console.error("刪除舊頭像時發生錯誤:", error);
+                    // 2. 刪除舊的圖檔（如果存在且不為空）
+                    if (publicIdToImg && publicIdToImg.trim() !== "") {
+                        try {
+                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToUser/${publicIdToImg}`);
+                            console.log("舊頭像已刪除:", oldAvatarFilename);
+                        } catch (error) {
+                            console.error("刪除舊頭像時發生錯誤:", error);
+                        }
                     }
+                } else {
+                    console.log("圖檔不存在");
                 }
 
 
