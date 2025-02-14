@@ -231,13 +231,14 @@ onUnmounted(() => {
   } */
 
   .menu {
-    position: absolute;
+    position: fixed; /* 固定側邊選單 */
     top: 0;
     left: 0;
     width: 150px;
     min-height: 100%; /* 讓 menu 高度至少與 body 一樣 */
     background-color: #fff;
     z-index: 1000;
+    overflow-y: auto; /* 讓 menu 內的內容可以滾動 */
   }
 
   .burger-menu-flexible {
