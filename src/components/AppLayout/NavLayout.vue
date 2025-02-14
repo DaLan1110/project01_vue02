@@ -147,6 +147,7 @@ const breadcrumbClass = computed(() => ({
 
 .breadcrumbml {
   margin-left: 60px;
+  text-align: center;
 }
 
 .breadcrumbMove {
