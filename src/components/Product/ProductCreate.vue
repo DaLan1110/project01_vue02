@@ -124,6 +124,8 @@ const imgRest = ref(false);
 const { newProductData, tempImageUrl, tempImageUrlName } =
   storeToRefs(productStore);
 
+const { resetNewMemberData } = productStore;
+
 const errors = ref({});
 
 const handleAvatarUpdate = ({ name, data }) => {
@@ -231,6 +233,8 @@ const updateWindowWidth = () => {
 
 // 在組件加載時檢查錯誤
 onMounted(() => {
+  resetNewMemberData();
+
   // 定義要檢查的特定欄位
   const fieldsToCheck = [
     "product_exhibit",
@@ -247,8 +251,6 @@ onMounted(() => {
       errors.value[field] = initialErrors; // 如果有錯誤，則顯示錯誤
     }
   });
-
-  productStore.resetNewMemberData();
 
   // 視窗 910px
   window.addEventListener("resize", updateWindowWidth);

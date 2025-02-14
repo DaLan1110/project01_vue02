@@ -400,7 +400,7 @@ export const useProductStore = defineStore('productStore', () => {
         // 更改產品上下架
         updateProductExhibit,
         // 新增產品
-        newProductData, tempImageUrl, tempImageUrlName, createProductData,
+        newProductData, resetNewMemberData, tempImageUrl, tempImageUrlName, createProductData,
         // 刪除產品
         selectedIds, deleteSelectedProducts,
         // 更新產品資料
