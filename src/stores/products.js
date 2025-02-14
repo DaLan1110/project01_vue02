@@ -288,23 +288,27 @@ export const useProductStore = defineStore('productStore', () => {
                 // 獲取當前的用戶數據以便刪除舊的圖檔
                 const currentProductData = await axios.get(`https://project01-back-end.onrender.com/products/get/${routePathId}`);
                 const oldProductFilename = currentProductData.data.product_img;
-                console.log('oldProductFilename', oldProductFilename);
+                if (oldProductFilename && oldProductFilename.trim() !== "") {
+                    console.log('oldProductFilename', oldProductFilename);
 
-                const publicIdToImg = oldProductFilename
-                    .split("/")          // 先按 "/" 切割
-                    .pop()                // 取得最後一段（即檔名和副檔名）
-                    .replace(/\.[^.]+$/, ""); // 移除副檔名
+                    const publicIdToImg = oldProductFilename
+                        .split("/")          // 先按 "/" 切割
+                        .pop()                // 取得最後一段（即檔名和副檔名）
+                        .replace(/\.[^.]+$/, ""); // 移除副檔名
 
-                console.log('publicIdToImg', publicIdToImg);
+                    console.log('publicIdToImg', publicIdToImg);
 
-                // 刪除舊的圖檔（如果存在且不為空）
-                if (publicIdToImg && publicIdToImg.trim() !== "") {
-                    try {
-                        await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToProduct/${publicIdToImg}`);
-                        console.log("舊圖檔已刪除:", oldProductFilename);
-                    } catch (error) {
-                        console.error("刪除舊圖檔時發生錯誤:", error);
+                    // 刪除舊的圖檔（如果存在且不為空）
+                    if (publicIdToImg && publicIdToImg.trim() !== "") {
+                        try {
+                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToProduct/${publicIdToImg}`);
+                            console.log("舊圖檔已刪除:", oldProductFilename);
+                        } catch (error) {
+                            console.error("刪除舊圖檔時發生錯誤:", error);
+                        }
                     }
+                } else {
+                    console.log("圖檔不存在");
                 }
 
                 // 上傳頭像
