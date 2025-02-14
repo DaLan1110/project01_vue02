@@ -73,7 +73,7 @@ const breadcrumbClass = computed(() => ({
               <i class="material-icons" style="color: #ffffff" v-else>person</i>
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-flex align-items-center justify-content-center">
             <span class="nav-link">{{ user_data.username }}</span>
           </li>
           <li class="nav-item dropdown">
