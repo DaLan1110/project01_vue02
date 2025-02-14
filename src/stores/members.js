@@ -149,15 +149,25 @@ export const useMemberStore = defineStore('memberStore', () => {
                     // 1. 獲取每個成員的資料以便刪除頭像
                     const getDeleteMemberrData = await axios.get(`https://project01-back-end.onrender.com/members/get/${Id}`);
                     const avatarFilename = getDeleteMemberrData.data.member_avatar;
-
-                    // 2. 刪除圖檔（如果存在且不為空）
                     if (avatarFilename && avatarFilename.trim() !== "") {
-                        try {
-                            await axios.delete(`https://project01-back-end.onrender.com/members/deleteMemberAvatar/${avatarFilename}`);
-                            console.log("頭像已刪除:", avatarFilename);
-                        } catch (error) {
-                            console.error(`刪除頭像失敗，成員ID: ${Id}, 頭像: ${avatarFilename}`, error);
+                        const publicIdToImg = avatarFilename
+                            .split("/")          // 先按 "/" 切割
+                            .pop()                // 取得最後一段（即檔名和副檔名）
+                            .replace(/\.[^.]+$/, ""); // 移除副檔名
+
+                        console.log('publicIdToImg', publicIdToImg);
+
+                        // 2. 刪除圖檔（如果存在且不為空）
+                        if (publicIdToImg && publicIdToImg.trim() !== "") {
+                            try {
+                                await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToMember/${publicIdToImg}`);
+                                console.log("頭像已刪除:", avatarFilename);
+                            } catch (error) {
+                                console.error(`刪除頭像失敗，成員ID: ${Id}, 頭像: ${avatarFilename}`, error);
+                            }
                         }
+                    } else {
+                        console.log("頭像不存在");
                     }
                 } catch (error) {
                     console.error(`獲取成員資料失敗，成員ID: ${Id}`, error);
@@ -215,16 +225,27 @@ export const useMemberStore = defineStore('memberStore', () => {
                 // 獲取當前的用戶數據以便刪除舊的圖檔
                 const currentMemberData = await axios.get(`https://project01-back-end.onrender.com/members/get/${routePathId}`);
                 const oldAvatarFilename = currentMemberData.data.member_avatar;
-
-                // 2. 刪除舊的圖檔（如果存在且不為空）
                 if (oldAvatarFilename && oldAvatarFilename.trim() !== "") {
-                    try {
-                        await axios.delete(`https://project01-back-end.onrender.com/members/deleteMemberAvatar/${oldAvatarFilename}`);
-                        console.log("舊頭像已刪除:", oldAvatarFilename);
-                    } catch (error) {
-                        console.error("刪除舊頭像時發生錯誤:", error);
+                    const publicIdToImg = oldAvatarFilename
+                        .split("/")          // 先按 "/" 切割
+                        .pop()                // 取得最後一段（即檔名和副檔名）
+                        .replace(/\.[^.]+$/, ""); // 移除副檔名
+
+                    console.log('publicIdToImg', publicIdToImg);
+
+                    // 2. 刪除舊的圖檔（如果存在且不為空）
+                    if (publicIdToImg && publicIdToImg.trim() !== "") {
+                        try {
+                            await axios.delete(`https://project01-back-end.onrender.com/uploadImg/deleteImageToMember/${publicIdToImg}`);
+                            console.log("舊頭像已刪除:", oldAvatarFilename);
+                        } catch (error) {
+                            console.error("刪除舊頭像時發生錯誤:", error);
+                        }
                     }
+                } else {
+                    console.log("圖檔不存在");
                 }
+
 
                 // 上傳頭像
                 const base64Response = await fetch(tempImageUrl.value);
@@ -236,14 +257,14 @@ export const useMemberStore = defineStore('memberStore', () => {
                 const randomFileName = `${generateRandomString(10)}.${fileExtension}`; // 10 為隨機字符長度
 
                 const file = new File([blob], randomFileName, {
-                    type: "image/png",
+                    type: `image/${fileExtension}`,
                 }); // 創建文件對象
 
                 const formData = new FormData();
-                formData.append("avatar", file);
+                formData.append("image", file);
 
                 const uploadResponse = await axios.post(
-                    "https://project01-back-end.onrender.com/members/uploadMemberAvatar",
+                    "https://project01-back-end.onrender.com/uploadImg/uploadImgToMember",
                     formData,
                     {
                         headers: {
@@ -252,8 +273,8 @@ export const useMemberStore = defineStore('memberStore', () => {
                     }
                 );
 
-                // 上传成功后，获取文件名
-                avatarFilename = uploadResponse.data.filename;
+                // 上傳成功後，取得文件名
+                avatarFilename = uploadResponse.data.data.imageUrl;
                 console.log("頭像上傳成功:", avatarFilename);
             }
 

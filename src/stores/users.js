@@ -384,8 +384,6 @@ export const useUserStore = defineStore('userStore', () => {
                 const currentUserData = await axios.get(`https://project01-back-end.onrender.com/users/get/${routePathId}`);
                 const oldAvatarFilename = currentUserData.data.user_avatar;
                 if (oldAvatarFilename && oldAvatarFilename.trim() !== "") {
-                    console.log('oldAvatarFilename', oldAvatarFilename);
-
                     const publicIdToImg = oldAvatarFilename
                         .split("/")          // 先按 "/" 切割
                         .pop()                // 取得最後一段（即檔名和副檔名）
@@ -432,7 +430,7 @@ export const useUserStore = defineStore('userStore', () => {
                     }
                 );
 
-                // 上传成功后，获取文件名
+                // 上傳成功後，取得文件名
                 avatarFilename = uploadResponse.data.data.imageUrl;
                 console.log("頭像上傳成功:", avatarFilename);
             }
