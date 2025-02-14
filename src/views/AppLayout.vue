@@ -33,13 +33,13 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
     margin-left: 60px;
   }
 
-  .menulayout-move {
+  /* .menulayout-move {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
     background-color: #fff;
     height: 100vh;
-  }
+  } */
 }
 </style>

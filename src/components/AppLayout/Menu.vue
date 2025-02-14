@@ -219,13 +219,18 @@ onUnmounted(() => {
   }
 } */
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .menu {
     width: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
   }
 
   .burger-menu-flexible {
     width: 60px;
   }
-} */
+}
 </style>
