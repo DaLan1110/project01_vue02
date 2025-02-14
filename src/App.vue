@@ -11,11 +11,4 @@ const router = useRouter();
 </template>
 
 <style>
-/* html,
-body {
-  height: auto;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-} */
 </style>
