@@ -380,11 +380,14 @@ export const useUserStore = defineStore('userStore', () => {
                 // 獲取當前的用戶數據以便刪除舊的圖檔
                 const currentUserData = await axios.get(`https://project01-back-end.onrender.com/users/get/${routePathId}`);
                 const oldAvatarFilename = currentUserData.data.user_avatar;
+                console.log('oldAvatarFilename', oldAvatarFilename);
 
                 const publicIdToImg = oldAvatarFilename
                     .split("/")          // 先按 "/" 切割
                     .pop()                // 取得最後一段（即檔名和副檔名）
                     .replace(/\.[^.]+$/, ""); // 移除副檔名
+
+                console.log('publicIdToImg', publicIdToImg);
 
                 // 2. 刪除舊的圖檔（如果存在且不為空）
                 if (publicIdToImg && publicIdToImg.trim() !== "") {
