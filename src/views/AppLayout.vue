@@ -26,7 +26,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
   z-index: 2000;
 }
 
-.avlayout-move {
+.navlayout-move {
   z-index: 1900;
 }
 
