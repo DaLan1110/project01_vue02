@@ -423,7 +423,7 @@ export const useUserStore = defineStore('userStore', () => {
                 );
 
                 // 上传成功后，获取文件名
-                avatarFilename = uploadResponse.data.data.filename;
+                avatarFilename = uploadResponse.data.filename;
                 console.log("頭像上傳成功:", avatarFilename);
             }
 
