@@ -38,7 +38,7 @@ watch(
 
 <template>
   <div class="row align-items-center productData-responsive-justify">
-    <div class="col-10" style="margin-top: 65px">
+    <div class="col-10">
       <label for="inputGroupFile01">產品圖片</label>
       <input
         type="file"
