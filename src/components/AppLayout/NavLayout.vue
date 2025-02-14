@@ -60,7 +60,10 @@ const breadcrumbClass = computed(() => ({
     >
       <div class="container-fluid">
         <!-- <div class="collapse navbar-collapse"> -->
-        <Breadcrumb class="breadcrumbml" :class="breadcrumbClass" />
+        <div class="d-flex align-items-center justify-content-center">
+          <Breadcrumb class="breadcrumbml" :class="breadcrumbClass" />
+        </div>
+
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item d-flex align-items-center justify-content-center">
             <div class="circle-img">
@@ -76,7 +79,9 @@ const breadcrumbClass = computed(() => ({
           <li class="nav-item d-flex align-items-center justify-content-center">
             <span class="nav-link">{{ user_data.username }}</span>
           </li>
-          <li class="nav-item dropdown">
+          <li
+            class="nav-item dropdown d-flex align-items-center justify-content-center"
+          >
             <a
               class="nav-link dropdown-toggle"
               href="#"
