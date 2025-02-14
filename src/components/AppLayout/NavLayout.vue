@@ -116,6 +116,7 @@ const breadcrumbClass = computed(() => ({
 
 <style>
 .naylayout-width {
+  position: relative !important;
   width: 100%;
   height: auto;
 }
