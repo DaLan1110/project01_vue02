@@ -25,6 +25,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
 @media (max-width: 768px) {
   .navlayout-move {
     margin-left: 60px;
+    width: 100%;
   }
 }
 </style>
