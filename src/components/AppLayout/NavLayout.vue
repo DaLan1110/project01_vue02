@@ -62,7 +62,7 @@ const breadcrumbClass = computed(() => ({
         <!-- <div class="collapse navbar-collapse"> -->
         <Breadcrumb class="breadcrumbml" :class="breadcrumbClass" />
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item d-flex align-items-center justify-content-center">
             <div class="circle-img">
               <img
                 :src="userAvatarUrl"
