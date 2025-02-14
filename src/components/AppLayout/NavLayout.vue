@@ -54,7 +54,10 @@ const breadcrumbClass = computed(() => ({
 
 <template>
   <div class="naylayout-width">
-    <nav class="navbar bg-body-tertiary navbar-expand" style="height: 60px">
+    <nav
+      class="navbar bg-body-tertiary navbar-expand navbar-position"
+      style="height: 60px"
+    >
       <div class="container-fluid">
         <!-- <div class="collapse navbar-collapse"> -->
         <Breadcrumb class="breadcrumbml" :class="breadcrumbClass" />
@@ -115,6 +118,13 @@ const breadcrumbClass = computed(() => ({
 .naylayout-width {
   width: 100%;
   height: auto;
+}
+
+.navbar-position {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .work-page {
