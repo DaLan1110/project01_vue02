@@ -238,7 +238,7 @@ onUnmounted(() => {
     min-height: 100%; /* 讓 menu 高度至少與 body 一樣 */
     background-color: #fff;
     z-index: 1000;
-    overflow-y: auto; /* 讓 menu 內的內容可以滾動 */
+    /* overflow-y: auto; */
   }
 
   .burger-menu-flexible {
