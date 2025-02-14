@@ -132,6 +132,7 @@ onUnmounted(() => {
   border-right: 1px solid #d0d0d0;
   transition: all 0.3s ease;
   overflow: visible;
+  z-index: 1000;
 }
 
 .meun-item-position {
@@ -140,7 +141,7 @@ onUnmounted(() => {
 
 .burger-menu-style {
   position: absolute;
-  z-index: 99;
+  z-index: 990;
   left: calc(100% + 20px); /* 距離容器右側保持固定距離 */
   top: 20px;
   font-size: 20px;
@@ -227,7 +228,6 @@ onUnmounted(() => {
     width: 150px;
     min-height: 100%; /* 讓 menu 高度至少與 body 一樣 */
     background-color: #fff;
-    z-index: 1000;
   }
 
   .burger-menu-flexible {
