@@ -39,6 +39,7 @@ import NavLayout from "@/components/AppLayout/NavLayout.vue";
     left: 0;
     z-index: 1000;
     background-color: #fff;
+    height: 100vh;
   }
 }
 </style>
