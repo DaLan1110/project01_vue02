@@ -49,5 +49,6 @@ onMounted(() => {
   font-weight: 500;
   color: #5b5b5b;
   cursor: pointer;
+  text-align: center;
 }
 </style>
