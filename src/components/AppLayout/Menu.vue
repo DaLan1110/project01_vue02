@@ -131,7 +131,7 @@ onUnmounted(() => {
   top: 0;
   border-right: 1px solid #d0d0d0;
   transition: all 0.3s ease;
-  /* overflow: visible; */
+  overflow: visible;
   z-index: 1000;
 }
 
@@ -140,9 +140,9 @@ onUnmounted(() => {
 }
 
 .burger-menu-style {
-  position: sticky !important;
+  position: fixed !important;
   z-index: 990;
-  left: calc(100% + 20px);
+  left: calc(200px + 5%); /* 左邊距離視窗寬度的10%，再加上200px */
   /* left: 220px; */
   top: 20px;
   font-size: 20px;
@@ -175,7 +175,6 @@ onUnmounted(() => {
   top: 80px;
   transform: rotate(180deg);
   transition: all 0.3s ease;
-  position: absolute !important;
 }
 
 .logo {
@@ -235,10 +234,5 @@ onUnmounted(() => {
   .burger-menu-flexible {
     width: 60px;
   }
-
-  /* .burger-menu-style {
-    left: 170px;
-    top: 20px;
-  } */
 }
 </style>
