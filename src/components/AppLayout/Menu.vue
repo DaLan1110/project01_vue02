@@ -175,6 +175,7 @@ onUnmounted(() => {
   top: 80px;
   transform: rotate(180deg);
   transition: all 0.3s ease;
+  position: absolute !important;
 }
 
 .logo {
@@ -233,6 +234,11 @@ onUnmounted(() => {
 
   .burger-menu-flexible {
     width: 60px;
+  }
+
+  .burger-menu-style {
+    left: 170px;
+    /* top: 20px; */
   }
 }
 </style>
