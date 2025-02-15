@@ -170,7 +170,7 @@ onUnmounted(() => {
 }
 
 .burger-menu-move {
-  left: 20px;
+  left: 20px !important;
   top: 80px;
   transform: rotate(180deg);
   transition: all 0.3s ease;
@@ -235,7 +235,7 @@ onUnmounted(() => {
   }
 
   .burger-menu-style {
-    left: calc(150px + 1%);
+    left: calc(150px + 5%);
   }
 }
 </style>
