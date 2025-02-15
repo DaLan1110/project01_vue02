@@ -45,7 +45,7 @@ const handleFileChange = (event) => {
         @change="handleFileChange"
       />
     </div>
-    <!-- <div class="col-10 d-flex justify-content-center mt-4">
+    <div class="col-9 d-flex justify-content-center mt-4">
       <div class="product-style-img">
         <i
           class="material-icons icon-style-avatar"
@@ -59,7 +59,7 @@ const handleFileChange = (event) => {
           v-if="tempImageUrl || propsImg.img_avatar"
         />
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -79,6 +79,12 @@ const handleFileChange = (event) => {
 .icon-style-avatar {
   font-size: 48px; /* 調整圖標大小 */
   color: #ffffff; /* 圖標顏色 */
+}
+
+@media (max-width: 930px) {
+  .product-style-img {
+    height: 300px;
+  }
 }
 
 @media (max-width: 1200px) {
