@@ -142,8 +142,7 @@ onUnmounted(() => {
 .burger-menu-style {
   position: fixed !important;
   z-index: 990;
-  left: calc(200px + 5%); /* 左邊距離視窗寬度的10%，再加上200px */
-  /* left: 220px; */
+  left: calc(200px + 1%);
   top: 20px;
   font-size: 20px;
   user-select: none;
@@ -233,6 +232,10 @@ onUnmounted(() => {
 
   .burger-menu-flexible {
     width: 60px;
+  }
+
+  .burger-menu-style {
+    left: calc(150px + 1%);
   }
 }
 </style>
