@@ -13,19 +13,19 @@
       </router-link>
       <router-link to="/product" class="icon-container">
         <i class="material-icons">store</i>
-        <span>產品管理</span>
+        <span class="home-button-text">產品管理</span>
       </router-link>
       <router-link to="/order" class="icon-container">
         <i class="material-icons">article</i>
-        <span>訂單管理</span>
+        <span class="home-button-text">訂單管理</span>
       </router-link>
       <router-link to="/member" class="icon-container">
         <i class="material-icons">manage_accounts</i>
-        <span>用戶管理</span>
+        <span class="home-button-text">用戶管理</span>
       </router-link>
       <router-link to="/company" class="icon-container">
         <i class="material-icons">supervisor_account</i>
-        <span>公司管理</span>
+        <span class="home-button-text">公司管理</span>
       </router-link>
     </div>
   </div>
@@ -82,7 +82,7 @@
 
 @media (max-width: 550px) {
   .home-button-text {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 }
 </style>
