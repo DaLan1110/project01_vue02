@@ -256,8 +256,8 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="card-body d-flex justify-content-center">
-    <!-- <div class="col-12">
-      <AddImgProductUpdate
+    <div class="col-12">
+      <!--<AddImgProductUpdate
         :img_avatar="product.product_img"
         @updateAvatar="handleAvatarUpdate"
       />
@@ -505,8 +505,8 @@ onBeforeUnmount(() => {
           儲存
         </button>
         <RouterLink to="/product" class="btn-style cancel-btn">返回</RouterLink>
-      </div>
-    </div> -->
+      </div>-->
+    </div>
   </div>
 </template>
 
