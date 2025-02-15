@@ -45,7 +45,7 @@ const handleFileChange = (event) => {
         @change="handleFileChange"
       />
     </div>
-    <div class="col-9 d-flex justify-content-center mt-4">
+    <div class="col-7 d-flex justify-content-center mt-4">
       <div class="product-style-img">
         <i
           class="material-icons icon-style-avatar"
