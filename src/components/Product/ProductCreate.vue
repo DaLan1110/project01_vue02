@@ -276,7 +276,7 @@ onBeforeUnmount(() => {
           />
         </div>
         <div class="col-6 col-xl-5">
-          <div>
+          <div class="mt-4">
             <label for="product_name">產品名稱</label>
             <input
               type="text"

@@ -268,7 +268,7 @@ onBeforeUnmount(() => {
         :imgRest="imgRest"
       />
       <div class="d-flex justify-content-center">
-        <div class="col-10">
+        <div class="col-12">
           <div class="mt-4">
             <label for="product_name">產品名稱</label>
             <input
