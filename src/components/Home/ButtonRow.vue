@@ -9,7 +9,7 @@
     <div class="card-body button-card-style-body">
       <router-link to="/product/create" class="icon-container">
         <i class="material-icons">add_card</i>
-        <span>新增產品</span>
+        <span class="home-button-text">新增產品</span>
       </router-link>
       <router-link to="/product" class="icon-container">
         <i class="material-icons">store</i>
@@ -78,5 +78,11 @@
 
 .icon-container:hover span {
   font-weight: 700; /* 滑鼠懸停時文字加粗 */
+}
+
+@media (max-width: 550px) {
+  .home-button-text {
+    font-size: 12px;
+  }
 }
 </style>
