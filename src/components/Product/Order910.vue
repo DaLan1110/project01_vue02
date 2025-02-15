@@ -5,7 +5,7 @@ import { useOrderStore } from "@/stores/order";
 import PaginationMember from "../AppLayout/Pagination.vue";
 
 const orderStore = useOrderStore();
-const { orders, selectedIds, deleteSelectedOrders } = storeToRefs(orderStore);
+const { orders, selectedIds } = storeToRefs(orderStore);
 
 const loading = ref(true);
 const selectAll = ref(false);

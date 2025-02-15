@@ -138,7 +138,7 @@ const {
   selectedAddress,
 } = storeToRefs(productStore);
 
-const img_path = "https://project01-back-end.onrender.com/img/product/";
+// const img_path = "https://project01-back-end.onrender.com/img/product/";
 const errors = ref({});
 
 const handleAvatarUpdate = ({ name, data }) => {
@@ -159,7 +159,8 @@ handleProductDataById();
 // 更新產品資料
 const handleUpdateProductData = async () => {
   await productStore.updateProductData(routePathId);
-  productStore.getOneProductData(routePathId);
+  await productStore.getOneProductData(routePathId);
+  productStore.initSelected();
 };
 
 // hook
@@ -181,33 +182,37 @@ const onInputBlur = (e, inputText) => {
     : (errors.value[inputText] = null);
 };
 
-const isFormValid = computed(() => {
-  // 確保 newProductData 存在並且所有屬性都有值
-  watch(
-    () => [
-      selectedSweetness.value,
-      selectedIce.value,
-      selectedAddress.value,
-      selectedAdd.value,
-    ],
-    ([newSweet, newIce, newAddress, newAdd], [oldIce, oldAddress]) => {
-      console.log(newSweet, newIce, newAddress, newAdd);
-      product.value.product_sweetness = selectedSweetness.value;
-      product.value.product_ice = selectedIce.value;
-      product.value.product_address = selectedAddress.value;
-      product.value.product_add = selectedAdd.value;
-    }
-  );
+// 確保 newProductData 存在並且所有屬性都有值
+watch(product, (newVal) => {
+  console.log("product 變更:", newVal);
+});
 
+watch(
+  () => [
+    selectedSweetness.value,
+    selectedIce.value,
+    selectedAddress.value,
+    selectedAdd.value,
+  ],
+  ([newSweet, newIce, newAddress, newAdd]) => {
+    console.log(newSweet, newIce, newAddress, newAdd);
+    product.value.product_sweetness = selectedSweetness.value;
+    product.value.product_ice = selectedIce.value;
+    product.value.product_address = selectedAddress.value;
+    product.value.product_add = selectedAdd.value;
+  }
+);
+
+const isFormValid = computed(() => {
   if (
     !product.value ||
     !product.value.product_name ||
     !product.value.product_price ||
     !product.value.product_exhibit ||
-    !product.value.product_classify ||
-    !selectedSweetness.value ||
-    !selectedIce.value ||
-    !selectedAddress.value
+    !product.value.product_classify
+    // !selectedSweetness.value ||
+    // !selectedIce.value ||
+    // !selectedAddress.value
   ) {
     return false; // 當任一屬性不存在時返回 false
   }
@@ -253,7 +258,6 @@ onBeforeUnmount(() => {
   <div class="card-body d-flex justify-content-center">
     <div class="col-12">
       <AddImgProductUpdate
-        :img_path="img_path"
         :img_avatar="product.product_img"
         @updateAvatar="handleAvatarUpdate"
       />

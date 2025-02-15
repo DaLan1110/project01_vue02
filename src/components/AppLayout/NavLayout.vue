@@ -137,6 +137,7 @@ const breadcrumbClass = computed(() => ({
 .work-page {
   padding: 1rem;
   padding-bottom: 60px !important;
+  overflow-x: hidden;
 }
 
 .breadcrumb-style {
