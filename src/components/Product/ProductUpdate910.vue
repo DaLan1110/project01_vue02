@@ -257,11 +257,11 @@ onBeforeUnmount(() => {
 <template>
   <div class="card-body d-flex justify-content-center">
     <div class="col-12">
-      <!--<AddImgProductUpdate
+      <AddImgProductUpdate
         :img_avatar="product.product_img"
         @updateAvatar="handleAvatarUpdate"
       />
-      <div class="d-flex justify-content-center">
+      <!--<div class="d-flex justify-content-center">
         <div class="col-12">
           <div class="mt-4">
             <label for="product_name">產品名稱</label>
