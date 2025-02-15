@@ -256,13 +256,13 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="card-body d-flex justify-content-center">
-    <div class="col-12">
+    <!-- <div class="col-12">
       <AddImgProductUpdate
         :img_avatar="product.product_img"
         @updateAvatar="handleAvatarUpdate"
       />
       <div class="d-flex justify-content-center">
-        <!-- <div class="col-12">
+        <div class="col-12">
           <div class="mt-4">
             <label for="product_name">產品名稱</label>
             <input
@@ -487,7 +487,7 @@ onBeforeUnmount(() => {
               </li>
             </ul>
           </div>
-        </div> -->
+        </div>
       </div>
 
       <div class="mt-4 d-flex justify-content-end">
@@ -506,7 +506,7 @@ onBeforeUnmount(() => {
         </button>
         <RouterLink to="/product" class="btn-style cancel-btn">返回</RouterLink>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
