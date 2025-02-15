@@ -170,6 +170,7 @@ onUnmounted(() => {
 }
 
 .burger-menu-move {
+  position: absolute !important;
   left: 20px !important;
   top: 80px;
   transform: rotate(180deg);
