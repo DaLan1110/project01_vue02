@@ -84,6 +84,7 @@ const handleFileChange = (event) => {
 @media (max-width: 930px) {
   .product-style-img {
     height: 300px;
+    width: 300px;
   }
 }
 
