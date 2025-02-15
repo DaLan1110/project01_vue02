@@ -47,7 +47,7 @@ watch(
         @change="handleFileChange"
       />
     </div>
-    <!-- <div class="col-8 d-flex justify-content-center mt-4">
+    <div class="col-10 d-flex justify-content-center mt-4">
       <div class="product-data-style-img">
         <i class="material-icons icon-style-avatar" v-if="!tempImageUrl"
           >image</i
@@ -59,7 +59,7 @@ watch(
           v-if="tempImageUrl"
         />
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -79,12 +79,6 @@ watch(
 .icon-style-avatar {
   font-size: 48px; /* 調整圖標大小 */
   color: #ffffff; /* 圖標顏色 */
-}
-
-@media (max-width: 910px) {
-  .product-data-style-img {
-    height: 300px !important;
-  }
 }
 
 @media (max-width: 1200px) {

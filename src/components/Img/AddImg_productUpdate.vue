@@ -45,7 +45,7 @@ const handleFileChange = (event) => {
         @change="handleFileChange"
       />
     </div>
-    <div class="col-10 d-flex justify-content-center mt-4">
+    <!-- <div class="col-10 d-flex justify-content-center mt-4">
       <div class="product-style-img">
         <i
           class="material-icons icon-style-avatar"
@@ -59,7 +59,7 @@ const handleFileChange = (event) => {
           v-if="tempImageUrl || propsImg.img_avatar"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
