@@ -262,7 +262,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="card-body d-flex justify-content-center">
-    <div div class="col-12">
+    <div class="col-12">
       <AddImgProductData
         @updateAvatar="handleAvatarUpdate"
         :imgRest="imgRest"

@@ -263,7 +263,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="container mt-5" style="display: flex; justify-content: center">
-    <div class="card col-10">
+    <div class="card col-12">
       <div class="card-header mt-2"><h4 class="mt-1">新增產品</h4></div>
       <div
         class="card-body d-flex justify-content-center"

@@ -81,6 +81,13 @@ watch(
   color: #ffffff; /* 圖標顏色 */
 }
 
+@media (max-width: 930px) {
+  .product-data-style-img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
 @media (max-width: 1200px) {
   .productData-responsive-justify {
     justify-content: center !important;
