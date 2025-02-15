@@ -131,7 +131,7 @@ onUnmounted(() => {
   top: 0;
   border-right: 1px solid #d0d0d0;
   transition: all 0.3s ease;
-  overflow: visible;
+  /* overflow: visible; */
   z-index: 1000;
 }
 
@@ -140,10 +140,10 @@ onUnmounted(() => {
 }
 
 .burger-menu-style {
-  position: fixed !important;
+  position: sticky !important;
   z-index: 990;
-  /* left: calc(100% + 20px); 距離容器右側保持固定距離 */
-  left: 220px;
+  left: calc(100% + 20px);
+  /* left: 220px; */
   top: 20px;
   font-size: 20px;
   user-select: none;
@@ -236,9 +236,9 @@ onUnmounted(() => {
     width: 60px;
   }
 
-  .burger-menu-style {
+  /* .burger-menu-style {
     left: 170px;
-    /* top: 20px; */
-  }
+    top: 20px;
+  } */
 }
 </style>
