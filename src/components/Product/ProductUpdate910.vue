@@ -261,7 +261,7 @@ onBeforeUnmount(() => {
         :img_avatar="product.product_img"
         @updateAvatar="handleAvatarUpdate"
       />
-      <!--<div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <div class="col-12">
           <div class="mt-4">
             <label for="product_name">產品名稱</label>
@@ -505,7 +505,7 @@ onBeforeUnmount(() => {
           儲存
         </button>
         <RouterLink to="/product" class="btn-style cancel-btn">返回</RouterLink>
-      </div>-->
+      </div>
     </div>
   </div>
 </template>
