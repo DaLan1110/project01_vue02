@@ -140,7 +140,7 @@ onUnmounted(() => {
 }
 
 .burger-menu-style {
-  position: absolute;
+  position: sticky !important;
   z-index: 990;
   left: calc(100% + 20px); /* 距離容器右側保持固定距離 */
   top: 20px;
