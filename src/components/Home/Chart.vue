@@ -69,7 +69,7 @@ const chartOptions = ref({
     datalabels: {
       color: "#ffffff", // 設定數字為白色
       font: {
-        size: 16, // 設定字體大小
+        size: 14, // 設定字體大小
         weight: "bold", // 設定字體加粗
       },
       align: "center", // 讓文字垂直置中
