@@ -195,7 +195,7 @@ export const useUserStore = defineStore('userStore', () => {
                     try {
                         // 確保 JSON 格式正確才解析
                         const userData = JSON.parse(storedUserData);
-                        setMember(userData); // 恢復用戶數據
+                        setUser(userData); // 恢復用戶數據
                     } catch (parseError) {
                         console.error("解析 user_data 失敗，清除 localStorage", parseError);
                         logoutUserAccount(); // 解析錯誤時直接登出
