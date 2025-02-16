@@ -497,6 +497,9 @@ export const useUserStore = defineStore('userStore', () => {
             console.log(user_data);
             alert(response.data.message);
 
+            tempImageUrl.value = "";
+            tempImageUrlName.value = "";
+
         } catch (error) {
             console.error("更新資料時發生錯誤:", error);
         }
