@@ -26,15 +26,15 @@ const isFormValid = computed(() => {
   return validationForm(newMemberData.value).formIsValid;
 });
 
-onMounted(()=>{
-  memberStore.resetNewMemberData()
-})
+onMounted(() => {
+  memberStore.resetNewMemberData();
+});
 </script>
 
 <template>
   <div class="container mt-5" style="display: flex; justify-content: center">
     <div class="card col-12 col-md-8">
-      <div class="card-header mt-2"><h4 class="mt-1">新增會員</h4></div>
+      <div class="card-header"><h4 class="card-header-text">新增會員</h4></div>
       <div class="card-body col-10 mx-auto">
         <div class="mt-4">
           <label for="member_account">會員帳號</label>
@@ -164,5 +164,10 @@ onMounted(()=>{
 
 .cancel-btn:hover {
   opacity: 0.8;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 </style>

@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
     <div class="card">
       <div class="card-header">
         <div class="card-title-style">
-          <h4 class="mt-3" style="font-weight: 600">會員</h4>
+          <h4 class="card-header-text" style="font-weight: 600">會員</h4>
           <div class="float-end">
             <RouterLink
               to="/member/create"
@@ -400,6 +400,11 @@ onBeforeUnmount(() => {
 
 .member-button-gap {
   margin-inline-end: 8px;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1510px) {
