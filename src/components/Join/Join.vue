@@ -154,7 +154,7 @@ onBeforeUnmount(() => {
     <div class="card text-center">
       <div class="card-header" style="position: relative">
         <div class="card-title-style">
-          <h4 class="mt-3" style="font-weight: 600">加盟</h4>
+          <h4 class="card-header-text" style="font-weight: 600">加盟</h4>
           <div
             class="float-end"
             style="position: absolute; bottom: 10%; right: 1%"
@@ -475,6 +475,11 @@ onBeforeUnmount(() => {
   display: block;
   text-align: left;
   word-break: break-word;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1270px) {
