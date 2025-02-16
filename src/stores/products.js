@@ -180,6 +180,8 @@ export const useProductStore = defineStore('productStore', () => {
 
             alert("建立成功");
             resetNewMemberData();
+            tempImageUrl.value = "";
+            tempImageUrlName.value = "";
         } catch (error) {
             // 錯誤處理邏輯不變
             if (error.response) {
