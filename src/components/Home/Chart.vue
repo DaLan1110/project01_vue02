@@ -74,6 +74,7 @@ const chartOptions = ref({
       },
       align: "center", // 讓文字垂直置中
       anchor: "center", // 讓文字水平置中
+      textAlign: "center", // 確保文本對齊
       formatter: (value, context) => {
         const dataset = context.chart.data.datasets[0]; // 取得數據集
         const total = dataset.data.reduce(
