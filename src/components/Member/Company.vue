@@ -102,7 +102,7 @@ const deleteUser = () => {
     <div class="card">
       <div class="card-header">
         <div class="card-title-style">
-          <h4 class="mt-3" style="font-weight: 600">公司人員</h4>
+          <h4 class="card-header-text" style="font-weight: 600">公司人員</h4>
           <div class="float-end">
             <RouterLink
               to="/company/create"
@@ -506,6 +506,11 @@ const deleteUser = () => {
 
 .company-button-gap {
   margin-inline-end: 8px;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1500px) {
