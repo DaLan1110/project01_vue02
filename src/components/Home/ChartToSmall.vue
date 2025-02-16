@@ -55,11 +55,12 @@ const chartOptions = ref({
       formatter: (value, context) => {
         const label = context.chart.data.labels[context.dataIndex];
         const total = context.chart.data.datasets[0].data.reduce(
-          (sum, val) => sum + val,
+          (sum, val) => sum + Number(val),
           0
         );
-        const percentage = ((value / total) * 100).toFixed(1); // 計算百分比
-        return `${label}\n${value} (${percentage}%)`; // 顯示名稱、數量和百分比
+        const numericValue = Number(value);
+        const percentage = ((numericValue / total) * 100).toFixed(1); // 計算百分比
+        return `${label}\n${numericValue} (${percentage}%)`; // 顯示名稱、數量和百分比
       },
     },
   },
