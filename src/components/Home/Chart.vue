@@ -112,7 +112,7 @@ const getHotProduct = async () => {
         const percentage = ((value / total) * 100).toFixed(2); // 百分比，保留 2 位小數
 
         return {
-          text: `${index + 1}. ${label} : ${value} : ${total} (${percentage}%)`,
+          text: `${index + 1}. ${label} : ${value} (${percentage}%)`,
           fillStyle: dataset.backgroundColor[index],
         };
       });
