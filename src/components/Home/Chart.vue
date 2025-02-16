@@ -43,7 +43,7 @@ const chartOptions = ref({
           const { labels } = chart.data;
           const dataset = chart.data.datasets[0];
           return labels.map((label, index) => ({
-            text: `${label}: ${Number(dataset.data[index])}`, // 顯示名稱和數量
+            text: `${label}: ${dataset.data[index]}`, // 顯示名稱和數量
             fillStyle: dataset.backgroundColor[index],
           }));
         },
@@ -109,7 +109,7 @@ const getHotProduct = async () => {
         const percentage = ((value / total) * 100).toFixed(2); // 百分比，保留 2 位小數
 
         return {
-          text: `${index + 1}. ${label} : ${value}  (${percentage}%)`,
+          text: `${index + 1}. ${label} : ${value} : ${total} (${percentage}%)`,
           fillStyle: dataset.backgroundColor[index],
         };
       });
