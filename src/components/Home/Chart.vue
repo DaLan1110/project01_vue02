@@ -59,8 +59,7 @@ const chartOptions = ref({
           const total = dataset.data.reduce((sum, current) => sum + current, 0); // 總和
           const percentage = ((value / total) * 100).toFixed(2); // 計算百分比
 
-          // return `${label}: ${value} (${percentage}%)`; // 自訂提示文字
-          return `${dataset}: ${value} (${total}%)`; // 自訂提示文字
+          return `${label}: ${value} ${total} (${percentage}%)`; // 自訂提示文字
         },
       },
     },
