@@ -35,7 +35,7 @@ getOrderListToSix();
 <template>
   <div class="card right-card-style">
     <div class="card-header">
-      <h4 class="mt-3" style="font-weight: 600">最新訂單</h4>
+      <h4 class="card-header-text" style="font-weight: 600">最新訂單</h4>
     </div>
     <div class="card-body card-body-style-rb">
       <table class="table home-right-card-table mt-1">
@@ -143,6 +143,11 @@ getOrderListToSix();
 
 .home-right-card-table tr:last-child td {
   border-bottom: none;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* @media (max-width: 1400px) {

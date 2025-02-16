@@ -4,7 +4,7 @@
 <template>
   <div class="card button-card-style">
     <div class="card-header button-card-header">
-      <h4 class="mt-3" style="font-weight: 600">快速操作</h4>
+      <h4 class="card-header-text" style="font-weight: 600">快速操作</h4>
     </div>
     <div class="card-body button-card-style-body">
       <router-link to="/product/create" class="icon-container">
@@ -78,6 +78,11 @@
 
 .icon-container:hover span {
   font-weight: 700; /* 滑鼠懸停時文字加粗 */
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 550px) {

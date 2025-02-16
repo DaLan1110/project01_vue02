@@ -23,7 +23,9 @@ onBeforeUnmount(() => {
 <template>
   <div class="card left-card-style">
     <div class="card-header">
-      <h4 class="mt-3" style="font-weight: 600">每周前五名熱門商品</h4>
+      <h4 class="card-header-text" style="font-weight: 600">
+        每周前五名熱門商品
+      </h4>
     </div>
     <div class="card-body card-body-style-lb">
       <div class="chart-container">
@@ -64,8 +66,9 @@ onBeforeUnmount(() => {
   align-items: center;
 }
 
-.card-header h4 {
-  font-weight: 600;
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1300px) {
