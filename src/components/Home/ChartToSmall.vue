@@ -48,7 +48,7 @@ const chartOptions = ref({
     datalabels: {
       color: "#fff", // 文字顏色
       font: {
-        size: 14, // 文字大小
+        size: 12, // 文字大小
         weight: "bold",
       },
       align: "center", // 置中
@@ -60,7 +60,7 @@ const chartOptions = ref({
         );
         const numericValue = Number(value);
         const percentage = ((numericValue / total) * 100).toFixed(1); // 計算百分比
-        return `${label}\n${numericValue} (${percentage}%)`; // 顯示名稱、數量和百分比
+        return `${numericValue}\n(${percentage}%)`; // 顯示名稱、數量和百分比
       },
     },
   },
