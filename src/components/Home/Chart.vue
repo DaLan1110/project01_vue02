@@ -56,7 +56,10 @@ const chartOptions = ref({
           const value = tooltipItem.raw; // 獲取數值
           const label = tooltipItem.label; // 獲取標籤
           const dataset = tooltipItem.dataset; // 獲取數據集
-          const total = dataset.data.reduce((sum, current) => sum + current, 0); // 總和
+          const total = dataset.data.reduce(
+            (sum, current) => sum + Number(current),
+            0
+          ); // 計算總數
           const percentage = ((value / total) * 100).toFixed(2); // 計算百分比
 
           return `${label}: ${value} ${total} (${percentage}%)`; // 自訂提示文字
