@@ -24,7 +24,7 @@ import LeftBox from "./LeftBox.vue";
 .home-container {
   display: flex;
   flex-direction: column; /* 垂直排列 */
-  height: 750px;
+  height: auto;
   width: 100%; /* 滿版寬度 */
   box-sizing: border-box;
 }
@@ -77,9 +77,9 @@ import LeftBox from "./LeftBox.vue";
 }
 
 @media (max-width: 1150px) {
-  .home-container {
+  /* .home-container {
     height: auto !important;
-  }
+  } */
 
   /* 將下方的兩個格子變成上下排列 */
   .bottom-row {

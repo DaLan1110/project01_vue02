@@ -38,10 +38,13 @@ const chartOptions = ref({
           const value = tooltipItem.raw; // 獲取數值
           const label = tooltipItem.label; // 獲取標籤
           const dataset = tooltipItem.dataset; // 獲取數據集
-          const total = dataset.data.reduce((sum, current) => sum + current, 0); // 總和
+          const total = dataset.data.reduce(
+            (sum, current) => sum + Number(current),
+            0
+          ); // 計算總數
           const percentage = ((value / total) * 100).toFixed(2); // 計算百分比
 
-          return `${label}: ${value} (${percentage}%)`; // 自訂提示文字
+          return `${label}: ${value}杯 (${percentage}%)`; // 自訂提示文字
         },
       },
     },
@@ -51,7 +54,9 @@ const chartOptions = ref({
         size: 12, // 文字大小
         weight: "bold",
       },
-      align: "center", // 置中
+      align: "center", // 水平置中
+      anchor: "center", // 垂直置中
+      textAlign: "center", // 確保文本對齊
       formatter: (value, context) => {
         const label = context.chart.data.labels[context.dataIndex];
         const total = context.chart.data.datasets[0].data.reduce(
@@ -60,7 +65,7 @@ const chartOptions = ref({
         );
         const numericValue = Number(value);
         const percentage = ((numericValue / total) * 100).toFixed(1); // 計算百分比
-        return `${numericValue}\n(${percentage}%)`; // 顯示名稱、數量和百分比
+        return `${numericValue}杯\n(${percentage}%)`; // 顯示名稱、數量和百分比
       },
     },
   },

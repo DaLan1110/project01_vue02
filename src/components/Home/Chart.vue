@@ -62,7 +62,7 @@ const chartOptions = ref({
           ); // 計算總數
           const percentage = ((value / total) * 100).toFixed(2); // 計算百分比
 
-          return `${label}: ${value} (${percentage}%)`; // 自訂提示文字
+          return `${label}: ${value}杯 (${percentage}%)`; // 自訂提示文字
         },
       },
     },
