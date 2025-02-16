@@ -13,6 +13,8 @@ ChartJS.register(ChartDataLabels);
 const orderStore = useOrderStore();
 const { hotProductToFiveName, hotProductToFiveCount } = storeToRefs(orderStore);
 
+const loading = ref(true);
+
 // 定義圖表數據和選項
 const chartData = ref({
   labels: ["1"],
@@ -138,6 +140,10 @@ const getHotProduct = async () => {
         };
       });
     };
+
+    setTimeout(() => {
+      loading.value = false;
+    }, 500);
   } catch (error) {
     console.error("Error fetching hot products: ", error);
   }
@@ -146,7 +152,12 @@ getHotProduct();
 </script>
 
 <template>
-  <Doughnut id="myChart" :data="chartData" :options="chartOptions" />
+  <Doughnut
+    id="myChart"
+    :data="chartData"
+    :options="chartOptions"
+    v-if="!loading"
+  />
 </template>
 
 <style>
