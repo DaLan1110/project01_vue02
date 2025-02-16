@@ -43,7 +43,7 @@ const chartOptions = ref({
           const { labels } = chart.data;
           const dataset = chart.data.datasets[0];
           return labels.map((label, index) => ({
-            text: `${label}: ${dataset.data[index]}`, // 顯示名稱和數量
+            text: `${label}: ${Number(dataset.data[index])}`, // 顯示名稱和數量
             fillStyle: dataset.backgroundColor[index],
           }));
         },
@@ -62,7 +62,7 @@ const chartOptions = ref({
           ); // 計算總數
           const percentage = ((value / total) * 100).toFixed(2); // 計算百分比
 
-          return `${label}: ${value} ${total} (${percentage}%)`; // 自訂提示文字
+          return `${label}: ${value} (${percentage}%)`; // 自訂提示文字
         },
       },
     },
