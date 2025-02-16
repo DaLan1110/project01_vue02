@@ -72,7 +72,19 @@ const chartOptions = ref({
         size: 16, // 設定字體大小
         weight: "bold", // 設定字體加粗
       },
-      formatter: (value) => value, // 只顯示數字
+      align: "center", // 讓文字垂直置中
+      anchor: "center", // 讓文字水平置中
+      formatter: (value, context) => {
+        const dataset = context.chart.data.datasets[0]; // 取得數據集
+        const total = dataset.data.reduce(
+          (sum, current) => sum + Number(current),
+          0
+        ); // 計算總數
+        const numericValue = Number(value);
+        const percentage = ((numericValue / total) * 100).toFixed(2); // 計算百分比（保留2位小數）
+
+        return `${value}杯\n${percentage}%`; // 顯示數量 + 百分比，換行
+      },
     },
   },
 });
