@@ -27,6 +27,7 @@ const userAvatarUrl = computed(() => {
 
 const logoutHandle = () => {
   userStore.logoutUserAccount(); // 調用 store 的登出方法
+  alert("登出成功"); // 彈出提示
   router.push("/login"); // 導向登入頁面
 };
 
