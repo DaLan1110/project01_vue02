@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
     <div class="card">
       <div class="card-header">
         <div class="card-title-style">
-          <h4 class="mt-3" style="font-weight: 600">產品</h4>
+          <h4 class="card-header-text" style="font-weight: 600">產品</h4>
           <div class="float-end">
             <RouterLink
               to="/product/create"
@@ -322,6 +322,11 @@ onBeforeUnmount(() => {
   background: white;
   padding: 3px;
   z-index: 1;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1450px) {
