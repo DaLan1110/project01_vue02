@@ -118,7 +118,7 @@ onBeforeUnmount(() => {
     <div class="card text-center">
       <div class="card-header" style="position: relative">
         <div class="card-title-style">
-          <h4 class="mt-3" style="font-weight: 600">訂單</h4>
+          <h4 class="card-header-text" style="font-weight: 600">訂單</h4>
           <div class="float-end order-delete-btn-position">
             <button
               class="company-btn-style delete-user-btn"
@@ -358,6 +358,11 @@ onBeforeUnmount(() => {
   position: absolute;
   bottom: 10%;
   right: 1%;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1350px) {

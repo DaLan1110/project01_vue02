@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
     <div class="card">
       <div class="card-header">
         <div class="card-title-style">
-          <h4 class="mt-3" style="font-weight: 600">訂單資料</h4>
+          <h4 class="card-header-text" style="font-weight: 600">訂單資料</h4>
         </div>
       </div>
       <div class="card-body">
@@ -336,6 +336,11 @@ onBeforeUnmount(() => {
 .add-btn:hover {
   color: #ffffff;
   background-color: #272727;
+}
+
+.card-header-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1325px) {
