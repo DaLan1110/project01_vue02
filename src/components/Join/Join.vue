@@ -477,6 +477,20 @@ onBeforeUnmount(() => {
   word-break: break-word;
 }
 
+@media (max-width: 1270px) {
+  /* join-1-table */
+  .join-1-table thead th:nth-child(4),
+  .join-1-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  /* join-2-table */
+  .join-2-table thead th:nth-child(4),
+  .join-2-table tbody td:nth-child(4) {
+    display: none;
+  }
+}
+
 @media (max-width: 1250px) {
   .join-1-table thead th:nth-child(1),
   .join-1-table tbody td:nth-child(1) {
@@ -506,20 +520,6 @@ onBeforeUnmount(() => {
   .join-2-table thead th:nth-child(7),
   .join-2-table tbody td:nth-child(7) {
     width: 18%;
-  }
-}
-
-@media (max-width: 1240px) {
-  /* join-1-table */
-  .join-1-table thead th:nth-child(4),
-  .join-1-table tbody td:nth-child(4) {
-    display: none;
-  }
-
-  /* join-2-table */
-  .join-2-table thead th:nth-child(4),
-  .join-2-table tbody td:nth-child(4) {
-    display: none;
   }
 }
 
