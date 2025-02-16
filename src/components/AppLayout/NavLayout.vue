@@ -133,6 +133,7 @@ const breadcrumbClass = computed(() => ({
   left: 0;
   width: 100%;
   z-index: 900;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .work-page {
