@@ -187,15 +187,30 @@ export const useUserStore = defineStore('userStore', () => {
                 const res = await axios.get('https://project01-back-end.onrender.com/users/checkJwt', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
-                isAuthenticated.value = res.data.valid;
-                setUser(JSON.parse(storedUserData)); // 恢復用戶數據
-                console.log("驗證成功")
+                // isAuthenticated.value = res.data.valid;
+                // setUser(JSON.parse(storedUserData)); // 恢復用戶數據
+
+                if (res.data.valid) {
+                    isAuthenticated.value = true;
+                    try {
+                        // 確保 JSON 格式正確才解析
+                        const userData = JSON.parse(storedUserData);
+                        setMember(userData); // 恢復用戶數據
+                    } catch (parseError) {
+                        console.error("解析 user_data 失敗，清除 localStorage", parseError);
+                        logoutUserAccount(); // 解析錯誤時直接登出
+                    }
+
+                    console.log("驗證成功");
+                } else {
+                    throw new Error("JWT 無效"); // 讓錯誤處理流程執行
+                }
             } catch (error) {
-                isAuthenticated.value = false;
-                console.error("JWT 驗證失敗", error);
+                console.warn("JWT 驗證失敗，登出用戶");
+                logoutUserAccount(); // 調用登出函式
             }
         } else {
-            isAuthenticated.value = false;
+            logoutUserAccount(); // 調用登出函式
         }
     };
 
