@@ -141,6 +141,8 @@ const {
 // const img_path = "https://project01-back-end.onrender.com/img/product/";
 const errors = ref({});
 
+const loading = ref(true);
+
 const handleAvatarUpdate = ({ name, data }) => {
   tempImageUrl.value = data; // 可以將數據保存到本地狀態
   tempImageUrlName.value = name;
@@ -153,6 +155,9 @@ const handleAvatarUpdate = ({ name, data }) => {
 const handleProductDataById = async () => {
   await productStore.getOneProductData(routePathId);
   productStore.initSelected();
+  setTimeout(() => {
+    loading.value = false;
+  }, 500);
 };
 handleProductDataById();
 
@@ -255,7 +260,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="card-body d-flex justify-content-center">
+  <div class="card-body d-flex justify-content-center" v-if="!loading">
     <div class="col-12">
       <AddImgProductUpdate
         :img_avatar="product.product_img"
@@ -508,6 +513,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </div>
+  <div class="card-body d-flex justify-content-center" v-else>Loading</div>
 </template>
 
 <style>
