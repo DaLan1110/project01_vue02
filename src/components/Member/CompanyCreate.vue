@@ -39,7 +39,7 @@ onBeforeMount(() => {
 <template>
   <div class="container mt-5" style="display: flex; justify-content: center">
     <div class="card col-12 col-md-8">
-      <div class="card-header mt-2"><h4 class="mt-1">新增人員</h4></div>
+      <div class="card-header"><h4 class="card-header-text">新增人員</h4></div>
       <div class="card-body col-10 mx-auto">
         <div class="mt-4">
           <label for="useraccount">使用者帳號</label>
@@ -150,5 +150,10 @@ onBeforeMount(() => {
 
 .cancel-btn:hover {
   opacity: 0.8;
+}
+
+.card-header-text {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 </style>
