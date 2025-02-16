@@ -102,10 +102,13 @@ const getHotProduct = async () => {
     // 更新圖例文字
     chartOptions.value.plugins.legend.labels.generateLabels = (chart) => {
       const dataset = chart.data.datasets[0];
-      const total = dataset.data.reduce((sum, current) => sum + current, 0);
+      const total = dataset.data.reduce(
+        (sum, current) => sum + Number(current),
+        0
+      );
 
       return chart.data.labels.map((label, index) => {
-        const value = dataset.data[index];
+        const value = Number(dataset.data[index]);
         const percentage = ((value / total) * 100).toFixed(2); // 百分比，保留 2 位小數
 
         return {
