@@ -222,7 +222,7 @@ const breadcrumbClass = computed(() => ({
 
 @media (max-width: 600px) {
   .navlayout-footer {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 </style>
