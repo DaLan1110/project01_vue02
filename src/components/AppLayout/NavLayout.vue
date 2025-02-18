@@ -117,17 +117,9 @@ const breadcrumbClass = computed(() => ({
     <div class="work-page">
       <RouterView />
     </div>
-    <!-- <div class="navlayout-footer">
+    <div class="navlayout-footer">
       本專案中的圖片來源於 「 Pinterest 網站 」，僅用於開發展示，未作商業用途。
-    </div> -->
-    <footer class="navlayout-footer01 mt-auto py-3 be-light">
-      <div class="container">
-        <span
-          >本專案中的圖片來源於 「 Pinterest 網站
-          」，僅用於開發展示，未作商業用途。</span
-        >
-      </div>
-    </footer>
+    </div>
   </div>
 </template>
 
@@ -136,8 +128,6 @@ const breadcrumbClass = computed(() => ({
   position: relative !important;
   width: 100%;
   height: auto;
-  flex-direction: column;
-  min-height: 100vh; /* 讓頁面至少填滿整個視窗 */
 }
 
 .navbar-position {
@@ -151,7 +141,7 @@ const breadcrumbClass = computed(() => ({
 
 .work-page {
   padding: 1rem;
-  /* padding-bottom: 60px !important; */
+  padding-bottom: 60px !important;
   overflow-x: hidden;
 }
 
@@ -185,6 +175,9 @@ const breadcrumbClass = computed(() => ({
 }
 
 .navlayout-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 30px;
   background-color: black; /* 黑色背景 */
@@ -195,11 +188,6 @@ const breadcrumbClass = computed(() => ({
   font-size: 12px;
   white-space: nowrap; /* 禁止換行 */
   margin-top: auto; /* 讓它推到最底部 */
-}
-
-.navlayout-footer01 {
-  display: block;
-  unicode-bidi: isolate;
 }
 
 @media (min-width: 1150px) {
