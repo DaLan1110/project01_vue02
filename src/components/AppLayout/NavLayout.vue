@@ -128,6 +128,7 @@ const breadcrumbClass = computed(() => ({
   position: relative !important;
   width: 100%;
   height: auto;
+  min-height: 100vh;
 }
 
 .navbar-position {
@@ -141,8 +142,9 @@ const breadcrumbClass = computed(() => ({
 
 .work-page {
   padding: 1rem;
-  padding-bottom: 60px !important;
+  /* padding-bottom: 60px !important; */
   overflow-x: hidden;
+  flex: 1;
 }
 
 .breadcrumb-style {
@@ -176,13 +178,13 @@ const breadcrumbClass = computed(() => ({
 
 .navlayout-footer {
   width: 100%;
-  height: 60px;
+  height: 30px;
   background-color: black; /* 黑色背景 */
   color: white; /* 白色文字 */
   display: flex;
   justify-content: center; /* 水平置中 */
   align-items: center; /* 垂直置中 */
-  font-size: 16px;
+  font-size: 14px;
   white-space: nowrap; /* 禁止換行 */
   margin-top: auto; /* 讓它推到最底部 */
 }
