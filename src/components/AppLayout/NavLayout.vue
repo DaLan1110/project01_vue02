@@ -117,6 +117,9 @@ const breadcrumbClass = computed(() => ({
     <div class="work-page">
       <RouterView />
     </div>
+    <div class="navlayout-footer">
+      本專案中的圖片來源於 「 Pinterest 網站 」，僅用於開發展示，未作商業用途。
+    </div>
   </div>
 </template>
 
@@ -169,6 +172,19 @@ const breadcrumbClass = computed(() => ({
 
 .breadcrumbMoveToSmall {
   display: none;
+}
+
+.navlayout-footer {
+  width: 100%;
+  height: 60px;
+  background-color: black; /* 黑色背景 */
+  color: white; /* 白色文字 */
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  font-size: 16px;
+  white-space: nowrap; /* 禁止換行 */
+  margin-top: auto; /* 讓它推到最底部 */
 }
 
 @media (min-width: 1150px) {
