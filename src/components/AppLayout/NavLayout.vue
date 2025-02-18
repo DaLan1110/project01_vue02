@@ -128,7 +128,8 @@ const breadcrumbClass = computed(() => ({
   position: relative !important;
   width: 100%;
   height: auto;
-  min-height: 100vh;
+  flex-direction: column;
+  min-height: 100vh; /* 讓頁面至少填滿整個視窗 */
 }
 
 .navbar-position {
@@ -144,7 +145,6 @@ const breadcrumbClass = computed(() => ({
   padding: 1rem;
   /* padding-bottom: 60px !important; */
   overflow-x: hidden;
-  flex: 1;
 }
 
 .breadcrumb-style {
@@ -184,7 +184,7 @@ const breadcrumbClass = computed(() => ({
   display: flex;
   justify-content: center; /* 水平置中 */
   align-items: center; /* 垂直置中 */
-  font-size: 14px;
+  font-size: 12px;
   white-space: nowrap; /* 禁止換行 */
   margin-top: auto; /* 讓它推到最底部 */
 }
