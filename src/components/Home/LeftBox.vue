@@ -24,7 +24,7 @@ onBeforeUnmount(() => {
   <div class="card left-card-style">
     <div class="card-header">
       <h4 class="card-header-text" style="font-weight: 600">
-        每周前五名熱門商品
+        飲品前五名熱門商品
       </h4>
     </div>
     <div class="card-body card-body-style-lb">
