@@ -180,14 +180,14 @@ const breadcrumbClass = computed(() => ({
   left: 0;
   width: 100%;
   height: 30px;
-  background-color: black; /* 黑色背景 */
-  color: white; /* 白色文字 */
+  background-color: black;
+  color: white;
   display: flex;
-  justify-content: center; /* 水平置中 */
-  align-items: center; /* 垂直置中 */
+  justify-content: center;
+  align-items: center;
   font-size: 12px;
-  white-space: nowrap; /* 禁止換行 */
-  margin-top: auto; /* 讓它推到最底部 */
+  white-space: nowrap;
+  margin-top: auto;
 }
 
 @media (min-width: 1150px) {
@@ -217,6 +217,12 @@ const breadcrumbClass = computed(() => ({
 
   .breadcrumbMove {
     margin-left: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navlayout-footer {
+    font-size: 10px;
   }
 }
 </style>
