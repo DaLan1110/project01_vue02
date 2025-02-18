@@ -117,9 +117,17 @@ const breadcrumbClass = computed(() => ({
     <div class="work-page">
       <RouterView />
     </div>
-    <div class="navlayout-footer">
+    <!-- <div class="navlayout-footer">
       本專案中的圖片來源於 「 Pinterest 網站 」，僅用於開發展示，未作商業用途。
-    </div>
+    </div> -->
+    <footer class="navlayout-footer01 mt-auto py-3 be-light">
+      <div class="container">
+        <span
+          >本專案中的圖片來源於 「 Pinterest 網站
+          」，僅用於開發展示，未作商業用途。</span
+        >
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -187,6 +195,11 @@ const breadcrumbClass = computed(() => ({
   font-size: 12px;
   white-space: nowrap; /* 禁止換行 */
   margin-top: auto; /* 讓它推到最底部 */
+}
+
+.navlayout-footer01 {
+  display: block;
+  unicode-bidi: isolate;
 }
 
 @media (min-width: 1150px) {
